@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Vyrron",
   "colors": {
-    "primary": "#5865F2",
-    "light": "#8891F2",
-    "dark": "#404EED"
+    "primary": "#3B82C4",
+    "light": "#5BC8D8",
+    "dark": "#2B4FAE"
   },
   "navigation": {
     "pages": [
@@ -36,68 +36,78 @@
         }
       ]
     },
-    "groups": [
+    "languages": [
       {
-        "group": "Empieza aquí",
-        "icon": "rocket",
-        "pages": [
-          "index",
-          "start-here",
-          "setup",
-          "permissions"
-        ]
-      },
-      {
-        "group": "Protección y moderación",
-        "icon": "shield-halved",
-        "pages": [
-          "security/overview",
-          "security/antinuke",
-          "security/automod",
-          "security/logging",
-          "moderation/overview"
-        ]
-      },
-      {
-        "group": "Comunidad",
-        "icon": "users",
-        "pages": [
-          "community/overview",
-          "community/welcome",
-          "community/leveling",
-          "community/tickets",
-          "community/giveaways",
-          "community/voicemaster",
-          "community/suggestions",
-          "community/feedback",
-          "community/staff",
-          "community/automation",
-          "community/autopost",
-          "community/selfrole",
-          "community/social-notifier",
-          "community/tracking",
-          "community/liveleaderboard"
-        ]
-      },
-      {
-        "group": "Explorar Vyrron",
-        "icon": "compass",
-        "pages": [
-          "music/overview",
-          "utility/overview",
-          "utility/ai",
-          "utility/network",
-          "utility/roleplay",
-          "utility/misc"
-        ]
-      },
-      {
-        "group": "Referencia",
-        "icon": "book",
-        "pages": [
-          "reference/commands"
+        "language": "es",
+        "groups": [
+          {
+            "group": "Empieza aquí",
+            "icon": "rocket",
+            "pages": [
+              "index",
+              "start-here",
+              "setup",
+              "permissions"
+            ]
+          },
+          {
+            "group": "Protección y moderación",
+            "icon": "shield-halved",
+            "pages": [
+              "security/overview",
+              "security/antinuke",
+              "security/automod",
+              "security/logging",
+              "moderation/overview"
+            ]
+          },
+          {
+            "group": "Comunidad",
+            "icon": "users",
+            "pages": [
+              "community/overview",
+              "community/welcome",
+              "community/leveling",
+              "community/tickets",
+              "community/giveaways",
+              "community/voicemaster",
+              "community/suggestions",
+              "community/feedback",
+              "community/staff",
+              "community/automation",
+              "community/autopost",
+              "community/selfrole",
+              "community/social-notifier",
+              "community/tracking",
+              "community/liveleaderboard"
+            ]
+          },
+          {
+            "group": "Explorar Vyrron",
+            "icon": "compass",
+            "pages": [
+              "music/overview",
+              "utility/overview",
+              "utility/ai",
+              "utility/network",
+              "utility/roleplay",
+              "utility/misc"
+            ]
+          },
+          {
+            "group": "Referencia",
+            "icon": "book",
+            "pages": [
+              "reference/commands"
+            ]
+          }
         ]
       }
     ]
-  }
+  },
+  "logo": {
+    "light": "/images/vyrron.png",
+    "dark": "/images/vyrron.png"
+  },
+  "favicon": "/images/vyrron.png"
 }
