@@ -4,29 +4,27 @@ sidebarTitle: "IA"
 description: "Usa las herramientas de inteligencia artificial de Vyrron para preguntas, razonamiento, extracción de texto de imágenes, síntesis de voz y resúmenes."
 ---
 
-Vyrron incluye herramientas impulsadas por inteligencia artificial para preguntas, razonamiento, extracción de texto de imágenes, síntesis de voz y resúmenes de mensajes recientes. Estas herramientas son funciones opcionales respaldadas por proveedores; una conexión de bot funcional no garantiza que cada proveedor de IA esté disponible.
+Vyrron incluye herramientas de IA para preguntas, razonamiento, extracción de texto de imágenes, voz y resúmenes de mensajes recientes. Estas herramientas son funciones opcionales respaldadas por proveedores externos; una conexión funcional del bot no garantiza que cada proveedor de IA esté disponible.
 
 ## Comandos
 
-| Comando | Úsalo para |
+| Comando | Para qué usarlo |
 | --- | --- |
-| `/ai ask` | Hacerle una pregunta a la IA |
+| `/ai ask` | Hacer una pregunta a la IA |
 | `/ai reason` | Obtener un razonamiento más profundo para un problema complejo |
 | `/ai ocr` | Extraer y analizar texto de una imagen |
 | `/ai tts` | Convertir texto en audio de voz |
-| `/recap` | Resumir mensajes recientes de un canal |
+| `/recap` | Resumir los mensajes recientes de un canal |
 
-<Note>
-  `/ai ocr` acepta formatos de imagen comunes incluyendo PNG, JPEG, GIF y WebP. `/recap` usa mensajes recientes de un canal, así que avisa a los miembros cuando se esté generando un resumen y evita usarlo como sustituto de leer una conversación sensible.
-</Note>
+`/ai ocr` acepta formatos de imagen comunes como PNG, JPEG, GIF y WebP. `/recap` usa los mensajes recientes de un canal, así que avisa a los miembros cuando se esté generando un resumen y evita usarlo como sustituto de leer una conversación sensible.
 
 ## Usa la IA de forma responsable
 
 - No pegues contraseñas, tokens privados, registros personales ni conversaciones de soporte sensibles.
-- Trata las respuestas generadas como sugerencias, no como decisiones autoritarias de moderación o legales.
+- Trata las respuestas generadas como sugerencias, no como decisiones autoritativas de moderación o legales.
 - Avisa a los miembros cuando se esté usando un resumen de canal o una respuesta generada.
-- Revisa la salida del OCR antes de actuar sobre ella; las imágenes pueden ser ambiguas.
+- Revisa el resultado de OCR antes de actuar sobre él; las imágenes pueden ser ambiguas.
 
 <Note>
-  Los comandos de IA dependen de proveedores externos configurados por el operador del bot. Si uno falla mientras `/ping` funciona, verifica la disponibilidad del proveedor e inténtalo de nuevo más tarde. No añadas una clave de proveedor como argumento de un comando o en un canal público.
+  Los comandos de IA dependen de proveedores externos configurados por el operador del bot. Si uno falla mientras `/ping` funciona, revisa la disponibilidad del proveedor e inténtalo de nuevo más tarde. No añadas una clave de proveedor en un argumento de comando ni en un canal público.
 </Note>

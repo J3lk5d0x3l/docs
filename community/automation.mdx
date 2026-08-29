@@ -4,28 +4,28 @@ sidebarTitle: "Automatizacion"
 description: "Configura respuestas y reacciones automaticas en tu servidor con Vyrron para mensajes predecibles y preguntas frecuentes."
 ---
 
-La automatizacion de Vyrron es util para momentos pequenos y deterministas: responder una pregunta comun, agregar una reaccion a una frase recurrente, o dirigir a los miembros a un canal. Configuralo en un canal controlado y revisa las reglas antes de agregar disparadores superpuestos.
+Vyrron te permite automatizar respuestas y reacciones para mensajes predecibles y preguntas frecuentes en tu servidor. Esto reduce la carga del staff y ayuda a los miembros a obtener respuestas inmediatas sin esperar.
 
-## Auto-respuestas
+## Auto-responders
 
-| Comando | Para que sirve |
+Los auto-responders envian un mensaje automatico cuando alguien escribe una frase o palabra clave exacta.
+
+| Comando | Descripcion |
 | --- | --- |
-| `/autoresponder create` | Agrega una respuesta automatica |
-| `/autoresponder remove` | Elimina una respuesta |
-| `/autoresponder list` | Lista las respuestas configuradas |
+| `/autoresponder add` | Crea una nueva regla de respuesta automatica |
+| `/autoresponder remove` | Elimina una regla existente |
+| `/autoresponder list` | Muestra todas las reglas activas del servidor |
 
-## Auto-reacciones
+## Auto-reactions
 
-| Comando | Para que sirve |
+Los auto-reactions agregan una reaccion automatica a los mensajes enviados en un canal especifico.
+
+| Comando | Descripcion |
 | --- | --- |
-| `/autoreact create` | Agrega una reaccion automatica |
-| `/autoreact remove` | Elimina una reaccion |
-| `/autoreact list` | Lista las reacciones configuradas |
+| `,autoreact add` | Agrega una reaccion automatica a un canal |
+| `,autoreact remove` | Elimina una reaccion automatica de un canal |
+| `,autoreact list` | Muestra todas las reacciones automaticas configuradas |
 
 <Tip>
-  Prefiere frases de disparo precisas en lugar de palabras cortas comunes. Antes de agregar una regla, revisa la lista actual para que dos respuestas no compitan por el mismo mensaje.
+  Usa frases de trigger precisas para evitar respuestas accidentales. Revisa tu lista de auto-responders antes de agregar nuevas reglas para no duplicar funciones. El tiempo de borrado de triggers es de 10 segundos: Vyrron elimina el mensaje que activo la respuesta para mantener el canal limpio. Hay un limite de 25 reglas de auto-responder por servidor.
 </Tip>
-
-<Note>
-  La configuracion de auto-respuestas pregunta si Vyrron debe eliminar su respuesta despues de 10 segundos; elige eso intencionalmente para canales de mucho trafico. Auto-reacciones soporta hasta 25 reglas, y cada palabra clave puede tener hasta 50 caracteres.
-</Note>

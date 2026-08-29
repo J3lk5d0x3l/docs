@@ -4,97 +4,107 @@ sidebarTitle: "Comunidad"
 description: "Combina los sistemas de comunidad de Vyrron: bienvenida, niveles, tickets, sorteos, sugerencias, feedback y más para tu servidor."
 ---
 
-Vyrron ofrece funciones de comunidad diseñadas como pequeños sistemas que puedes combinar: da la bienvenida a los miembros, dales formas de participar y dirige las preguntas a las personas adecuadas. Los permisos requeridos varían según la función; consulta la guía dedicada antes de configurarla. Por ejemplo, Voicemaster requiere **Gestionar canales**, mientras que la mayoría de los comandos de configuración de comunidad requieren **Gestionar servidor**. Usa las guías dedicadas para [bienvenida y despedida](/community/welcome), [niveles](/community/leveling), [tickets](/community/tickets) y [seguimiento](/community/tracking). El resto de sistemas de comunidad están listados en la barra lateral.
+Vyrron incluye múltiples sistemas de comunidad que puedes combinar para crear una experiencia de servidor completa. Cada sistema tiene su propio conjunto de comandos y permisos, y puedes activar solo los que necesites.
 
-## Incorporación y participación
+Los permisos requeridos varian segun la funcion:
 
-| Sistema | Empieza aquí | Seguimientos útiles |
+- **Bienvenida y despedida**: `Manage Guild` (solo para configuracion)
+- **Niveles**: `Manage Guild` (configuracion); cualquier miembro (ver su rango)
+- **Tickets**: `Manage Guild` (configuracion); rol de soporte (gestionar tickets)
+- **Sorteos**: `Manage Messages` (crear y gestionar sorteos)
+- **Sugerencias y feedback**: `Manage Guild` (configuracion); cualquier miembro (enviar)
+- **Voicemaster**: `Manage Guild` (configuracion)
+- **Autopost y notificaciones sociales**: `Manage Guild` (configuracion)
+
+## Navegacion por area
+
+- [Bienvenida y despedida](/community/welcome)
+- [Niveles](/community/leveling)
+- [Tickets](/community/tickets)
+- [Seguimiento y clasificaciones](/community/tracking)
+
+## Incorporacion y participacion
+
+| Sistema | Comando de inicio | Comando de seguimiento |
 | --- | --- | --- |
-| Welcome | `/greet setup` | `/greet test`, `/greet variables` |
-| Farewell | `/farewell setup` | `/farewell test`, `/farewell variables` |
-| Leveling | `/leveling setup` | `/leveling style`, `,leveling rank`, `,leaderboard lvl` |
-| Self-roles | `/selfrole setup` | `/selfrole config`, `/selfrole reset` |
-| Suggestions | `/suggestions setup` | `/suggestions reset` |
-| Feedback | `/feedback setup` | `/feedback reset` |
-| Giveaways | `/giveaway start` | `/giveaway edit`, `/giveaway end`, `/giveaway reroll` |
+| Bienvenida | `/greet setup` | `/greet test` |
+| Despedida | `/farewell setup` | `/farewell test` |
+| Niveles | `/leveling enable` | `/leveling config` |
+| Tickets | `/ticket config` | `/ticket panel` |
+| Sorteos | `/giveaway start` | `/giveaway list` |
+| Sugerencias | `/suggestion config` | `/suggestion review` |
+| Feedback | `/feedback config` | — |
 
-<Tip>
-  Prueba los mensajes de bienvenida y despedida antes de invitar a una gran oleada de miembros. Los comandos `test` permiten al staff detectar errores de canal, variables y formato con antelación.
-</Tip>
+<Note>
+  Antes de una oleada de miembros, prueba siempre los mensajes de bienvenida y despedida con `/greet test` y `/farewell test` para verificar que el canal, las variables y el formato se ven correctos.
+</Note>
 
 ## Soporte y operaciones de staff
 
 ### Tickets
 
+El sistema de tickets de Vyrron crea un flujo de soporte privado con categorias, roles de soporte y transcripciones. Para configurarlo:
+
 ```text
-/ticket setup
-/category add
-/supportrole add
-/ticket panelsend
+/ticket config category:<ID de categoria>
+/ticket config support-role:<@rol>
+/ticket panel
 ```
 
-Cuando un ticket está abierto, el staff de soporte puede usar:
-
-| Comando | Propósito |
-| --- | --- |
-| `/ticket claim` | Reclamar el ticket |
-| `/ticket close` | Cerrar el ticket |
-| `/ticket rename` | Renombrar el canal del ticket |
-| `/ticket transfer` | Transferir la propiedad |
-| `/ticket adduser` | Añadir un usuario |
-| `/ticket removeuser` | Quitar un usuario |
-| `/ticket transcript` | Generar una transcripción |
-| `/category list` | Listar categorías de tickets |
-| `/supportrole list` | Listar roles de soporte |
+| Etapa | Comando | Quien lo usa |
+| --- | --- | --- |
+| Crear | Boton del panel o `/ticket create` | Miembro |
+| Reclamar | `/ticket claim` | Staff de soporte |
+| Agregar | `/ticket add <@usuario>` | Staff de soporte |
+| Transcribir | `/ticket transcript` | Staff de soporte |
+| Cerrar | `/ticket close` | Staff de soporte o miembro |
+| Eliminar | `/ticket delete` | Staff de soporte |
+| Reabrir | `/ticket reopen` | Staff de soporte |
 
 ### Solicitudes de staff
 
+Crea un formulario de solicitud de staff consistente para recibir aplicaciones estructuradas:
+
 ```text
-/staff setup
-/staff enable
-/staff apply
-/staff disable
+/staffapp config channel:<#canal>
+/staffapp config questions:Pregunta 1|Pregunta 2|Pregunta 3
+/staffapp config manager-role:<@rol>
+/staffapp panel
 ```
 
-Usa `/staff reset` solo cuando pretendas eliminar la configuración actual de solicitudes. El panel de configuración almacena preguntas, un rol de aceptado, un canal de revisión y un rol de gestor de staff.
+## Automatizacion
 
-## Automatización
+Configura respuestas y reacciones automaticas para mensajes predecibles y preguntas frecuentes.
 
-Usa la automatización por palabras clave para respuestas ligeras y predecibles:
-
-| Comando | Propósito |
-| --- | --- |
-| `/autoresponder create` | Crear una respuesta por palabra clave |
-| `/autoresponder remove` | Quitar una respuesta |
-| `/autoresponder list` | Listar respuestas |
-| `,autoreact create` | Crear una reacción por palabra clave |
-| `,autoreact remove` | Quitar una reacción |
-| `,autoreact list` | Listar reacciones |
+| Tipo | Configuracion | Ejemplo de uso |
+| --- | --- | --- |
+| Auto-responder | `/autoresponder add trigger:<texto> response:<texto>` | Responder "reglas" con el enlace a las reglas |
+| Auto-reaction | `,autoreact add <#canal> <emoji>` | Reaccionar automaticamente en canales de presentacion |
 
 ## Voz y actividad del servidor
 
 ### Voicemaster
 
-`/voicemaster setup` crea el flujo Join2Create para canales de voz privados. Estos comandos requieren **Gestionar canales**. Usa `/voicemaster config` para inspeccionar o actualizar los valores por defecto y `/voicemaster reset` para eliminar el sistema.
+Crea canales de voz privados temporales automaticamente. Los miembros se unen a un canal hub y Vyrron genera un canal privado que pueden gestionar.
 
 ### Autopost y notificaciones sociales
 
-| Función | Comandos |
-| --- | --- |
-| Autopost | `/autopost setup`, `/autopost config`, `/autopost reset` |
-| Feeds de YouTube y Reddit | `/notifier setup`, `/notifier remove`, `/notifier reset` |
-| Clasificaciones en vivo | `/liveleaderboard setup`, `/liveleaderboard reset` |
+Mantén canales activos con publicaciones automaticas y notificaciones de redes sociales.
+
+| Fuente | Comando | Detalle |
+| --- | --- | --- |
+| Imagenes (Male/Female/Anime/Banners) | `/autopost config` | Publica imagenes programadas |
+| YouTube | `/social add youtube <ID de canal> <#canal>` | Notifica nuevos videos |
+| Reddit | `/social add reddit <subreddit> <#canal>` | Notifica nuevas publicaciones |
 
 ## Niveles y seguimiento
 
-Vyrron puede rastrear invitaciones, mensajes y tiempo de voz. Usa los comandos de seguimiento para inspeccionar o administrar las estadísticas. Las clasificaciones diarias usan la fecha UTC actual, y las clasificaciones semanales usan la semana ISO UTC calculada. No hay un comando configurable de tiempo de reinicio, y estas clasificaciones no sustituyen un registro permanente de moderación.
+Vyrron rastrea tres señales de participacion: invitaciones, mensajes y tiempo de voz. Usa estos datos para recompensar la participacion.
 
-| Área | Vista del miembro | Clasificaciones |
+| Area | Comandos de miembro | Comandos de clasificacion |
 | --- | --- | --- |
-| Invitaciones | `,invites`, `,inviter`, `,invited`, `,inviteinfo` | `,leaderboard invites`, `,invitesleaderboard` |
-| Mensajes | `,messages` | `,leaderboard messages`, `,leaderboard dailymessages` |
-| Voz | `,vc` | `,leaderboard voice`, `,leaderboard dailyvoice`, `,leaderboard weeklyvoice` |
+| Invitaciones | `,invites`, `,invites @usuario` | `,leaderboard invites` |
+| Mensajes | `,messages`, `,messages @usuario` | `,leaderboard messages` |
+| Voz | `,voicetime`, `,voicetime @usuario` | `,leaderboard voicetime` |
 
-<Note>
-  Estos comandos de seguimiento son comandos de mensaje/prefijo. Los ajustes administrativos incluyen `,addinvites`, `,removeinvites`, `,clearinvites`, `,addmessages`, `,removemessages`, `,clearmessages`, `,addvctime`, `,reducevctime` y `,clearvoice`; requieren **Gestionar servidor**. Úsalos solo con una razón de moderación documentada.
-</Note>
+Para configurar roles por nivel, usa `/leveling config` y asigna roles a niveles especificos. Los miembros reciben los roles automaticamente al alcanzar cada nivel.

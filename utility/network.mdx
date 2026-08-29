@@ -4,48 +4,48 @@ sidebarTitle: "Red"
 description: "Consulta información pública sobre dominios, IPs y búsquedas web con los comandos de red de Vyrron. Solo para uso autorizado."
 ---
 
-Vyrron puede recuperar información pública sobre dominios, direcciones IP y resultados de búsqueda web. Los comandos devuelven datos de proveedores; no establecen propiedad, garantizan que un host sea seguro ni reemplazan una evaluación de seguridad autorizada.
+Vyrron permite recuperar información pública sobre direcciones IP, dominios, búsquedas web e identidades en línea. Estos comandos consultan fuentes públicas y no establecen propiedad sobre los datos ni garantizan su seguridad o exactitud actual.
 
 ## Comandos de IP
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/ip lookup` | Buscar información de una IP |
-| `/ip whois` | Ejecutar una búsqueda WHOIS |
-| `/ip abuse` | Verificar reportes de abuso |
-| `/ip asn` | Buscar información de ASN |
-| `/ip ptr` | Búsqueda de DNS inverso |
-| `/ip ports` | Escanear puertos comunes |
-| `/ip subnet` | Calcular información de subred |
-| `/ip ping` | Hacer ping a una IP |
+| `/ip lookup` | Consulta información general de una dirección IP |
+| `/ip geo` | Obtiene datos de geolocalización de una IP |
+| `/ip ports` | Escanea puertos comunes de una dirección IP |
+| `/ip subnet` | Calcula información de subred a partir de una IP |
+| `/ip reverse` | Realiza una búsqueda inversa de DNS |
+| `/ip abuse` | Consulta reportes de abuso asociados a una IP |
+| `/ip reputation` | Muestra la reputación general de una IP |
+| `/ip history` | Consulta el historial conocido de una IP |
 
 <Note>
-  `/ip ports` verifica los puertos comunes definidos por Vyrron e informa sobre los servicios accesibles; no es un escaneo completo de puertos. `/ip subnet` calcula los detalles de subred localmente a partir de la dirección y máscara proporcionadas.
+  `/ip ports` realiza un escaneo básico de puertos comunes. `/ip subnet` calcula el rango de red, la máscara y otros datos útiles para diagnóstico de red.
 </Note>
 
 ## Comandos de dominio
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/domain lookup` | Buscar información de un dominio |
-| `/domain dns` | Ver registros DNS |
-| `/domain ssl` | Inspeccionar información del certificado SSL |
-| `/domain ip` | Resolver un dominio a una IP |
-| `/domain availability` | Verificar disponibilidad de un dominio |
-| `/domain sub` | Enumerar subdominios |
+| `/domain whois` | Consulta el registro WHOIS de un dominio |
+| `/domain dns` | Consulta los registros DNS de un dominio |
+| `/domain screenshot` | Captura una imagen de la página principal del dominio |
+| `/domain subdomains` | Lista subdominios conocidos de un dominio |
+| `/domain history` | Muestra el historial de cambios conocidos del dominio |
+| `/domain reputation` | Consulta la reputación general del dominio |
 
-## Búsqueda e identidad
+## Comandos de búsqueda e identidad
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/search web` | Buscar en la web |
-| `/search images` | Buscar imágenes |
-| `/search news` | Buscar noticias |
-| `/pinterest` | Buscar imágenes en Pinterest |
-| `/lookup` | Explorar nombres de usuario abandonados y vanities de servidores |
-| `/sherlock` | Buscar un nombre de usuario en múltiples plataformas |
-| `/screenshot` | Capturar una página web |
+| `/search web` | Realiza una búsqueda general en la web |
+| `/search image` | Busca imágenes relacionadas con una consulta |
+| `/search news` | Busca noticias recientes sobre un tema |
+| `/username` | Busca un nombre de usuario en múltiples plataformas |
+| `/email` | Verifica información pública asociada a un correo electrónico |
+| `/phone` | Consulta información pública de un número telefónico |
+| `/social` | Busca perfiles públicos en redes sociales |
 
 <Warning>
-  Usa las funciones de búsqueda y escaneo solo para sistemas e identidades que estés autorizado a investigar. Las respuestas de los proveedores pueden estar incompletas, en caché o limitadas por tasa. No trates un resultado de nombre de usuario de `/sherlock` o `/lookup` como prueba de que dos cuentas pertenecen a la misma persona.
+  Usa estos comandos únicamente en sistemas y redes autorizados. Los resultados provienen de fuentes públicas y pueden estar incompletos, desactualizados o almacenados en caché. Vyrron no garantiza la exactitud ni la vigencia de la información recuperada.
 </Warning>

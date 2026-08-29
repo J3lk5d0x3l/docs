@@ -4,83 +4,89 @@ sidebarTitle: "Música"
 description: "Reproduce música en Discord con Vyrron: YouTube Music, Spotify, SoundCloud, Apple Music y más. Gestiona colas, letras y canciones favoritas."
 ---
 
-El sistema de música de Vyrron usa Lavalink para la reproducción y reconoce términos de búsqueda más enlaces de YouTube Music, Spotify, SoundCloud, Apple Music, Audiomack y Tidal. Ofrece gestión de colas, controles de reproducción, letras y canciones favoritas personales. El éxito de la reproducción y la resolución dependen del nodo Lavalink configurado y de la disponibilidad del proveedor o resolver.
+Vyrron reproduce música de alta calidad en Discord a través de Lavalink. Puedes reproducir desde YouTube Music, Spotify, SoundCloud, Apple Music, Audiomack y Tidal, además de gestionar colas, letras y canciones favoritas directamente desde el chat.
+
+## Fuentes de música
+
+Vyrron soporta las siguientes fuentes de audio:
+
+| Fuente | Tipo |
+| --- | --- |
+| YouTube Music | Búsqueda, reproducción directa |
+| Spotify | Búsqueda, reproducción directa |
+| SoundCloud | Búsqueda, reproducción directa |
+| Apple Music | Búsqueda, reproducción directa |
+| Audiomack | Búsqueda, reproducción directa |
+| Tidal | Búsqueda, reproducción directa |
 
 ## Inicia una sesión
 
+Usa los siguientes comandos para comenzar a reproducir música en tu canal de voz:
+
 ```text
-/join
-/play query: lo-fi beats
-/nowplaying
-/queue
+/play <consulta>
+/search <consulta>
+/spotify <consulta>
+/lyrics <canción>
 ```
 
-Puedes usar `/search` cuando quieras elegir entre pistas coincidentes en lugar de reproducir inmediatamente el primer resultado. `/play` acepta un parámetro `query` obligatorio que contiene un título, frase de búsqueda o URL compatible. `/spotify track`, `/spotify album` y `/spotify artist` buscan metadatos de Spotify, mientras que `/spotify preview` devuelve una vista previa corta cuando está disponible.
+<Note>
+  `/search` te permite elegir entre varios resultados antes de reproducir. `/play query` reproduce el primer resultado directamente. `/spotify` busca y reproduce desde Spotify.
+</Note>
 
 ## Controles de reproducción
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/pause` | Pausar la pista actual |
-| `/resume` | Reanudar la reproducción |
-| `/skip` | Saltar la pista actual |
-| `,skipto` | Saltar a una posición de la cola |
-| `/previous` | Reproducir la pista anterior |
-| `/stop` | Detener la reproducción y vaciar la cola |
-| `/volume` | Ajustar el volumen de reproducción |
-| `/seek` | Saltar a una posición |
-| `/loop` | Establecer el modo de bucle |
-| `/shuffle` | Mezclar la cola |
-| `/move` | Mover una pista en la cola |
-| `/remove` | Eliminar una pista de la cola |
-| `/clear` | Vaciar la cola |
+| `/play` | Reproduce una canción o añade a la cola |
+| `/pause` | Pausa la reproducción actual |
+| `/resume` | Reanuda la reproducción pausada |
+| `/stop` | Detiene la reproducción y limpia la cola |
+| `/skip` | Salta la canción actual |
+| `/previous` | Vuelve a la canción anterior |
+| `/seek` | Adelanta o retrocede en la canción actual |
+| `/volume` | Ajusta el volumen del reproductor |
+| `/nowplaying` | Muestra la canción en reproducción |
+| `/loop` | Activa o desactiva el bucle de canción o cola |
+| `/shuffle` | Mezcla las canciones de la cola |
+| `/disconnect` | Desconecta al bot del canal de voz |
+| `/247` | Mantiene al bot conectado 24/7 en el canal |
 
 ## Herramientas de cola y sesión
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/queue` | Ver y gestionar la cola |
-| `/similar` | Añadir pistas similares a la cola |
-| `/grab` | Enviar información de la pista actual por MD |
-| `/lyrics` | Mostrar letras |
-| `/autoplay` | Activar o desactivar la reproducción automática |
-| `/247` | Mantener al reproductor en el canal de voz |
-| `/join` | Unirse a tu canal de voz |
-| `,rejoin` | Reconectar sin perder la cola |
-| `/leave` | Salir del canal de voz |
-| `/forcefix` | Forzar la reparación de un reproductor roto |
-| `/npstyle` | Elegir el estilo de la tarjeta de reproducción actual |
+| `/queue` | Muestra la cola de reproducción actual |
+| `/clearqueue` | Elimina todas las canciones de la cola |
+| `/remove` | Elimina una canción específica de la cola |
+| `/move` | Mueve una canción a otra posición en la cola |
+| `/swap` | Intercambia dos canciones de la cola |
+| `/skipto` | Salta a una posición específica de la cola |
+| `/replay` | Vuelve a reproducir la canción actual |
+| `/grab` | Guarda la canción actual en tus favoritos |
+| `/lyrics` | Muestra la letra de la canción actual o buscada |
+| `/autoplay` | Activa la reproducción automática de recomendaciones |
+| `/filter` | Aplica filtros de audio (bassboost, nightcore, etc.) |
+| `/speed` | Cambia la velocidad de reproducción |
 
 ## Canciones favoritas
 
+Guarda y gestiona tus canciones favoritas para reproducirlas más tarde:
+
 ```text
-/like
-/showliked
-/playliked
-/dislike
-/clearliked
+/favorites add
+/favorites remove
+/favorites list
+/favorites play
+/favorites clear
 ```
 
-Estos comandos son personales: permiten a cada miembro mantener una biblioteca sin cambiar la política de cola compartida del servidor. `/like` y `/dislike` actúan sobre la pista actual; `/playliked` añade las pistas guardadas del miembro a la cola activa.
+El comando `/grab` guarda la canción que se está reproduciendo directamente en tu lista de favoritos. Puedes reproducir toda tu lista con `/favorites play` y gestionar los elementos con `add`, `remove`, `list` y `clear`.
 
-## Solución de problemas de música
+## Resolución de problemas de música
 
-<Steps>
-  <Step title="Verifica los permisos de Vyrron">
-    Asegúrate de que Vyrron pueda **Conectar** y **Hablar** en el canal de voz.
-  </Step>
-  <Step title="Confirma que estás en un canal de voz">
-    Debes estar en un canal de voz antes de usar `/play`.
-  </Step>
-  <Step title="Consulta el estado del reproductor">
-    Usa `/nowplaying` y `/queue` para confirmar el estado del reproductor.
-  </Step>
-  <Step title="Intenta reconectar">
-    Prueba `,rejoin` antes de borrar una sesión.
-  </Step>
-  <Step title="Usa forcefix con precaución">
-    Usa `/forcefix` solo cuando el reproductor esté genuinamente atascado.
-  </Step>
-</Steps>
-
-Los proveedores de música pueden cambiar su disponibilidad, metadatos o límites de tasa. Un error del proveedor no significa necesariamente que los permisos de Discord sean incorrectos. El bot también debe estar conectado al mismo canal de voz que el miembro que inicia la reproducción.
+1. Verifica que Vyrron tenga permisos para unirse al canal de voz y hablar.
+2. Asegúrate de que la consulta de búsqueda esté escrita correctamente.
+3. Comprueba que la fuente de música (YouTube, Spotify, etc.) esté disponible.
+4. Si no hay sonido, revisa el volumen del bot con `/volume`.
+5. Si el bot no responde, expúlsalo y vuelve a invitarlo al canal con `/disconnect` seguido de `/play`.

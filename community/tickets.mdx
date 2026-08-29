@@ -1,54 +1,52 @@
 ---
 title: "Sistema de tickets de Vyrron"
 sidebarTitle: "Tickets"
-description: "Crea un flujo de soporte privado para tu servidor con el sistema de tickets de Vyrron: categorías, roles de soporte y transcripciones."
+description: "Crea un flujo de soporte privado para tu servidor con el sistema de tickets de Vyrron: categorias, roles de soporte y transcripciones."
 ---
 
-El sistema de tickets de Vyrron crea un flujo de soporte privado para preguntas, reportes y solicitudes. Los comandos de configuración y panel requieren **Gestionar servidor**; las acciones de ticket están disponibles para el autor del ticket o los roles de soporte configurados según corresponda.
+El sistema de tickets de Vyrron te permite crear un flujo de soporte privado en tu servidor de Discord. Los miembros pueden abrir tickets mediante un panel interactivo, y el staff puede gestionarlos con comandos dedicados que incluyen reclamar, transcribir y cerrar conversaciones.
 
 ## Configura el sistema
 
 <Steps>
-  <Step>
-    **Crea el sistema.** Ejecuta `/ticket setup` y elige la categoría de tickets, el estilo del panel, el tipo de selector, el acceso del staff y el destino de los registros.
+  <Step title="Define la categoria">
+    Ejecuta `/ticket config category` y selecciona la categoria de canales donde se crearan los tickets.
   </Step>
-  <Step>
-    **Añade categorías.** Usa `/category add` para flujos distintos como soporte, reportes o partnerships. Verifícalas con `/category list`. Un panel debe tener al menos una categoría.
+  <Step title="Asigna el rol de soporte">
+    Ejecuta `/ticket config support-role` y menciona el rol que podra ver y gestionar los tickets.
   </Step>
-  <Step>
-    **Añade roles de soporte.** Usa `/supportrole add` para las personas que deben ver y gestionar tickets. Verifícalos con `/supportrole list`.
+  <Step title="Configura transcripciones (opcional)">
+    Si deseas guardar transcripciones, configura el canal de registros con `/ticket config transcript-channel`.
   </Step>
-  <Step>
-    **Publica el panel.** Ejecuta `/ticket panelsend` y selecciona un canal de texto o anuncios donde los miembros puedan abrir tickets. El panel puede usar botones o un menú de selección.
+  <Step title="Publica el panel">
+    Ejecuta `/ticket panel` para enviar el mensaje embed con el boton de crear ticket al canal deseado.
   </Step>
 </Steps>
 
 ## Ciclo de vida del ticket
 
-| Comando | Uso |
+| Etapa | Comando | Descripcion |
+| --- | --- | --- |
+| Crear | Boton del panel o `/ticket create` | El miembro abre un nuevo canal de ticket |
+| Reclamar | `/ticket claim` | Un miembro del staff toma responsabilidad del ticket |
+| Agregar | `/ticket add @usuario` | Invita a otro usuario al canal del ticket |
+| Transcribir | `/ticket transcript` | Genera una transcripcion del ticket |
+| Cerrar | `/ticket close` | Cierra el ticket y archiva el canal |
+| Eliminar | `/ticket delete` | Elimina el canal del ticket inmediatamente |
+| Reabrir | `/ticket reopen` | Reabre un ticket previamente cerrado |
+
+## Comandos de configuracion
+
+| Comando | Descripcion |
 | --- | --- |
-| `/ticket claim` | Reclamar un ticket abierto |
-| `/ticket close` | Cerrar un ticket |
-| `/ticket rename` | Renombrar el canal del ticket |
-| `/ticket transfer` | Transferir la propiedad |
-| `/ticket adduser` | Añadir un participante |
-| `/ticket removeuser` | Eliminar un participante |
-| `/ticket transcript` | Generar una transcripción |
-
-`/ticket close` puede ser usado por el autor del ticket o el staff de soporte. `/ticket claim` y los comandos de gestión de acceso requieren un rol de soporte configurado o acceso de administrador. `/ticket rename` acepta un nombre de canal y lo normaliza a letras, números y guiones.
-
-## Comandos de configuración
-
-| Comando | Uso |
-| --- | --- |
-| `/ticket reset` | Reiniciar la configuración de tickets |
-| `/category add` | Añadir una categoría de ticket |
-| `/category remove` | Eliminar una categoría de ticket |
-| `/category list` | Listar las categorías de tickets |
-| `/supportrole add` | Añadir un rol de soporte |
-| `/supportrole remove` | Eliminar un rol de soporte |
-| `/supportrole list` | Listar los roles de soporte |
+| `/ticket config category` | Establece la categoria donde se crean los tickets |
+| `/ticket config support-role` | Define el rol que puede gestionar tickets |
+| `/ticket config transcript-channel` | Canal donde se envian las transcripciones |
+| `/ticket config max-tickets` | Limite de tickets abiertos por miembro |
+| `/ticket config ticket-name` | Formato del nombre de los canales de ticket |
+| `/ticket panel` | Publica el panel de creacion de tickets |
+| `/ticket stats` | Muestra estadisticas del sistema de tickets |
 
 <Note>
-  Mantén las transcripciones y los canales de tickets sujetos a la política de privacidad y retención de tu servidor. No expongas el contenido de soporte a roles que no lo necesiten. Cerrar un ticket cambia el estado del canal; reiniciar el sistema elimina su configuración y debe tratarse como una acción administrativa separada.
+  Los canales de ticket son privados: solo el creador, el staff con rol de soporte y los usuarios agregados manualmente pueden verlos. Las transcripciones se guardan en el canal configurado y pueden conservarse incluso despues de eliminar el ticket.
 </Note>

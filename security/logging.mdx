@@ -4,33 +4,35 @@ sidebarTitle: "Registro"
 description: "Configura los 5 canales de registro de Vyrron para tener un historial completo de mensajes, miembros, moderación, voz y servidor."
 ---
 
-El registro de eventos (logging) proporciona al staff un registro dedicado de eventos que son difíciles de reconstruir más tarde. Vyrron almacena cinco destinos de registro: mensajes, miembros, moderación, voz y eventos del servidor. Usa canales privados o la categoría privada automática `Vyrron Logs`.
+El registro da al staff un historial dedicado de eventos difíciles de reconstruir después. Vyrron almacena cinco destinos de log: mensajes, miembros, moderación, voz y eventos del servidor. Usa canales privados o la categoría privada automática `Vyrron Logs`.
 
 ## Comandos
 
-| Comando | Úsalo para |
+| Comando | Para qué usarlo |
 | --- | --- |
-| `/logging setup` | Elegir y configurar los canales de registro |
-| `/logging enable` | Habilitar el registro de eventos |
+| `/logging setup` | Elegir y configurar canales de log |
+| `/logging enable` | Activar el registro de eventos |
 | `/logging disable` | Pausar el registro de eventos |
-| `/logging reset` | Eliminar la configuración de registro |
+| `/logging reset` | Eliminar la configuración de logging |
 
 ## Qué recibe cada canal
 
 | Destino | Ejemplos |
 | --- | --- |
-| Registro de mensajes | Ediciones, eliminaciones y eliminaciones masivas de mensajes |
-| Registro de miembros | Entradas, salidas, kicks, cambios de roles y cambios de apodo |
-| Registro de moderación | Bans, desbaneos y timeouts |
-| Registro de voz | Entradas, salidas, movimientos y cambios de estado en canales de voz |
-| Registro de servidor | Cambios en canales, roles, emojis, stickers y configuración del servidor |
+| Logs de mensajes | Ediciones, eliminaciones y eliminaciones masivas de mensajes |
+| Logs de miembros | Entradas, salidas, expulsiones, cambios de rol y cambios de apodo |
+| Logs de moderación | Baneos, desbaneos y tiempos de espera |
+| Logs de voz | Entradas, salidas, movimientos y cambios de estado en voz |
+| Logs del servidor | Cambios en canales, roles, emojis, stickers y configuración del servidor |
 
 ## Lista de verificación de configuración
 
-- Crea canales de registro exclusivos para el staff, o deja que Vyrron cree la categoría `Vyrron Logs` automáticamente.
-- Otorga a Vyrron permiso para ver y enviar mensajes allí. La configuración automática también necesita **Gestionar canales**; la entrega mediante webhooks necesita **Gestionar webhooks**.
+- Crea canales de log solo para staff, o deja que Vyrron cree la categoría `Vyrron Logs` automáticamente.
+- Dale a Vyrron permiso para ver y enviar mensajes allí. La configuración automática también necesita **Gestionar Canales**; la entrega con webhooks necesita **Gestionar Webhooks**.
 - Ejecuta `/logging setup`.
-- Activa un evento de prueba inofensivo.
-- Confirma que el evento aparece antes de habilitar el antinuke o el automod.
+- Desencadena un evento de prueba inofensivo.
+- Confirma que el evento aparece antes de activar antinuke o automod.
 
-El registro solo es útil cuando el staff puede acceder a él. Mantén los canales privados, pero asegúrate de que el equipo de moderación de guardia pueda leerlos durante un incidente.
+<Note>
+  El logging es útil solo cuando el staff puede acceder a él. Mantén los canales privados, pero asegúrate de que el equipo de moderación de guardia pueda leerlos durante un incidente.
+</Note>

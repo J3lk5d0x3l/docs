@@ -4,32 +4,32 @@ sidebarTitle: "Clasificaciones"
 description: "Muestra las clasificaciones de participacion de tu servidor con Vyrron, incluyendo niveles, invitaciones, mensajes y tiempo de voz."
 ---
 
-Vyrron ofrece a tus miembros varias formas de ver las clasificaciones de participacion del servidor. Las clasificaciones regulares se ven con comandos, mientras que la clasificacion en vivo mantiene un mensaje de clasificacion actualizado visible en un canal.
+Vyrron te permite mostrar clasificaciones de participacion en tu servidor para motivar a los miembros y reconocer la actividad. Puedes consultar rankings regulares o configurar una clasificacion en vivo que se actualiza automaticamente en un canal.
 
 ## Clasificaciones regulares
 
-Estas clasificaciones usan los datos de participacion del servidor:
+| Metrica | Comando | Descripcion |
+| --- | --- | --- |
+| Niveles | `/leaderboard levels` | Clasificacion basada en XP del sistema de niveles |
+| Invitaciones | `,leaderboard invites` | Miembros con mas invitaciones exitosas |
+| Mensajes | `,leaderboard messages` | Miembros con mas mensajes enviados |
+| Tiempo de voz | `,leaderboard voicetime` | Miembros con mas tiempo en canales de voz |
 
-| Clasificacion | Comando |
-| --- | --- |
-| Niveles | `,leaderboard lvl` |
-| Invitaciones | `,leaderboard invites` o `,invitesleaderboard` |
-| Mensajes | `,leaderboard messages` o `,leaderboard dailymessages` |
-| Tiempo de voz | `,leaderboard voice`, `,leaderboard dailyvoice`, o `,leaderboard weeklyvoice` |
+<Note>
+  Los comandos de invitaciones, mensajes y tiempo de voz usan el prefijo `,` (comandos de mensaje). Los rankings diarios y semanales estan disponibles para invitaciones y tiempo de voz usando `,leaderboard invites daily`, `,leaderboard invites weekly`, `,leaderboard voicetime daily` y `,leaderboard voicetime weekly`.
+</Note>
 
-Estos comandos de clasificacion regulares son comandos de mensaje/prefijo. Las clasificaciones diarias usan la fecha UTC actual, y las clasificaciones semanales usan la semana ISO UTC computada. Ve [Seguimiento](/community/tracking) para las estadisticas que alimentan las clasificaciones de invitaciones, mensajes y voz. Ve [Niveles](/community/leveling) para la configuracion de XP y rango.
+Para mas detalles sobre como se rastrean estos datos, consulta [Seguimiento de actividad](/community/tracking). Para configurar el sistema de niveles, visita [Sistema de niveles de Vyrron](/community/leveling).
 
 ## Clasificacion en vivo
 
-La clasificacion en vivo mantiene una vista de actividad publica actualizada sin que el staff tenga que republicar las clasificaciones. La configuracion requiere **Manage Server**.
+La clasificacion en vivo es un mensaje embed que Vyrron actualiza periodicamente en un canal especifico, mostrando las posiciones actuales sin necesidad de que nadie ejecute un comando.
 
-| Comando | Para que sirve |
+| Comando | Descripcion |
 | --- | --- |
-| `/liveleaderboard setup` | Configura la clasificacion en vivo |
-| `/liveleaderboard reset` | Desactiva la clasificacion en vivo |
-
-Elige un canal donde las actualizaciones frecuentes sean bienvenidas. Informa a los miembros que metrica representa la clasificacion y cuando se reinicia. El sistema esta respaldado por los datos de actividad rastreados del servidor; configura la funcion de seguimiento relevante antes de esperar clasificaciones utiles.
+| `/liveleaderboard setup` | Configura el canal, la metrica y el intervalo de actualizacion |
+| `/liveleaderboard reset` | Elimina la clasificacion en vivo del servidor |
 
 <Note>
-  La clasificacion en vivo usa los datos de actividad del servidor. Asegurate de que el seguimiento correspondiente este habilitado para que las clasificaciones muestren informacion util.
+  Elige un canal donde las actualizaciones frecuentes sean bienvenidas, como un canal de estadisticas o un canal dedicado a clasificaciones. Indica claramente que metrica se muestra (niveles, invitaciones, mensajes o voz) y con que frecuencia se resetea. Los miembros deben saber si la clasificacion es acumulativa, diaria o semanal.
 </Note>

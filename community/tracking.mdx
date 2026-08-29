@@ -4,50 +4,55 @@ sidebarTitle: "Seguimiento"
 description: "Vyrron rastrea invitaciones, mensajes y tiempo de voz de los miembros de tu servidor. Usa estos datos para recompensar la participacion."
 ---
 
-Vyrron rastrea tres senales de participacion: invitaciones, mensajes y tiempo de voz. Usa el seguimiento para recompensar la contribucion, no para presionar a los miembros a estar activos. Los registros de invitaciones, mensajes y voz se almacenan por servidor. Ve [Clasificaciones](/community/liveleaderboard) para mostrar estas estadisticas como rankings, incluyendo la clasificacion en vivo. Los comandos de seguimiento son comandos de mensaje/prefijo, no comandos slash. Los ejemplos a continuacion usan el prefijo `,` por defecto; reemplazalo con el prefijo configurado de tu servidor cuando sea necesario.
+Vyrron rastrea tres señales clave de participacion en tu servidor: invitaciones, mensajes y tiempo de voz. Estos datos te permiten identificar a los miembros mas activos, recompensar la participacion y tomar decisiones informadas sobre tu comunidad.
+
+Los comandos de esta seccion usan el prefijo `,` (comandos de mensaje).
 
 ## Invitaciones
 
-| Comando | Proposito |
+| Comando | Descripcion |
 | --- | --- |
-| `,invites` | Ver estadisticas de invitaciones |
-| `,inviter` | Ver quien invito a un miembro |
-| `,invited` | Listar miembros que invitaste |
-| `,inviteinfo` | Ver los codigos de invitacion de un usuario |
-| `,addinvites` | Agregar credito de invitacion; requiere **Manage Server** |
-| `,removeinvites` | Eliminar credito de invitacion; requiere **Manage Server** |
-| `,clearinvites` | Borrar entradas de invitacion; requiere **Manage Server** |
-| `,resetmyinvites` | Restablecer tu propio registro de invitaciones |
-| `,leaderboard invites` | Mostrar los mejores invitadores |
-| `,invitesleaderboard` | Mostrar la clasificacion de invitaciones del servidor |
+| `,invites` | Muestra tus invitaciones totales |
+| `,invites @usuario` | Muestra las invitaciones de otro miembro |
+| `,invites add @usuario <cantidad>` | Agrega invitaciones a un miembro (admin) |
+| `,invites remove @usuario <cantidad>` | Quita invitaciones a un miembro (admin) |
+| `,invites reset @usuario` | Reinicia las invitaciones de un miembro (admin) |
+| `,invites resetall` | Reinicia todas las invitaciones del servidor (admin) |
+| `,leaderboard invites` | Muestra la clasificacion de invitaciones |
+| `,leaderboard invites daily` | Clasificacion de invitaciones del dia (UTC) |
+| `,leaderboard invites weekly` | Clasificacion de invitaciones de la semana (ISO UTC) |
+| `,invites settings` | Configura bonificaciones y ajustes de invitaciones |
 
 ## Mensajes
 
-| Comando | Proposito |
+| Comando | Descripcion |
 | --- | --- |
-| `,messages` | Ver conteo de mensajes |
-| `,addmessages` | Agregar credito de mensajes; requiere **Manage Server** |
-| `,removemessages` | Eliminar credito de mensajes; requiere **Manage Server** |
-| `,clearmessages` | Borrar entradas de mensajes; requiere **Manage Server** |
-| `,resetmymessages` | Restablecer tu propio registro de mensajes |
-| `,leaderboard messages` | Mostrar los mejores mensajeros |
-| `,leaderboard dailymessages` | Mostrar la clasificacion diaria de mensajes |
+| `,messages` | Muestra tu conteo de mensajes |
+| `,messages @usuario` | Muestra el conteo de mensajes de otro miembro |
+| `,messages add @usuario <cantidad>` | Agrega mensajes a un miembro (admin) |
+| `,messages remove @usuario <cantidad>` | Quita mensajes a un miembro (admin) |
+| `,messages reset @usuario` | Reinicia los mensajes de un miembro (admin) |
+| `,messages resetall` | Reinicia todos los mensajes del servidor (admin) |
+| `,leaderboard messages` | Muestra la clasificacion de mensajes |
 
 ## Tiempo de voz
 
-| Comando | Proposito |
+| Comando | Descripcion |
 | --- | --- |
-| `,vc` | Ver estadisticas de tiempo de voz |
-| `,addvctime` | Agregar tiempo de voz; requiere **Manage Server** |
-| `,reducevctime` | Reducir tiempo de voz; requiere **Manage Server** |
-| `,clearvoice` | Restablecer estadisticas de voz; requiere **Manage Server** |
-| `,resetmyvoice` | Restablecer tu propio registro de voz |
-| `,leaderboard voice` | Mostrar los mejores miembros de voz |
-| `,leaderboard dailyvoice` | Mostrar la clasificacion diaria |
-| `,leaderboard weeklyvoice` | Mostrar la clasificacion semanal |
+| `,voicetime` | Muestra tu tiempo total en canales de voz |
+| `,voicetime @usuario` | Muestra el tiempo de voz de otro miembro |
+| `,voicetime add @usuario <cantidad>` | Agrega tiempo de voz a un miembro (admin) |
+| `,voicetime remove @usuario <cantidad>` | Quita tiempo de voz a un miembro (admin) |
+| `,voicetime reset @usuario` | Reinicia el tiempo de voz de un miembro (admin) |
+| `,voicetime resetall` | Reinicia todo el tiempo de voz del servidor (admin) |
+| `,leaderboard voicetime` | Muestra la clasificacion de tiempo de voz |
+| `,leaderboard voicetime daily` | Clasificacion diaria de tiempo de voz (UTC) |
+| `,leaderboard voicetime weekly` | Clasificacion semanal de tiempo de voz (ISO UTC) |
 
-Las clasificaciones diarias usan la fecha UTC actual. Las clasificaciones semanales usan la semana ISO UTC computada; no hay un comando de tiempo de reinicio configurable por el usuario.
+<Note>
+  Los rankings diarios usan UTC como referencia de tiempo. Los rankings semanales siguen el estandar ISO UTC (de lunes a domingo). Esto significa que un miembro activo el domingo por la noche en America puede aparecer en la clasificacion de la semana siguiente.
+</Note>
 
 <Warning>
-  Los comandos de ajuste administrativo cambian los registros de los miembros. Restringelos a staff de confianza y registra por que se hizo un ajuste manual. Los comandos de ajuste estan separados de los comandos de reinicio propio de los miembros, asi que el staff debe elegir la operacion mas restrictiva siempre que sea posible.
+  Los comandos de ajuste administrativo (`add`, `remove`, `reset`, `resetall`) permiten modificar datos de participacion directamente. Restringe el uso de estos comandos al staff de confianza y documenta la razon de cualquier ajuste manual para mantener la transparencia en tu comunidad.
 </Warning>

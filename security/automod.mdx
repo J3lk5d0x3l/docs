@@ -4,17 +4,17 @@ sidebarTitle: "Automod"
 description: "Configura los 13 módulos de automod de Vyrron para filtrar spam, enlaces no deseados, palabras prohibidas, contenido NSFW y más."
 ---
 
-El Automod de Vyrron gestiona la protección a nivel de mensajes, como spam, enlaces no deseados, palabras inapropiadas, contenido NSFW, abuso de mayúsculas, menciones masivas, spam de emojis, spam de archivos adjuntos, mensajes largos, spam de saltos de línea y contenido repetido entre canales. Configúralo gradualmente y empárelo con el registro de eventos para que el staff pueda revisar los falsos positivos.
+Automod maneja la protección a nivel de mensajes: spam, enlaces no deseados, palabras prohibidas, contenido NSFW, abuso de mayúsculas, menciones masivas, spam de emojis y adjuntos, mensajes largos, spam de saltos de línea y contenido repetido entre canales. Configúralo gradualmente y combínalo con logging para que el staff pueda revisar falsos positivos.
 
 ## Comandos
 
-| Comando | Úsalo para |
+| Comando | Para qué usarlo |
 | --- | --- |
-| `/automod setup` | Configurar los módulos de automod |
-| `/automod enable` | Activar el automod |
-| `/automod disable` | Pausar el automod |
-| `/automod reset` | Eliminar la configuración del automod |
-| `/automod whitelist` | Gestionar excepciones del automod |
+| `/automod setup` | Configurar módulos de automod |
+| `/automod enable` | Activar automod |
+| `/automod disable` | Pausar automod |
+| `/automod reset` | Eliminar configuración de automod |
+| `/automod whitelist` | Gestionar excepciones de automod |
 
 ## Módulos disponibles
 
@@ -27,36 +27,34 @@ El panel de configuración expone actualmente estos módulos:
 | Anti Invite | Enlaces de invitación de Discord |
 | Anti Bad Words | Lista multilingüe integrada o lista personalizada |
 | Anti NSFW | Texto e imágenes NSFW |
-| Anti Caps | Uso excesivo de mayúsculas y abuso de caracteres combinados |
-| Anti Ping | Menciones a `@everyone` y `@here` |
-| Anti Mass Mention | Ráfagas grandes o repetidas de menciones |
+| Anti Caps | Mayúsculas excesivas y abuso de caracteres combinados |
+| Anti Ping | Pings a `@everyone` y `@here` |
+| Anti Mass Mention | Ráfagas de menciones grandes o repetidas |
 | Anti Emoji Spam | Mensajes con exceso de emojis |
-| Anti Attachment Spam | Múltiples archivos o ráfagas de subidas rápidas |
+| Anti Attachment Spam | Múltiples archivos o ráfagas rápidas de subida |
 | Anti Char Limit | Mensajes de más de 900 caracteres |
 | Anti Newline Spam | Mensajes con 8 o más saltos de línea |
 | Anti Scam Spread | El mismo mensaje publicado en 3 o más canales |
 
-<Note>
-  Los módulos de palabras prohibidas y NSFW también sincronizan las reglas del AutoMod de Discord cuando el bot tiene el permiso **Gestionar servidor**. La lista integrada de palabras prohibidas es multilingüe; usa la opción de lista personalizada del panel de configuración cuando el servidor necesite su propio vocabulario.
-</Note>
+Los módulos de palabras prohibidas y NSFW también sincronizan reglas de Discord AutoMod cuando el bot tiene **Gestionar Servidor**. La lista de palabras prohibidas integrada es multilingüe; usa la opción de lista personalizada del panel cuando el servidor necesite su propio vocabulario.
 
-## Despliegue recomendado
+## Implementación recomendada
 
 <Steps>
   <Step title="Empieza en un canal de prueba">
     Usa un canal privado del staff o un servidor de prueba pequeño para validar el comportamiento.
   </Step>
   <Step title="Activa una capa a la vez">
-    Registra qué filtros están activos y qué deben hacer cuando detecten una coincidencia.
+    Registra qué filtros están activos y qué deben hacer cuando coincidan.
   </Step>
   <Step title="Revisa las excepciones">
-    Agrega solo los canales, usuarios o roles que realmente necesiten una excepción.
+    Añade solo los canales, usuarios o roles que genuinamente necesiten una excepción.
   </Step>
-  <Step title="Monitorea los registros">
-    Observa el canal de registros para detectar falsos positivos después de habilitar el automod.
+  <Step title="Monitorea los logs">
+    Observa el canal de logging para detectar falsos positivos después de activar automod.
   </Step>
 </Steps>
 
 <Tip>
-  Si un filtro es demasiado agresivo, pausa el automod con `/automod disable`, ajusta la configuración, y prueba de nuevo en lugar de agregar excepciones amplias en la lista blanca.
+  Si un filtro es demasiado agresivo, pausa automod con `/automod disable`, ajusta la configuración y vuelve a probar en lugar de añadir entradas amplias a la lista blanca.
 </Tip>

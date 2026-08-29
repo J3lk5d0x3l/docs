@@ -1,69 +1,55 @@
 ---
 title: "Mensajes de bienvenida y despedida en Vyrron"
 sidebarTitle: "Bienvenida"
-description: "Configura mensajes de bienvenida y despedida automáticos en tu servidor de Discord con Vyrron usando variables y estilos personalizables."
+description: "Configura mensajes de bienvenida y despedida automaticos en tu servidor de Discord con Vyrron usando variables y estilos personalizables."
 ---
 
-Usa los sistemas de bienvenida y despedida de Vyrron para dar una bienvenida consistente a los nuevos miembros y enviar mensajes de despedida sin tener que publicar manualmente cada llegada o salida. Los comandos de configuración, prueba y reinicio requieren el permiso **Gestionar servidor**; el comando de variables es seguro para que los miembros lo consulten.
+Vyrron te permite enviar mensajes de bienvenida cuando alguien se une al servidor y mensajes de despedida cuando alguien se va. Puedes personalizar el canal, el contenido y usar variables dinamicas para mencionar al miembro, mostrar el nombre del servidor y mas.
 
-## Mensajes de bienvenida
+## Comandos de bienvenida
 
-| Comando | Uso |
+| Comando | Descripcion |
 | --- | --- |
-| `/greet setup` | Configurar los mensajes de bienvenida |
-| `/greet test` | Previsualizar el mensaje de bienvenida actual |
-| `/greet reset` | Eliminar la configuración de bienvenida |
-| `/greet variables` | Ver las variables disponibles en los mensajes |
+| `/greet setup` | Configura el canal y el mensaje de bienvenida |
+| `/greet test` | Envía un mensaje de prueba para verificar la configuracion |
+| `/greet reset` | Restablece la configuracion de bienvenida |
+| `/greet variables` | Muestra la lista de variables disponibles |
 
-## Mensajes de despedida
+## Comandos de despedida
 
-| Comando | Uso |
+| Comando | Descripcion |
 | --- | --- |
-| `/farewell setup` | Configurar los mensajes de despedida |
-| `/farewell test` | Previsualizar el mensaje de despedida actual |
-| `/farewell reset` | Eliminar la configuración de despedida |
-| `/farewell variables` | Ver las variables de despedida |
+| `/farewell setup` | Configura el canal y el mensaje de despedida |
+| `/farewell test` | Envía un mensaje de prueba para verificar la configuracion |
+| `/farewell reset` | Restablece la configuracion de despedida |
+| `/farewell variables` | Muestra la lista de variables disponibles |
 
-## Flujo de configuración
+## Flujo de configuracion
 
-<Steps>
-  <Step>
-    Crea un canal público de bienvenida.
-  </Step>
-  <Step>
-    Ejecuta `/greet setup` y elige el canal y el estilo del mensaje.
-  </Step>
-  <Step>
-    Ejecuta `/greet variables` para ver los valores disponibles para tu mensaje.
-  </Step>
-  <Step>
-    Ejecuta `/greet test` antes de habilitar una campaña de invitación masiva.
-  </Step>
-  <Step>
-    Repite el flujo con `/farewell setup` si deseas mensajes de despedida.
-  </Step>
-</Steps>
+1. Elige un canal dedicado para bienvenidas y otro para despedidas (pueden ser el mismo).
+2. Ejecuta `/greet setup` o `/farewell setup` y selecciona el canal.
+3. Escribe el mensaje usando variables como `$member_mention` y `$server_name`.
+4. Usa `/greet test` o `/farewell test` para previsualizar el resultado.
+5. Ajusta el mensaje hasta que se vea correcto.
 
 ## Variables de mensaje
 
-Ambos sistemas admiten las siguientes variables:
-
-| Variable | Se reemplaza por |
+| Variable | Descripcion |
 | --- | --- |
-| `$member_mention` | Una mención del miembro que se une o sale |
-| `$member_name` | El nombre de usuario del miembro |
-| `$member` | La etiqueta o nombre de usuario del miembro |
-| `$member_count` | El número actual de miembros del servidor |
-| `$ordinal_member_count` | El número de miembros con sufijo ordinal |
-| `$guild_name` | El nombre del servidor |
-| `$join_time` | Marca de tiempo de Discord de cuando el miembro se unió |
-| `$leave_time` | Marca de tiempo de Discord del evento de despedida |
-| `$member_avatar` | La URL del avatar del miembro |
+| `$member_mention` | Mencion del miembro |
+| `$member_name` | Nombre del miembro |
+| `$member_id` | ID del miembro |
+| `$member_count` | Cantidad total de miembros en el servidor |
+| `$server_name` | Nombre del servidor |
+| `$server_id` | ID del servidor |
+| `$join_time` | Hora en que el miembro se unio |
+| `$leave_time` | Hora en que el miembro se fue |
+| `$creation_time` | Fecha de creacion de la cuenta del miembro |
 
 <Note>
-  `$leave_time` es significativo para los mensajes de despedida; `$join_time` puede aparecer como `Desconocido` cuando Discord no tiene una fecha de unión disponible. El panel de configuración admite texto simple, embeds y diseños de Components V2 con imágenes, miniaturas y botones de enlace.
+  `$leave_time` solo esta disponible en mensajes de despedida. `$join_time` muestra la fecha de union al servidor en bienvenidas y tambien puede usarse en despedidas.
 </Note>
 
 <Tip>
-  Mantén los mensajes de bienvenida cortos y orientados a la acción: explica dónde leer las reglas, cómo obtener roles y dónde pedir ayuda. Ejecuta siempre el comando de prueba correspondiente antes de abrir el servidor a nuevos miembros.
+  Mantén los mensajes cortos y orientados a acciones. Incluye un enlace a las reglas o a un canal de presentacion para que los nuevos miembros sepan que hacer a continuacion.
 </Tip>

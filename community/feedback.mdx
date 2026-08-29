@@ -4,15 +4,25 @@ sidebarTitle: "Feedback"
 description: "Recibe comentarios abiertos de tus miembros con el sistema de feedback de Vyrron, separado del canal de sugerencias."
 ---
 
-El sistema de feedback de Vyrron recopila comentarios abiertos de los miembros en un canal que el staff puede revisar realmente. El feedback es para aportes abiertos que no necesitan el flujo de votacion que usan las sugerencias. La configuracion requiere **Manage Server**.
+El sistema de feedback de Vyrron te permite recibir comentarios abiertos de los miembros de tu servidor. A diferencia de las sugerencias, que son ideas publicas votables, el feedback es una forma directa de recibir opiniones, quejas o comentarios generales de forma mas privada o estructurada.
 
-| Comando | Para que sirve |
+## Comandos principales
+
+| Comando | Descripcion |
 | --- | --- |
-| `/feedback setup` | Elige el canal de feedback |
-| `/feedback reset` | Desactiva el sistema de feedback |
+| `/feedback config` | Configura el canal donde se recibiran los mensajes de feedback |
+| `/feedback panel` | Publica el panel interactivo para que los miembros envien feedback |
 
-Mantén el feedback y las sugerencias separadas: las sugerencias son propuestas de cambio, mientras que el feedback puede describir la experiencia de un miembro con algo que ya existe.
+<Note>
+  La diferencia clave entre sugerencias y feedback es que las sugerencias son publicas, votables y revisables por el staff con estados visibles (aprobado, rechazado). El feedback es mas directo y personal: los miembros envian un mensaje que llega al canal configurado sin sistema de votacion publica.
+</Note>
 
 ## Que hace la configuracion
 
-Elige un canal de texto o anuncios. Vyrron lo guarda, bloquea los permisos de mensajes y reacciones de los miembros en ese canal, mantiene su propio acceso de publicacion y publica el panel de feedback. Dale al bot **Ver Canal**, **Enviar Mensajes**, **Gestionar Canales**, **Insertar Enlaces** y **Adjuntar Archivos** alli.
+Cuando ejecutas `/feedback config`, Vyrron guarda el canal seleccionado como destino de los mensajes de feedback. El panel publicado con `/feedback panel` permite a los miembros enviar sus comentarios de forma estructurada.
+
+Vyrron bloquea los permisos de envio de mensajes y reacciones de los miembros regulares en el canal de feedback para mantenerlo limpio. Solo el staff y Vyrron pueden ver y responder los mensajes enviados a traves del panel.
+
+### Permisos necesarios
+
+Vyrron necesita `View Channel`, `Send Messages` y `Manage Messages` en el canal de feedback para publicar los envios y gestionar el acceso.

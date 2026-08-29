@@ -4,44 +4,32 @@ sidebarTitle: "Staff"
 description: "Crea un formulario de solicitud de staff consistente en tu servidor de Discord con Vyrron para recibir aplicaciones estructuradas."
 ---
 
-Usa este sistema cuando los miembros deban aplicar a traves de un formulario consistente en lugar de enviar mensajes directos desestructurados. La configuracion requiere **Manage Server**.
+Vyrron te permite crear un formulario de solicitud de staff personalizado para tu servidor. Los miembros pueden enviar aplicaciones estructuradas a traves de un panel interactivo, y el staff recibe las respuestas en un canal privado para evaluarlas.
 
-## Comandos
+## Comandos principales
 
-| Comando | Para que sirve |
+| Comando | Descripcion |
 | --- | --- |
-| `/staff setup` | Configura el flujo de solicitud |
-| `/staff enable` | Abre las solicitudes |
-| `/staff disable` | Cierra las solicitudes |
-| `/staff reset` | Restablece la configuracion de solicitudes |
-| `/staff apply` | Envia una solicitud |
+| `/staffapp config channel` | Define el canal donde se enviaran las solicitudes recibidas |
+| `/staffapp config questions` | Establece las preguntas del formulario separadas por `\|` |
+| `/staffapp config manager-role` | Define el rol que recibira notificaciones de nuevas solicitudes |
+| `/staffapp config color` | Personaliza el color del embed del panel |
+| `/staffapp panel` | Publica el panel de solicitud de staff en el canal deseado |
 
 ## Proceso recomendado
 
-<Steps>
-  <Step>
-    Ejecuta `/staff setup` en un canal exclusivo para staff.
-  </Step>
-  <Step>
-    Agrega al menos una pregunta, luego elige el rol aceptado, el canal de revision y el rol de staff-manager en el panel de configuracion.
-  </Step>
-  <Step>
-    Ejecuta `/staff enable` solo cuando el equipo este listo para revisar las solicitudes.
-  </Step>
-  <Step>
-    Cierra la recepcion con `/staff disable` despues de la ventana de solicitudes.
-  </Step>
-  <Step>
-    Mantén una rubrica de revision consistente e informa a los solicitantes cuando esperar una respuesta.
-  </Step>
-</Steps>
+1. Crea un canal privado exclusivo para el staff donde llegaran las solicitudes.
+2. Define las preguntas del formulario usando `/staffapp config questions`. Separa cada pregunta con el caracter `|`.
+3. Asigna un rol de manager de staff que recibira menciones cuando llegue una nueva solicitud.
+4. Personaliza el color del embed para que coincida con la estetica de tu servidor.
+5. Publica el panel con `/staffapp panel` en un canal visible para los miembros interesados.
 
-Las preguntas se ingresan en un campo de configuracion separadas por `|`, por ejemplo:
+Ejemplo de configuracion de preguntas:
 
 ```text
-Cuantos anos tienes? | Por que quieres ser staff? | Que mejorarias?
+/staffapp config questions:Cual es tu edad?|Por que quieres ser staff?|Experiencia previa?|Horario de disponibilidad?
 ```
 
 <Note>
-  El rol de staff-manager es el rol que puede aceptar o rechazar solicitudes. Mantén el canal de revision privado y asegurate de que el rol aceptado este por debajo del rol mas alto de Vyrron si el bot debe asignarlo.
+  El rol de manager de staff debe tener acceso al canal privado de solicitudes. Vyrron mencionara ese rol automaticamente cada vez que un miembro envie una nueva aplicacion. Asegurate de que el canal este correctamente protegido para evitar filtraciones de informacion de los candidatos.
 </Note>

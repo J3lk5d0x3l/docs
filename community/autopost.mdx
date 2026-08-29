@@ -4,14 +4,23 @@ sidebarTitle: "Autopost"
 description: "Mantén tus canales activos con publicaciones automaticas de imagenes programadas usando el sistema Autopost de Vyrron."
 ---
 
-Autopost mantiene un canal activo con publicaciones de imagenes programadas. El panel de configuracion soporta cuatro categorias: Male, Female, Anime y Banners, y asigna cada una a un canal de texto o anuncios. Elige categorias que coincidan con el proposito del canal e informa a los miembros que el contenido es automatizado.
+El sistema Autopost de Vyrron mantiene tus canales activos enviando imagenes automaticamente en intervalos programados. Puedes elegir entre varias categorias de contenido y configurar la frecuencia de publicacion para mantener la participacion sin intervencion manual.
 
-| Comando | Para que sirve |
+## Categorias disponibles
+
+- **Male**: Imagenes de hombres
+- **Female**: Imagenes de mujeres
+- **Anime**: Imagenes de anime
+- **Banners**: Banners decorativos
+
+## Comandos principales
+
+| Comando | Descripcion |
 | --- | --- |
-| `/autopost setup` | Asigna categorias de imagenes y un destino |
-| `/autopost config` | Ve o actualiza la configuracion de autopost |
-| `/autopost reset` | Detiene todos los temporizadores de autopost |
+| `/autopost config` | Configura el canal, la categoria y el intervalo de publicacion |
+| `/autopost list` | Muestra todas las configuraciones de autopost activas |
+| `/autopost reset` | Detiene y elimina todas las configuraciones de autopost del servidor |
 
-<Warning>
-  `/autopost reset` detiene todos los temporizadores de autopost del servidor. Usa `/autopost config` para inspeccionar la configuracion actual antes de restablecerla.
-</Warning>
+<Note>
+  `/autopost reset` detiene todos los timers de publicacion activos. Antes de usarlo, verifica tus configuraciones actuales con `/autopost list` para saber exactamente que publicaciones se detendran. Si solo quieres modificar una configuracion existente, usa `/autopost config` en lugar de resetear todo.
+</Note>

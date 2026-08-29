@@ -1,26 +1,26 @@
 ---
 title: "Voicemaster en Vyrron"
 sidebarTitle: "Voicemaster"
-description: "Crea canales de voz privados temporales automáticamente en tu servidor con el sistema Voicemaster de Vyrron."
+description: "Crea canales de voz privados temporales automaticamente en tu servidor con el sistema Voicemaster de Vyrron."
 ---
 
-Voicemaster crea canales de voz privados temporales cuando los miembros se unen al canal creador configurado. La configuración y el ajuste del sistema requieren **Gestionar canales**.
+Voicemaster de Vyrron permite a los miembros de tu servidor crear canales de voz privados temporales automaticamente. Cuando un miembro se une a un canal hub designado, Vyrron genera un nuevo canal de voz exclusivo que el creador puede gestionar: renombrar, limitar usuarios, expulsar invitados o hacerlo privado.
 
-## Comandos
+## Comandos principales
 
-| Comando | Uso |
+| Comando | Descripcion |
 | --- | --- |
-| `/voicemaster setup` | Crear el sistema Voicemaster |
-| `/voicemaster config` | Ver o actualizar los valores predeterminados |
-| `/voicemaster reset` | Eliminar el sistema |
+| `/voicemaster setup` | Configura el canal hub y la categoria para canales temporales |
+| `/voicemaster config` | Ajusta permisos por defecto, limite de usuarios y otros parametros |
+| `/voicemaster reset` | Elimina la configuracion de Voicemaster del servidor |
 
-## Antes de la configuración
+## Antes de configurar
 
-- Crea o elige una categoría para los canales de voz temporales, si el panel de configuración lo solicita.
-- Decide quién puede ver y unirse a los canales temporales.
-- Asegúrate de que Vyrron pueda gestionar canales y conectarse a voz. El bot necesita **Gestionar canales** para crear y limpiar las salas temporales.
-- Informa a los miembros dónde está el canal de creación.
+- Crea una categoria de canales vacia donde Voicemaster colocara los canales temporales.
+- Elige o crea un canal de voz que funcionara como hub: los miembros se unen a el para generar su canal privado.
+- Asegurate de que Vyrron tenga permisos para gestionar canales de voz en esa categoria.
+- Considera establecer un limite razonable de canales simultaneos para evitar saturacion.
 
 <Note>
-  El comportamiento de los canales temporales depende de los permisos de canales de Discord. Prueba con una cuenta de miembro normal después de la configuración, no solo con una cuenta de administrador. Un administrador puede ver un comportamiento que un miembro ordinario no puede.
+  Prueba Voicemaster con una cuenta de miembro regular, no solo con tu cuenta de administrador. Algunos permisos pueden parecer funcionar para ti pero no para los miembros tipicos del servidor.
 </Note>

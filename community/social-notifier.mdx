@@ -4,31 +4,28 @@ sidebarTitle: "Notificador Social"
 description: "Configura feeds de YouTube y Reddit en tu servidor con el Notificador Social de Vyrron para publicar actualizaciones automaticamente."
 ---
 
-El Notificador Social de Vyrron vigila los feeds configurados de YouTube y Reddit y publica actualizaciones en un canal elegido. Un servidor puede configurar hasta 10 feeds.
+El Notificador Social de Vyrron te permite configurar hasta 10 feeds de redes sociales en tu servidor de Discord. Cuando hay una nueva publicacion o video, Vyrron lo anuncia automaticamente en el canal que hayas configurado, manteniendo a tu comunidad informada sin esfuerzo manual.
 
-| Comando | Para que sirve |
+## Comandos principales
+
+| Comando | Descripcion |
 | --- | --- |
-| `/notifier setup` | Agrega un feed de notificacion |
-| `/notifier remove` | Elimina un feed |
-| `/notifier reset` | Elimina todos los feeds |
+| `/social add` | Agrega un nuevo feed de YouTube o Reddit a un canal |
+| `/social remove` | Elimina un feed existente |
+| `/social list` | Muestra todos los feeds activos en el servidor |
 
 ## Lista de verificacion de configuracion
 
-<Steps>
-  <Step>
-    Elige un canal con un proposito claro.
-  </Step>
-  <Step>
-    Ejecuta `/notifier setup` y agrega un canal de YouTube o un subreddit. YouTube acepta un ID de canal, URL de canal o handle; Reddit acepta un nombre de subreddit como `gaming` o `r/gaming`.
-  </Step>
-  <Step>
-    Confirma que la publicacion de prueba o la primera actualizacion aparezca.
-  </Step>
-  <Step>
-    Usa `/notifier remove` para un solo feed, o `/notifier reset` cuando reconstruyas la configuracion completa.
-  </Step>
-</Steps>
+1. Identifica el canal de Discord donde quieres recibir las notificaciones.
+2. Para YouTube, obtén el ID del canal de YouTube (no el nombre de usuario).
+3. Para Reddit, indica el nombre exacto del subreddit sin el prefijo `r/`.
+4. Ejecuta `/social add` seleccionando la plataforma, el ID del canal o subreddit, y el canal de Discord destino.
+5. Verifica que Vyrron tenga permisos para enviar mensajes y embeds en el canal de notificaciones.
 
 <Note>
-  Las notificaciones usan feeds publicos de YouTube y Reddit; no se requiere una clave de API de YouTube Data API. Una publicacion retrasada puede ser un problema del proveedor, feed o limite de tasa en lugar de un problema de configuracion de Discord.
+  El Notificador Social funciona con feeds publicos de YouTube y Reddit. No se requiere API key ni configuracion adicional: Vyrron consulta los feeds publicos directamente.
+</Note>
+
+<Note>
+  Puede haber demoras del proveedor entre la publicacion original en la plataforma y la notificacion en Discord. Esto depende de la frecuencia de actualizacion de los feeds publicos y no es controlable por Vyrron.
 </Note>

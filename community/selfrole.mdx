@@ -4,23 +4,27 @@ sidebarTitle: "Roles Propios"
 description: "Crea paneles de roles auto-asignables en tu servidor con Vyrron para que los miembros puedan gestionar sus propios roles."
 ---
 
-Los paneles de roles propios de Vyrron hacen que los roles opcionales sean faciles de gestionar para los miembros sin darles permisos generales de gestion de roles. La configuracion requiere **Manage Server** y puede publicar un panel con hasta 25 roles seleccionables.
+Vyrron te permite crear paneles de roles auto-asignables donde los miembros pueden obtener o quitar roles haciendo clic en botones o reacciones. Esto es util para roles de notificaciones, colores, regiones, juegos o cualquier categoria que los miembros quieran gestionar por si mismos.
 
-| Comando | Para que sirve |
+## Comandos principales
+
+| Comando | Descripcion |
 | --- | --- |
-| `/selfrole setup` | Crea un panel de roles propios |
-| `/selfrole config` | Edita un panel existente |
-| `/selfrole reset` | Elimina el panel |
+| `/selfrole create` | Crea un nuevo panel de roles auto-asignables |
+| `/selfrole edit` | Modifica un panel existente: agrega o quita roles |
+| `/selfrole delete` | Elimina un panel de roles del servidor |
 
 ## Antes de publicar
 
-- Crea los roles que los miembros pueden elegir.
-- Coloca a Vyrron por encima de esos roles.
-- Decide si los roles son para notificaciones, intereses o acceso.
-- Prueba el panel con una cuenta de miembro regular.
-
-El panel de configuracion tambien soporta un titulo personalizado, color de acento y emoji adjunto a opciones de rol individuales. `/selfrole config` edita el panel existente; usa `/selfrole reset` cuando el panel deba eliminarse en lugar de simplemente cambiarse.
+- Crea los roles en Discord antes de configurar el panel. Vyrron no puede crear roles, solo asignarlos.
+- Verifica que los roles que asignas no otorguen permisos administrativos o de moderacion.
+- Decide si usaras botones o reacciones para el panel: los botones son mas modernos y visibles.
+- Prueba el panel con una cuenta de miembro regular para confirmar que la asignacion funciona correctamente.
 
 <Note>
-  Un panel de roles propios no evade la jerarquia de Discord. Vyrron sigue necesitando **Manage Roles**, y su rol debe estar por encima de cada rol en el panel.
+  Puedes personalizar el titulo, color y emoji del panel para que coincida con la estetica de tu servidor. Usa colores distintivos y emojis representativos para que los miembros identifiquen facilmente cada rol.
+</Note>
+
+<Note>
+  El panel de roles no bypasea la jerarquia de roles de Discord. Vyrron necesita el permiso `Manage Roles`, y su rol debe estar posicionado por encima de cada rol incluido en el panel. Si un rol esta por encima de Vyrron en la jerarquia, no podra asignarlo.
 </Note>

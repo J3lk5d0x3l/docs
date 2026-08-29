@@ -1,28 +1,28 @@
 ---
 title: "Sorteos en Vyrron"
 sidebarTitle: "Sorteos"
-description: "Crea y gestiona sorteos en tu servidor de Discord con Vyrron. Edita sorteos activos, finalízalos y elige nuevos ganadores fácilmente."
+description: "Crea y gestiona sorteos en tu servidor de Discord con Vyrron. Edita sorteos activos, finalizalos y elige nuevos ganadores facilmente."
 ---
 
-Los sorteos hacen visible la participación de los miembros y le dan un límite de tiempo. Usa un canal dedicado y anuncia claramente la elegibilidad antes de iniciar uno. Los comandos de gestión de sorteos requieren **Gestionar servidor**.
+Vyrron te permite crear sorteos interactivos en tu servidor de Discord con requisitos configurables, duracion personalizada y multiples ganadores. Tambien puedes editar sorteos activos, finalizarlos antes de tiempo y seleccionar nuevos ganadores si es necesario.
 
-## Comandos
+## Comandos principales
 
-| Comando | Uso |
+| Comando | Descripcion |
 | --- | --- |
-| `/giveaway start` | Crear un sorteo |
-| `/giveaway edit` | Editar un sorteo activo |
-| `/giveaway end` | Finalizar un sorteo activo |
-| `/giveaway reroll` | Elegir un nuevo ganador para un sorteo finalizado |
+| `/giveaway start` | Inicia un nuevo sorteo con duracion, premio y requisitos |
+| `/giveaway edit` | Modifica un sorteo activo (premio, duracion, ganadores) |
+| `/giveaway end` | Finaliza un sorteo antes de su tiempo programado |
+| `/giveaway reroll` | Selecciona nuevos ganadores para un sorteo ya finalizado |
 
-## Sorteo responsable
+## Lista de verificacion para sorteos responsables
 
-- Indica el premio, la duración, el número de ganadores y la elegibilidad.
-- Mantén el mensaje del sorteo en un canal donde los miembros puedan encontrarlo después.
-- Usa `/giveaway edit` en lugar de crear uno duplicado cuando cambie algún detalle.
-- Usa `/giveaway reroll` cuando un ganador no pueda reclamar el premio.
-- Registra al ganador final y la entrega fuera del bot si el premio es sensible.
+- Define claramente el premio y la duracion antes de iniciar.
+- Establece requisitos razonables (por ejemplo, rol especifico o tiempo minimo en el servidor).
+- Anuncia el sorteo con anticipacion para maximizar la participacion.
+- Verifica que Vyrron tenga permisos para enviar mensajes y agregar reacciones en el canal elegido.
+- Documenta la razon si necesitas hacer reroll o finalizar antes de tiempo.
 
 <Note>
-  `/giveaway edit` es para un sorteo activo, `/giveaway end` cierra el período de participación activo, y `/giveaway reroll` se aplica a un sorteo finalizado. Mantén la entrega del premio y cualquier verificación de elegibilidad con el equipo de staff.
+  La diferencia entre los comandos es clara: `/giveaway edit` modifica un sorteo que aun esta activo; `/giveaway end` lo cierra inmediatamente y anuncia ganadores; `/giveaway reroll` elige nuevos ganadores de un sorteo ya cerrado, util si el ganador original no reclama el premio.
 </Note>

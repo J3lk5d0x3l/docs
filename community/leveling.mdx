@@ -1,46 +1,49 @@
 ---
 title: "Sistema de niveles de Vyrron"
 sidebarTitle: "Niveles"
-description: "Activa el sistema de XP de Vyrron para rastrear la participación, mostrar tarjetas de rango y recompensar miembros con roles por nivel."
+description: "Activa el sistema de XP de Vyrron para rastrear la participacion, mostrar tarjetas de rango y recompensar miembros con roles por nivel."
 ---
 
-El sistema de niveles de Vyrron rastrea el XP generado por la participación de los miembros y muestra tarjetas de rango y clasificaciones. La configuración y el ajuste del sistema requieren el permiso **Gestionar servidor**.
+El sistema de niveles de Vyrron rastrea la participacion de los miembros mediante XP ganado por mensajes y tiempo de voz. Puedes mostrar tarjetas de rango personalizadas y recompensar a los miembros con roles automaticos al alcanzar niveles especificos.
 
-## Comandos
+## Comandos principales
 
-| Comando | Uso |
+| Comando | Descripcion |
 | --- | --- |
-| `/leveling setup` | Configurar el sistema de niveles |
-| `/leveling enable` | Habilitar la ganancia de XP |
-| `/leveling disable` | Pausar la ganancia de XP |
-| `/leveling config` | Editar los ajustes del sistema de niveles |
-| `/leveling style` | Elegir el estilo de la tarjeta de nivel |
-| `/leveling reset` | Borrar todos los datos de XP |
-| `,leveling rank` | Ver una tarjeta de rango |
-| `,leaderboard lvl` | Ver los miembros con mayor nivel |
+| `/leveling enable` | Activa el sistema de niveles en el servidor |
+| `/leveling disable` | Desactiva el sistema de niveles |
+| `/leveling config` | Configura roles por nivel, canales ignorados y mas |
+| `/leveling reset` | Reinicia todos los niveles y XP del servidor |
+| `/rank` | Muestra tu tarjeta de rango |
+| `/rank @usuario` | Muestra la tarjeta de rango de otro miembro |
+| `/leaderboard levels` | Muestra la clasificacion de niveles del servidor |
 
 <Note>
-  `,rank` y `,level` son alias de comando de mensaje para `,leveling rank`.
+  Tambien puedes usar los aliases `,rank` y `,level` como comandos de mensaje.
 </Note>
 
-## Despliegue
+## Implementacion
 
 <Steps>
-  <Step>
-    **Configura.** Ejecuta `/leveling setup` y, opcionalmente, elige un canal para las tarjetas de nivel. Si no seleccionas un canal, las tarjetas se publicarán en el canal donde ocurra el evento de subida de nivel. Usa `/leveling config` para gestionar los roles por nivel.
+  <Step title="Activa el sistema">
+    Ejecuta `/leveling enable` para activar el rastreo de XP en tu servidor.
   </Step>
-  <Step>
-    **Elige la presentación.** Usa `/leveling style` para elegir el estilo de tarjeta de nivel que mejor se adapte a tu servidor.
+  <Step title="Configura roles por nivel">
+    Usa `/leveling config` para asignar roles a niveles especificos. Los miembros reciben los roles automaticamente al subir de nivel.
   </Step>
-  <Step>
-    **Activa y prueba.** Ejecuta `/leveling enable`, luego verifica `,leveling rank` y `,leaderboard lvl`.
+  <Step title="Personaliza la experiencia">
+    Define canales ignorados, multiplicadores de XP y otros ajustes desde `/leveling config`.
   </Step>
 </Steps>
 
 ## Roles por nivel
 
-`/leveling config` abre un gestor de roles interactivo. Selecciona un rol, introduce un número de nivel entero mayor que cero, y Vyrron asignará ese rol cuando un miembro alcance el nivel. Elimina entradas desde el mismo panel. Vyrron necesita el permiso **Gestionar roles**, y su rol más alto debe estar por encima de cada rol de recompensa.
+Desde `/leveling config` puedes asignar roles de Discord a niveles especificos del sistema de Vyrron. Cuando un miembro alcanza ese nivel, Vyrron le asigna el rol automaticamente.
+
+<Note>
+  Vyrron necesita el permiso `Manage Roles` para asignar roles por nivel. Ademas, el rol de Vyrron debe estar posicionado por encima de los roles que asigna en la jerarquia del servidor.
+</Note>
 
 <Warning>
-  `/leveling reset` borra todos los datos de XP. Trátalo como una acción de migración o reinicio, no como una forma habitual de corregir un problema de visualización.
+  `/leveling reset` es una accion destructiva. Elimina todos los datos de XP y niveles del servidor sin posibilidad de recuperacion. Usalo solo si estas seguro de querer reiniciar desde cero.
 </Warning>

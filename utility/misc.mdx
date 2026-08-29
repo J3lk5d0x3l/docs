@@ -4,56 +4,56 @@ sidebarTitle: "Varios"
 description: "Perfiles, encuestas, temporizadores, recordatorios y otras utilidades menores de Vyrron para todo tipo de servidores."
 ---
 
-Esta es la categoría general para las herramientas más pequeñas de Vyrron que son útiles en muchos tipos de servidores. Los comandos que crean imágenes, encuestas, temporizadores o recordatorios pueden publicar contenido visible o mantener estado, así que verifica el canal de destino y la duración antes de confirmar.
+Vyrron incluye una variedad de herramientas menores que facilitan la gestión diaria de servidores: perfiles personalizados, encuestas, temporizadores, recordatorios y más. Estas funciones están disponibles para todo tipo de comunidades, grandes o pequeñas.
 
-## Perfiles y multimedia
+## Perfiles y media
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/profile` | Ver una tarjeta de perfil |
-| `/profileedit` | Crear o editar tu tarjeta de perfil |
-| `/steal` | Copiar un emoji o sticker al servidor |
-| `,quote` | Generar una imagen de cita |
-| `/caption` | Añadir un pie de foto sobre una imagen |
-| `/get pfp` | Obtener el avatar de un usuario |
-| `/get banner` | Obtener el banner de un usuario |
-| `/get wallpaper` | Obtener inspiración de fondos de pantalla |
-| `/imdb` | Buscar una película o serie |
-| `/embed` | Construir y enviar un embed personalizado |
-| `/container` | Construir un contenedor de Components V2 |
+| `/profile` | Muestra tu perfil personal en el servidor |
+| `/profileedit` | Edita la información visible de tu perfil |
+| `/steal` | Guarda un emoji o sticker en el servidor actual |
+| `,quote` | Crea una imagen de cita a partir de un mensaje |
+| `/caption` | Añade un pie de foto a una imagen |
+| `/get pfp` | Obtiene la foto de perfil de un usuario |
+| `/get banner` | Obtiene el banner de un usuario |
+| `/get wallpaper` | Obtiene un fondo de pantalla aleatorio |
+| `/imdb` | Busca información de películas y series en IMDb |
+| `/embed` | Crea un mensaje embed personalizado |
+| `/container` | Envía un mensaje con formato de contenedor |
 
 ## Temporizadores e interacción
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/poll create` | Crear una encuesta |
-| `/poll end` | Finalizar una encuesta |
-| `/timer start` | Iniciar un temporizador |
-| `/timer pause` | Pausar un temporizador |
-| `/timer resume` | Reanudar un temporizador |
-| `/timer end` | Finalizar un temporizador |
-| `/reminder add` | Añadir un recordatorio personal |
-| `/reminder list` | Listar recordatorios activos |
-| `/reminder remove` | Eliminar un recordatorio |
-| `/timezone` | Ver o establecer una zona horaria |
+| `/poll create` | Crea una encuesta con opciones de voto |
+| `/poll end` | Finaliza una encuesta activa y muestra resultados |
+| `/timer start` | Inicia un temporizador con duración personalizada |
+| `/timer pause` | Pausa el temporizador activo |
+| `/timer resume` | Reanuda el temporizador pausado |
+| `/timer end` | Detiene el temporizador antes de tiempo |
+| `/reminder add` | Crea un recordatorio programado |
+| `/reminder list` | Muestra tus recordatorios activos |
+| `/reminder remove` | Elimina un recordatorio específico |
+| `/timezone` | Configura tu zona horaria personal |
 
 <Note>
-  Iniciar, pausar, reanudar y finalizar un temporizador son acciones de gestión del servidor en esta versión. Un temporizador usa el ID del mensaje devuelto por el flujo de inicio para su gestión posterior; mantén ese mensaje disponible si el staff necesita pausarlo o finalizarlo.
+  Los temporizadores de Vyrron funcionan por usuario. Si inicias un temporizador, solo tú puedes pausarlo, reanudarlo o detenerlo. Los recordatorios se envían por mensaje directo o en el canal configurado.
 </Note>
 
 ## Otras herramientas
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/report` | Enviar un reporte de error |
-| `/lookup` | Explorar nombres de usuario y vanities |
-| `/define` | Buscar una definición |
-| `/nptoggle` | Activar o desactivar el acceso sin prefijo personal |
-| `/fix` | Descargar medios de Instagram o TikTok |
-| `/lens` | Búsqueda inversa de imágenes |
-| `/math` | Evaluar una expresión matemática |
-| `/todo` | Gestionar tareas personales |
+| `/report` | Reporta un problema o sugerencia al equipo de Vyrron |
+| `/lookup` | Busca información pública sobre un elemento |
+| `/define` | Consulta la definición de una palabra |
+| `/nptoggle` | Activa o desactiva el modo no molestar de notificaciones |
+| `/fix` | Intenta corregir un mensaje con formato incorrecto |
+| `/lens` | Analiza una imagen con herramientas de visión |
+| `/math` | Resuelve operaciones matemáticas complejas |
+| `/todo` | Gestiona una lista de tareas personales |
 
-<Warning>
-  `/report` envía un reporte de error al canal de desarrollo configurado, así que no incluyas contraseñas, tokens ni datos privados de miembros.
-</Warning>
+<Note>
+  El comando `,help cmdname` muestra ayuda rápida sobre cualquier comando sin necesidad de usar `/help`. Usa `/report` para enviar problemas directamente al equipo de soporte de Vyrron.
+</Note>

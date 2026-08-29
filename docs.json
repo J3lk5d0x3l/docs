@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "luma",
+  "theme": "mint",
   "name": "Vyrron",
   "colors": {
-    "primary": "#7C3AED",
-    "light": "#A78BFA",
-    "dark": "#5B21B6"
+    "primary": "#5865F2",
+    "light": "#8891F2",
+    "dark": "#404EED"
   },
   "navigation": {
     "pages": [
@@ -17,21 +17,86 @@
         ]
       }
     ],
-    "anchors": [
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Invitar Vyrron",
+          "icon": "robot",
+          "href": "https://discord.com/oauth2/authorize"
+        },
+        {
+          "anchor": "GitHub",
+          "icon": "github",
+          "href": "https://github.com/j3lk5d0x3l"
+        },
+        {
+          "anchor": "Soporte",
+          "icon": "discord",
+          "href": "https://discord.vyrron.net"
+        }
+      ]
+    },
+    "groups": [
       {
-        "anchor": "Invitar Vyrron",
-        "icon": "robot",
-        "href": "https://discord.com/oauth2/authorize"
+        "group": "Empieza aquí",
+        "icon": "rocket",
+        "pages": [
+          "index",
+          "start-here",
+          "setup",
+          "permissions"
+        ]
       },
       {
-        "anchor": "GitHub",
-        "icon": "github",
-        "href": "https://github.com/j3lk5d0x3l"
+        "group": "Protección y moderación",
+        "icon": "shield-halved",
+        "pages": [
+          "security/overview",
+          "security/antinuke",
+          "security/automod",
+          "security/logging",
+          "moderation/overview"
+        ]
       },
       {
-        "anchor": "Soporte",
-        "icon": "discord",
-        "href": "https://discord.vyrron.net"
+        "group": "Comunidad",
+        "icon": "users",
+        "pages": [
+          "community/overview",
+          "community/welcome",
+          "community/leveling",
+          "community/tickets",
+          "community/giveaways",
+          "community/voicemaster",
+          "community/suggestions",
+          "community/feedback",
+          "community/staff",
+          "community/automation",
+          "community/autopost",
+          "community/selfrole",
+          "community/social-notifier",
+          "community/tracking",
+          "community/liveleaderboard"
+        ]
+      },
+      {
+        "group": "Explorar Vyrron",
+        "icon": "compass",
+        "pages": [
+          "music/overview",
+          "utility/overview",
+          "utility/ai",
+          "utility/network",
+          "utility/roleplay",
+          "utility/misc"
+        ]
+      },
+      {
+        "group": "Referencia",
+        "icon": "book",
+        "pages": [
+          "reference/commands"
+        ]
       }
     ]
   }

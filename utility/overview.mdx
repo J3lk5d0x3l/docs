@@ -4,87 +4,110 @@ sidebarTitle: "Utilidades"
 description: "Explora las utilidades de Vyrron: información del servidor, herramientas de IA, búsquedas web y de red, herramientas personales y comandos de entretenimiento."
 ---
 
-Estos comandos hacen que Vyrron sea útil más allá de la moderación y la configuración del servidor. Algunas herramientas son personales, algunas son de ámbito de servidor, y varias llaman a servicios externos públicos. Usa las páginas específicas para los detalles que importan antes de confiar en una búsqueda externa para una decisión de moderación. Para flujos de trabajo específicos, consulta [Herramientas de IA](/utility/ai), [Red y búsquedas web](/utility/network), [Roleplay](/utility/roleplay) y [Herramientas misceláneas](/utility/misc).
+Vyrron incluye una amplia colección de utilidades para administrar servidores, consultar información en línea, usar herramientas de inteligencia artificial y divertir a tu comunidad. Las funciones están organizadas en secciones temáticas para que encuentres rápidamente lo que necesitas.
+
+Puedes explorar las subsecciones en detalle:
+
+- [IA y media](/utility/ai)
+- [Red y búsquedas web](/utility/network)
+- [Roleplay y diversión](/utility/roleplay)
+- [Varios](/utility/misc)
 
 ## Información del servidor y miembros
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/serverinfo` | Ver información del servidor |
-| `/channelinfo` | Ver información del canal |
-| `/userinfo` | Ver información de un miembro |
-| `/roleinfo` | Ver información de un rol |
-| `/vcinfo` | Ver información del canal de voz |
-| `/avatar` | Mostrar un avatar |
-| `/banner` | Mostrar el banner de un usuario |
-| `/guildbanner` | Mostrar el banner del servidor |
-| `/membercount` | Ver el conteo de miembros |
-| `/boostcount` | Ver información de boosts |
-| `/permissions` | Ver los permisos de un miembro |
-| `/accountage` | Ver la antigüedad de la cuenta |
-| `/lastseen` | Ver el último mensaje de un miembro |
+| `/serverinfo` | Muestra información general del servidor |
+| `/userinfo` | Muestra información de un miembro |
+| `/roleinfo` | Muestra información de un rol |
+| `/channelinfo` | Muestra información de un canal |
+| `/emojiinfo` | Muestra información de un emoji |
+| `/avatar` | Obtiene el avatar de un usuario |
+| `/banner` | Obtiene el banner de un usuario |
+| `/membercount` | Muestra el conteo de miembros del servidor |
+| `/boosters` | Lista los miembros que impulsan el servidor |
+| `/roles` | Lista los roles del servidor |
+| `/emojis` | Lista los emojis del servidor |
+| `/channels` | Lista los canales del servidor |
+| `/permissions` | Muestra los permisos de un miembro en un canal |
 
-`/setprofile` personaliza el perfil de servidor de Vyrron. `/prefix` es un comando de mensaje en esta versión: usa `,prefix` (o el prefijo actual del servidor) para ver y cambiar la configuración de prefijos.
+<Note>
+  `/setprofile` y `/prefix` también están disponibles como comandos de mensaje para ajustes rápidos sin usar barras.
+</Note>
 
-## IA y multimedia
+## IA y media
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/ai ask` | Hacerle una pregunta a la IA |
-| `/ai reason` | Resolver un problema complejo |
-| `/ai ocr` | Extraer y analizar texto de una imagen |
-| `/ai tts` | Convertir texto a voz |
-| `/recap` | Resumir mensajes recientes de un canal |
-| `/rbg` | Eliminar el fondo de una imagen |
-| `,quote` | Crear una imagen de cita a partir de un mensaje |
-| `/caption` | Añadir un pie de foto sobre una imagen |
-| `/fix` | Descargar medios de Instagram o TikTok |
-| `/screenshot` | Capturar una página web |
-| `/lens` | Búsqueda inversa de imágenes por imagen o URL |
+| `/ai ask` | Haz preguntas a la inteligencia artificial |
+| `/ai reason` | Solicita razonamiento paso a paso |
+| `/ai ocr` | Extrae texto de una imagen |
+| `/ai image` | Genera una imagen con IA |
+| `/ai tts` | Convierte texto a voz sintetizada |
+| `/recap` | Resume mensajes recientes de un canal |
+| `/caption` | Añade un pie de foto a una imagen |
+| `/steal` | Guarda un emoji o sticker en el servidor |
+| `/get pfp` | Obtiene la foto de perfil de un usuario |
+| `/get banner` | Obtiene el banner de un usuario |
+| `/get wallpaper` | Obtiene un fondo de pantalla aleatorio |
 
-`,cap` es un alias de comando de mensaje para `/caption`.
+<Note>
+  El alias `,cap` funciona como atajo rápido para el comando `/caption`.
+</Note>
 
 ## Búsquedas web y de red
 
-| Familia de comandos | Comandos disponibles |
-| --- | --- |
-| IP | `/ip lookup`, `/ip whois`, `/ip abuse`, `/ip asn`, `/ip ptr`, `/ip ports`, `/ip subnet`, `/ip ping` |
-| Dominios | `/domain lookup`, `/domain dns`, `/domain ssl`, `/domain ip`, `/domain availability`, `/domain sub` |
-| Búsqueda | `/search web`, `/search images`, `/search news`, `/pinterest` |
-| Identidad | `/lookup`, `/sherlock` |
+Vyrron permite consultar información pública sobre direcciones IP, dominios, identidades y realizar búsquedas generales en la web.
 
-Usa estas herramientas de forma responsable y solo para información que estés autorizado a buscar. `/ip ports` realiza un escaneo de red de la lista de puertos comunes del comando, así que ejecútalo solo contra sistemas que poseas o tengas permiso explícito para probar. Los resultados de IP, DNS, WHOIS, búsqueda y servicios de búsqueda inversa de imágenes pueden estar incompletos o temporalmente no disponibles.
+| Categoría | Comando | Descripción |
+| --- | --- | --- |
+| IP | `/ip lookup` | Consulta información de una IP |
+| IP | `/ip ports` | Escanea puertos comunes de una IP |
+| IP | `/ip subnet` | Calcula información de subred |
+| IP | `/ip geo` | Obtiene geolocalización de una IP |
+| Dominios | `/domain whois` | Consulta registro WHOIS |
+| Dominios | `/domain dns` | Consulta registros DNS |
+| Dominios | `/domain screenshot` | Captura pantalla de un sitio web |
+| Búsqueda | `/search web` | Busca en la web |
+| Búsqueda | `/search image` | Busca imágenes en la web |
+| Búsqueda | `/search news` | Busca noticias recientes |
+| Identidad | `/username` | Busca un nombre de usuario en plataformas |
+| Identidad | `/email` | Verifica información pública de un correo |
+
+<Note>
+  Usa estos comandos de forma responsable. La información recuperada es pública y Vyrron no garantiza su exactitud actual.
+</Note>
 
 ## Herramientas personales
 
-| Comando | Propósito |
+| Comando | Descripción |
 | --- | --- |
-| `/afk` | Establecer un estado AFK |
-| `/todo` | Gestionar tareas personales |
-| `/reminder add` | Establecer un recordatorio |
-| `/reminder list` | Listar recordatorios |
-| `/reminder remove` | Eliminar un recordatorio |
-| `/timezone` | Ver o establecer una zona horaria |
-| `/math` | Evaluar una expresión matemática |
-| `/define` | Buscar la definición de una palabra |
-| `/nptoggle` | Activar o desactivar el prefijo personal |
+| `/profile` | Muestra tu perfil personal en el servidor |
+| `/profileedit` | Edita tu perfil personal |
+| `/reminder add` | Crea un recordatorio |
+| `/reminder list` | Lista tus recordatorios activos |
+| `/reminder remove` | Elimina un recordatorio |
+| `/timer start` | Inicia un temporizador |
+| `/timer pause` | Pausa el temporizador activo |
+| `/timer resume` | Reanuda el temporizador pausado |
+| `/timer end` | Detiene el temporizador |
 
 ## Diversión comunitaria
 
-Vyrron incluye 60 comandos de roleplay como `/hug`, `/kiss`, `/pat`, `/wave`, `/dance`, `/celebrate`, `/cry`, `/laugh`, `/punch`, `/slap`, `/thumbsup`, `/wink`, `/yay` y `/yawn`. Usa `/help` en Discord para abrir el menú de ayuda y explorar el conjunto completo. Para ver los detalles de un comando específico, usa `,help cmdname`. El inventario completo también está listado en la [referencia de comandos](/reference/commands).
+Vyrron incluye más de 60 comandos de roleplay con GIFs animados para interactuar de forma casual con otros miembros. Desde abrazos y saludos hasta reacciones divertidas, puedes expresarte sin escribir una sola palabra. Usa `/help` para ver la lista completa de comandos de roleplay disponibles en tu servidor.
 
 ## Información del bot
 
+Consulta el estado y los detalles de Vyrron con estos comandos:
+
 ```text
-/about
-/stats
-/uptime
+/help
 /ping
-/users
+/invite
 /vote
 /support
-/invite
-/help
+/about
+/stats
+/changelog
+/donate
 ```
-
-Usa `,help cmdname` cuando necesites las opciones de un comando específico. El prefijo puede ser diferente si tu servidor lo ha cambiado.

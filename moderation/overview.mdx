@@ -4,7 +4,7 @@ sidebarTitle: "Moderación"
 description: "Comandos de moderación de Vyrron: acciones sobre miembros, controles de canales, gestión de roles y recuperación de mensajes."
 ---
 
-Vyrron cubre el trabajo diario de un equipo de moderación de Discord: acciones sobre miembros, advertencias, controles de canales, gestión de roles, listas del servidor y limpieza de mensajes. Cada acción sigue estando sujeta al permiso de Discord del miembro que la invoca y a la posición del rol del bot.
+Vyrron cubre el trabajo diario de un equipo de moderación de Discord: acciones sobre miembros, advertencias, controles de canales, gestión de roles, listas del servidor y limpieza de mensajes. Cada acción sigue sujeta al permiso de Discord del miembro que la invoca y a la posición del rol del bot.
 
 ## Acciones sobre miembros
 
@@ -12,69 +12,63 @@ Vyrron cubre el trabajo diario de un equipo de moderación de Discord: acciones 
 | --- | --- |
 | `/kick` | Expulsar a un miembro |
 | `/ban` | Banear a un miembro |
-| `/unban` | Quitar un ban |
+| `/unban` | Eliminar un baneo |
 | `/tempban` | Banear a un miembro temporalmente |
 | `/softban` | Banear y eliminar mensajes recientes |
 | `/mute` | Silenciar a un miembro |
-| `/unmute` | Quitar el silencio |
+| `/unmute` | Eliminar un silencio |
 | `/warn` | Añadir una advertencia |
 | `/warnings` | Ver las advertencias de un miembro |
 | `/clearwarn` | Eliminar las advertencias de un miembro |
 | `/nick` | Cambiar el apodo de un miembro |
 
-<Note>
-  Los comandos de moderación siguen estando limitados por los permisos de Discord y la jerarquía de roles. Vyrron no puede moderar a un miembro cuyo rol más alto sea igual o superior al rol más alto del bot. Los miembros a nivel de propietario de Discord y los roles protegidos también pueden no estar disponibles como objetivos.
-</Note>
+Los comandos de moderación siguen limitados por los permisos de Discord y la jerarquía de roles. Vyrron no puede moderar a un miembro cuyo rol más alto sea igual o superior al rol más alto del bot. Los miembros de nivel propietario de Discord y los roles protegidos también pueden no estar disponibles como objetivos.
 
-## Controles de canal
+## Controles de canales
 
 | Comando | Qué hace |
 | --- | --- |
 | `/lock` | Bloquear un canal |
 | `/unlock` | Desbloquear un canal |
 | `/hide` | Ocultar un canal |
-| `/unhide` | Mostrar un canal |
-| `/slowmode` | Establecer modo lento en un canal |
+| `/unhide` | Mostrar un canal oculto |
+| `/slowmode` | Establecer el modo lento del canal |
 | `/channel create` | Crear un canal |
 | `/channel rename` | Renombrar un canal |
 | `/channel move` | Mover un canal a una categoría |
-| `/channel topic` | Editar la descripción de un canal |
+| `/channel topic` | Editar el tema de un canal |
 | `/delete channel` | Eliminar un canal |
 | `/cleanup` | Eliminar los mensajes de Vyrron de un canal |
-| `/purge` | Eliminar mensajes de un canal |
+| `/purge` | Eliminar mensajes del canal |
 
-<Note>
-  Estos son alias de comandos de mensaje, no alias de comandos slash: `,cc` para `channel create`, `,cr` para `channel rename`, `,cm` para `channel move`, `,ct` para `channel topic`, `,channeldelete` para `delete channel`, `,deleterole` para `delete role`, `,deleteemoji` para `delete emoji` y `,whohas` para `list inrole`. Usa el prefijo configurado del servidor en lugar de `,` cuando sea diferente.
-</Note>
+Estos son alias de comandos de mensaje, no de comandos slash: `,cc` para `channel create`, `,cr` para `channel rename`, `,cm` para `channel move`, `,ct` para `channel topic`, `,channeldelete` para `delete channel`, `,deleterole` para `delete role`, `,deleteemoji` para `delete emoji` y `,whohas` para `list inrole`. Usa el prefijo de servidor configurado en lugar de `,` cuando sea diferente.
 
 ## Roles y listas del servidor
 
 | Comando | Qué hace |
 | --- | --- |
 | `/role add` | Añadir un rol a un miembro |
-| `/role remove` | Quitar un rol a un miembro |
+| `/role remove` | Quitar un rol de un miembro |
 | `/ar` | Añadir un rol a un miembro |
-| `/rr` | Quitar un rol a un miembro |
+| `/rr` | Quitar un rol de un miembro |
 | `/roleicon` | Establecer un icono de rol |
-| `/autorole add` | Añadir un autorrol |
-| `/autorole remove` | Quitar un autorrol |
-| `/autorole show` | Mostrar los autorroles configurados |
+| `/autorole add` | Añadir un autorole |
+| `/autorole remove` | Eliminar un autorole |
+| `/autorole show` | Mostrar los autoroles configurados |
 | `/rolecreate` | Crear un rol |
 | `/roledelete` | Eliminar un rol |
 | `/delete role` | Eliminar un rol |
 | `/delete emoji` | Eliminar un emoji personalizado |
-| `,list boosters` | Listar los boosters del servidor |
-| `,list bots` | Listar los bots del servidor |
-| `,list roles` | Listar los roles del servidor |
-| `,list inrole` | Listar los miembros de un rol |
+| `,list boosters` | Listar boosters del servidor |
+| `,list bots` | Listar bots del servidor |
+| `,list roles` | Listar roles del servidor |
+| `,list inrole` | Listar miembros en un rol |
 
-<Note>
-  Los comandos `list` y `ghostping` son comandos de mensaje/prefijo. `,whohas` es un alias de `,list inrole`.
-</Note>
+Estos comandos de lista son comandos de mensaje/prefijo. `,whohas` es un alias de `,list inrole`.
 
-### Autorroles
+### Autoroles
 
-Los autorroles se asignan cuando un miembro se une. Usa `/autorole add` con un rol, `/autorole show` para revisar la lista actual y `/autorole remove` para eliminar una entrada. El usuario que invoca el comando necesita **Gestionar servidor**. Cuando el bot asigna un rol, también necesita **Gestionar roles**, y su rol más alto debe estar por encima de cada autorrol. Los autorroles no cambian retroactivamente a los miembros existentes.
+Los autoroles se asignan cuando un miembro entra. Usa `/autorole add` con un rol, `/autorole show` para revisar la lista actual y `/autorole remove` para eliminar una entrada. El usuario que lo invoca necesita **Gestionar Servidor**. Cuando el bot asigna un rol, también necesita **Gestionar Roles**, y su rol más alto debe estar por encima de cada autorole. Los autoroles no cambian retroactivamente a los miembros existentes.
 
 ## Evidencia y recuperación de mensajes
 
@@ -82,25 +76,27 @@ Los autorroles se asignan cuando un miembro se une. Usa `/autorole add` con un r
 | --- | --- |
 | `/snipe` | Ver mensajes eliminados recientemente |
 | `/editsnipe` | Ver mensajes editados recientemente |
-| `,ghostping` | Comprobar ghost pings recientes |
+| `,ghostping` | Verificar pings fantasma recientes |
 
-## Un flujo de moderación seguro
+`list` y `ghostping` son comandos de mensaje/prefijo.
+
+## Flujo de moderación seguro
 
 <Steps>
   <Step title="Registra la acción">
-    Mantén el registro de eventos activado para que el staff pueda revisar lo ocurrido.
+    Mantén el registro de eventos activado para que el staff pueda revisar lo que ocurrió.
   </Step>
   <Step title="Usa la acción menos destructiva">
-    Empieza con una advertencia o un silencio cuando un ban no sea necesario.
+    Empieza con una advertencia o silencio cuando un baneo no sea necesario.
   </Step>
   <Step title="Verifica el objetivo">
-    Usa `/userinfo` y `/permissions` antes de cambiar roles o tomar medidas.
+    Usa `/userinfo` y `/permissions` antes de cambiar roles o tomar acción.
   </Step>
-  <Step title="Documenta excepciones">
-    Mantén las listas de permitidos y los permisos del staff de forma intencionada. Usa `/antinuke status` cuando un incidente implique acciones destructivas.
+  <Step title="Documenta las excepciones">
+    Mantén las listas blancas y los permisos del staff de forma intencionada. Usa `/antinuke status` cuando un incidente implique acciones destructivas.
   </Step>
 </Steps>
 
-## Antes de solucionar una acción fallida
+## Antes de depurar una acción fallida
 
-Usa `/userinfo` para confirmar el objetivo y `/permissions` para inspeccionar al miembro que invoca el comando. Luego comprueba la posición del rol del bot, los permisos de canal y si el canal está ignorado con `,ignore` (o el prefijo configurado del servidor). `/purge`, los comandos de eliminación, bans y cambios de rol son destructivos; úsalos solo en canales donde la política de moderación esté clara.
+Usa `/userinfo` para confirmar el objetivo y `/permissions` para inspeccionar al miembro que invoca el comando. Luego verifica la posición del rol del bot, los permisos del canal y si el canal está ignorado con `,ignore` (o el prefijo configurado del servidor). `/purge`, los comandos de eliminación, los baneos y los cambios de roles son destructivos; úsalos solo en canales donde la política de moderación sea clara.

@@ -4,13 +4,21 @@ sidebarTitle: "Sugerencias"
 description: "Configura un canal de sugerencias revisable en tu servidor con Vyrron para que los miembros puedan enviar ideas facilmente."
 ---
 
-Vyrron te permite dar a los miembros un lugar claro para proponer y votar ideas. El sistema de sugerencias convierte las ideas de los miembros en una cola visible y revisable. La configuracion requiere **Manage Server** y Vyrron verifica el canal seleccionado antes de guardar.
+Vyrron te permite configurar un canal de sugerencias donde los miembros pueden enviar ideas que el staff luego puede revisar, aprobar o rechazar. Cada sugerencia se publica como un mensaje embed con reacciones para votar, y el estado puede actualizarse visiblemente.
 
-| Comando | Para que sirve |
+## Comandos principales
+
+| Comando | Descripcion |
 | --- | --- |
-| `/suggestions setup` | Elige el canal de sugerencias |
-| `/suggestions reset` | Desactiva el sistema de sugerencias |
+| `/suggestion config` | Configura el canal de sugerencias y los ajustes del sistema |
+| `/suggestion review` | Revisa una sugerencia especifica: apruebala, rechazala o deja un comentario |
 
 ## Buena configuracion
 
-Crea un canal de texto o anuncios dedicado, explica que hace una sugerencia util y publica una politica de revision simple. Vyrron verifica que pueda ver el canal, enviar mensajes, gestionar mensajes, crear hilos publicos y enviar mensajes en hilos. Fija la politica junto al flujo de sugerencias para que los miembros sepan si las ideas se aceptan, estan en revision o se rechazan.
+- Crea un canal dedicado exclusivamente para sugerencias, con un nombre claro como `#sugerencias` o `#ideas`.
+- Establece una politica de revision clara: indica en la descripcion del canal como se evaluan las sugerencias y el tiempo esperado de respuesta.
+- Usa `/suggestion config` para definir el canal, el color de los embeds y si se permiten votos anonimos o publicos.
+
+<Note>
+  Vyrron necesita los siguientes permisos en el canal de sugerencias: `View Channel`, `Send Messages`, `Manage Messages`, `Create Public Threads` y `Send Messages in Threads`. Estos permisos permiten publicar las sugerencias, gestionar reacciones y crear hilos de discusion cuando sea necesario.
+</Note>
