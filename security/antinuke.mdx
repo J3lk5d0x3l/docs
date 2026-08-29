@@ -1,0 +1,62 @@
+---
+title: "Antinuke de Vyrron: protección de emergencia"
+sidebarTitle: "Antinuke"
+description: "Activa el Antinuke de Vyrron para reducir el daño de cuentas comprometidas y bots maliciosos. Monitorea 25 tipos de eventos destructivos."
+---
+
+El Antinuke es la capa de emergencia de Vyrron para acciones destructivas del servidor. Está diseñado para reducir el radio de impacto de cuentas comprometidas, bots maliciosos y cambios masivos. La implementación monitorea 25 tipos de eventos, incluyendo acciones de canales, roles, webhooks, integraciones, bans, kicks, desbaneos, adición de bots, menciones masivas, roles de miembros, purgas, invites peligrosos y eventos programados.
+
+## Actívalo de forma segura
+
+<Steps>
+  <Step title="Configura el registro primero">
+    Ejecuta `/logging setup` y `/logging enable` para que el staff pueda ver a qué está reaccionando el antinuke.
+  </Step>
+  <Step title="Revisa el límite de confianza">
+    Usa `/whitelist` y `/extraowner manage` para revisar quién puede saltarse la protección. Solo el propietario del servidor o un propietario adicional pueden habilitar, deshabilitar, restablecer o gestionar el límite de confianza del antinuke. Mantén ambas listas intencionalmente pequeñas.
+  </Step>
+  <Step title="Activa y verifica">
+    Ejecuta `/antinuke enable`, y luego `/antinuke status` para confirmar los módulos activos. Al habilitarlo también se prepara el rol `Vyrron Antinuke` usado por el sistema de protección; sigue la instrucción de jerarquía que aparece en la respuesta.
+  </Step>
+</Steps>
+
+## Comandos
+
+| Comando | Úsalo para |
+| --- | --- |
+| `/antinuke enable` | Habilitar la protección |
+| `/antinuke disable` | Pausar la protección |
+| `/antinuke config` | Ver la configuración del antinuke |
+| `/antinuke status` | Ver los módulos de protección activos |
+| `/antinuke reset` | Borrar la configuración del antinuke |
+| `/whitelist add` | Agregar un usuario o rol |
+| `/whitelist remove` | Eliminar un usuario o rol |
+| `/whitelist` | Gestionar la lista blanca de forma interactiva |
+| `/extraowner add` | Agregar un propietario adicional |
+| `/extraowner remove` | Eliminar un propietario adicional |
+| `/extraowner manage` | Gestionar propietarios adicionales de forma interactiva |
+| `/extraowner reset` | Eliminar todos los propietarios adicionales |
+
+<Warning>
+  No agregues un rol completo de staff a la lista blanca del antinuke sin revisar quién tiene ese rol. Una cuenta de confianza comprometida puede saltarse la protección que pretendías agregar. Esto no reemplaza la revisión del registro de auditoría de Discord ni el diseño de roles de staff con privilegios mínimos.
+</Warning>
+
+## Respuesta a incidentes
+
+<Steps>
+  <Step title="Revisa el estado">
+    Verifica `/antinuke status`.
+  </Step>
+  <Step title="Revisa los registros">
+    Examina los registros de eventos más recientes.
+  </Step>
+  <Step title="Elimina entradas sospechosas">
+    Remueve entradas sospechosas de la lista blanca o de propietarios adicionales.
+  </Step>
+  <Step title="Pausa la automatización">
+    Detén la automatización que pueda estar contribuyendo al incidente.
+  </Step>
+  <Step title="Deshabilita con cuidado">
+    Usa `/antinuke disable` solo cuando entiendas el compromiso y estés investigando activamente.
+  </Step>
+</Steps>

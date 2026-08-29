@@ -1,0 +1,100 @@
+---
+title: "Sistemas de comunidad de Vyrron"
+sidebarTitle: "Comunidad"
+description: "Combina los sistemas de comunidad de Vyrron: bienvenida, niveles, tickets, sorteos, sugerencias, feedback y más para tu servidor."
+---
+
+Vyrron ofrece funciones de comunidad diseñadas como pequeños sistemas que puedes combinar: da la bienvenida a los miembros, dales formas de participar y dirige las preguntas a las personas adecuadas. Los permisos requeridos varían según la función; consulta la guía dedicada antes de configurarla. Por ejemplo, Voicemaster requiere **Gestionar canales**, mientras que la mayoría de los comandos de configuración de comunidad requieren **Gestionar servidor**. Usa las guías dedicadas para [bienvenida y despedida](/community/welcome), [niveles](/community/leveling), [tickets](/community/tickets) y [seguimiento](/community/tracking). El resto de sistemas de comunidad están listados en la barra lateral.
+
+## Incorporación y participación
+
+| Sistema | Empieza aquí | Seguimientos útiles |
+| --- | --- | --- |
+| Welcome | `/greet setup` | `/greet test`, `/greet variables` |
+| Farewell | `/farewell setup` | `/farewell test`, `/farewell variables` |
+| Leveling | `/leveling setup` | `/leveling style`, `,leveling rank`, `,leaderboard lvl` |
+| Self-roles | `/selfrole setup` | `/selfrole config`, `/selfrole reset` |
+| Suggestions | `/suggestions setup` | `/suggestions reset` |
+| Feedback | `/feedback setup` | `/feedback reset` |
+| Giveaways | `/giveaway start` | `/giveaway edit`, `/giveaway end`, `/giveaway reroll` |
+
+<Tip>
+  Prueba los mensajes de bienvenida y despedida antes de invitar a una gran oleada de miembros. Los comandos `test` permiten al staff detectar errores de canal, variables y formato con antelación.
+</Tip>
+
+## Soporte y operaciones de staff
+
+### Tickets
+
+```text
+/ticket setup
+/category add
+/supportrole add
+/ticket panelsend
+```
+
+Cuando un ticket está abierto, el staff de soporte puede usar:
+
+| Comando | Propósito |
+| --- | --- |
+| `/ticket claim` | Reclamar el ticket |
+| `/ticket close` | Cerrar el ticket |
+| `/ticket rename` | Renombrar el canal del ticket |
+| `/ticket transfer` | Transferir la propiedad |
+| `/ticket adduser` | Añadir un usuario |
+| `/ticket removeuser` | Quitar un usuario |
+| `/ticket transcript` | Generar una transcripción |
+| `/category list` | Listar categorías de tickets |
+| `/supportrole list` | Listar roles de soporte |
+
+### Solicitudes de staff
+
+```text
+/staff setup
+/staff enable
+/staff apply
+/staff disable
+```
+
+Usa `/staff reset` solo cuando pretendas eliminar la configuración actual de solicitudes. El panel de configuración almacena preguntas, un rol de aceptado, un canal de revisión y un rol de gestor de staff.
+
+## Automatización
+
+Usa la automatización por palabras clave para respuestas ligeras y predecibles:
+
+| Comando | Propósito |
+| --- | --- |
+| `/autoresponder create` | Crear una respuesta por palabra clave |
+| `/autoresponder remove` | Quitar una respuesta |
+| `/autoresponder list` | Listar respuestas |
+| `,autoreact create` | Crear una reacción por palabra clave |
+| `,autoreact remove` | Quitar una reacción |
+| `,autoreact list` | Listar reacciones |
+
+## Voz y actividad del servidor
+
+### Voicemaster
+
+`/voicemaster setup` crea el flujo Join2Create para canales de voz privados. Estos comandos requieren **Gestionar canales**. Usa `/voicemaster config` para inspeccionar o actualizar los valores por defecto y `/voicemaster reset` para eliminar el sistema.
+
+### Autopost y notificaciones sociales
+
+| Función | Comandos |
+| --- | --- |
+| Autopost | `/autopost setup`, `/autopost config`, `/autopost reset` |
+| Feeds de YouTube y Reddit | `/notifier setup`, `/notifier remove`, `/notifier reset` |
+| Clasificaciones en vivo | `/liveleaderboard setup`, `/liveleaderboard reset` |
+
+## Niveles y seguimiento
+
+Vyrron puede rastrear invitaciones, mensajes y tiempo de voz. Usa los comandos de seguimiento para inspeccionar o administrar las estadísticas. Las clasificaciones diarias usan la fecha UTC actual, y las clasificaciones semanales usan la semana ISO UTC calculada. No hay un comando configurable de tiempo de reinicio, y estas clasificaciones no sustituyen un registro permanente de moderación.
+
+| Área | Vista del miembro | Clasificaciones |
+| --- | --- | --- |
+| Invitaciones | `,invites`, `,inviter`, `,invited`, `,inviteinfo` | `,leaderboard invites`, `,invitesleaderboard` |
+| Mensajes | `,messages` | `,leaderboard messages`, `,leaderboard dailymessages` |
+| Voz | `,vc` | `,leaderboard voice`, `,leaderboard dailyvoice`, `,leaderboard weeklyvoice` |
+
+<Note>
+  Estos comandos de seguimiento son comandos de mensaje/prefijo. Los ajustes administrativos incluyen `,addinvites`, `,removeinvites`, `,clearinvites`, `,addmessages`, `,removemessages`, `,clearmessages`, `,addvctime`, `,reducevctime` y `,clearvoice`; requieren **Gestionar servidor**. Úsalos solo con una razón de moderación documentada.
+</Note>

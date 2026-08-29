@@ -1,0 +1,31 @@
+---
+title: "Automatizacion en Vyrron"
+sidebarTitle: "Automatizacion"
+description: "Configura respuestas y reacciones automaticas en tu servidor con Vyrron para mensajes predecibles y preguntas frecuentes."
+---
+
+La automatizacion de Vyrron es util para momentos pequenos y deterministas: responder una pregunta comun, agregar una reaccion a una frase recurrente, o dirigir a los miembros a un canal. Configuralo en un canal controlado y revisa las reglas antes de agregar disparadores superpuestos.
+
+## Auto-respuestas
+
+| Comando | Para que sirve |
+| --- | --- |
+| `/autoresponder create` | Agrega una respuesta automatica |
+| `/autoresponder remove` | Elimina una respuesta |
+| `/autoresponder list` | Lista las respuestas configuradas |
+
+## Auto-reacciones
+
+| Comando | Para que sirve |
+| --- | --- |
+| `/autoreact create` | Agrega una reaccion automatica |
+| `/autoreact remove` | Elimina una reaccion |
+| `/autoreact list` | Lista las reacciones configuradas |
+
+<Tip>
+  Prefiere frases de disparo precisas en lugar de palabras cortas comunes. Antes de agregar una regla, revisa la lista actual para que dos respuestas no compitan por el mismo mensaje.
+</Tip>
+
+<Note>
+  La configuracion de auto-respuestas pregunta si Vyrron debe eliminar su respuesta despues de 10 segundos; elige eso intencionalmente para canales de mucho trafico. Auto-reacciones soporta hasta 25 reglas, y cada palabra clave puede tener hasta 50 caracteres.
+</Note>

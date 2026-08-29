@@ -1,0 +1,51 @@
+---
+title: "Red y búsquedas web en Vyrron"
+sidebarTitle: "Red"
+description: "Consulta información pública sobre dominios, IPs y búsquedas web con los comandos de red de Vyrron. Solo para uso autorizado."
+---
+
+Vyrron puede recuperar información pública sobre dominios, direcciones IP y resultados de búsqueda web. Los comandos devuelven datos de proveedores; no establecen propiedad, garantizan que un host sea seguro ni reemplazan una evaluación de seguridad autorizada.
+
+## Comandos de IP
+
+| Comando | Propósito |
+| --- | --- |
+| `/ip lookup` | Buscar información de una IP |
+| `/ip whois` | Ejecutar una búsqueda WHOIS |
+| `/ip abuse` | Verificar reportes de abuso |
+| `/ip asn` | Buscar información de ASN |
+| `/ip ptr` | Búsqueda de DNS inverso |
+| `/ip ports` | Escanear puertos comunes |
+| `/ip subnet` | Calcular información de subred |
+| `/ip ping` | Hacer ping a una IP |
+
+<Note>
+  `/ip ports` verifica los puertos comunes definidos por Vyrron e informa sobre los servicios accesibles; no es un escaneo completo de puertos. `/ip subnet` calcula los detalles de subred localmente a partir de la dirección y máscara proporcionadas.
+</Note>
+
+## Comandos de dominio
+
+| Comando | Propósito |
+| --- | --- |
+| `/domain lookup` | Buscar información de un dominio |
+| `/domain dns` | Ver registros DNS |
+| `/domain ssl` | Inspeccionar información del certificado SSL |
+| `/domain ip` | Resolver un dominio a una IP |
+| `/domain availability` | Verificar disponibilidad de un dominio |
+| `/domain sub` | Enumerar subdominios |
+
+## Búsqueda e identidad
+
+| Comando | Propósito |
+| --- | --- |
+| `/search web` | Buscar en la web |
+| `/search images` | Buscar imágenes |
+| `/search news` | Buscar noticias |
+| `/pinterest` | Buscar imágenes en Pinterest |
+| `/lookup` | Explorar nombres de usuario abandonados y vanities de servidores |
+| `/sherlock` | Buscar un nombre de usuario en múltiples plataformas |
+| `/screenshot` | Capturar una página web |
+
+<Warning>
+  Usa las funciones de búsqueda y escaneo solo para sistemas e identidades que estés autorizado a investigar. Las respuestas de los proveedores pueden estar incompletas, en caché o limitadas por tasa. No trates un resultado de nombre de usuario de `/sherlock` o `/lookup` como prueba de que dos cuentas pertenecen a la misma persona.
+</Warning>

@@ -1,0 +1,97 @@
+---
+title: "Configuración inicial de Vyrron"
+sidebarTitle: "Configuración"
+description: "Guía paso a paso para propietarios y administradores que configuran Vyrron por primera vez en un servidor de Discord."
+---
+
+Configura Vyrron de forma segura y haz que cada sistema del servidor sea predecible.
+
+Esta página es para propietarios de servidores y administradores que configuran Vyrron por primera vez.
+
+<Steps>
+  <Step title="Invita el bot">
+    Usa el botón **Invite Vyrron** en la navegación. El enlace de invitación de este proyecto solicita los permisos que utiliza Vyrron en sus sistemas de moderación, automatización y comunidad. Puedes invitarlo con menos permisos, pero las funciones fallarán hasta que se otorgue el permiso específico de Discord. Después de invitarlo, verifica:
+
+    - Vyrron puede ver los canales donde se utilizará.
+    - Vyrron puede enviar mensajes y embeds.
+    - Su rol está por encima de los roles que necesita asignar o moderar.
+    - Puede conectarse y hablar en los canales de voz de música.
+
+    Consulta [Permisos](/permissions) para conocer las reglas de jerarquía que importan.
+  </Step>
+  <Step title="Configura un prefijo">
+    Los comandos de barra no dependen de un prefijo. Los comandos de mensaje con prefijo sí:
+
+    ```text
+    ,prefix
+    ,prefix set !
+    ,prefix remove
+    ,prefix self ?
+    ```
+
+    El comando de prefijo acepta el valor como argumento de mensaje, no como opción de barra de Discord. Usa un prefijo corto y fácil de recordar, y evita uno que los miembros escriban comúnmente en conversaciones normales. `set` y `remove` a nivel de servidor requieren **Administrador**; `self` está disponible para un miembro individual.
+  </Step>
+  <Step title="Elige canales dedicados">
+    Crea canales privados de staff para la configuración y canales públicos para los sistemas orientados a los miembros. Un diseño típico se ve así:
+
+    | Canal | Uso |
+    | --- | --- |
+    | `#mod-logs` | Salida de `/logging setup` |
+    | `#bienvenida` | Mensajes de `/greet setup` |
+    | `#sugerencias` | `/suggestions setup` |
+    | `#feedback` | `/feedback setup` |
+    | `#soporte` | `/ticket panelsend` |
+    | `#subidas-de-nivel` | Anuncios de subida de nivel |
+  </Step>
+  <Step title="Configura la protección">
+    Ejecuta los comandos de configuración en este orden:
+
+    ```text
+    /logging setup
+    /logging enable
+    /automod setup
+    /automod enable
+    /antinuke enable
+    /antinuke status
+    ```
+
+    `logging setup` ofrece un modo automático que crea una categoría privada `Vyrron Logs` con canales de mensajes, miembros, moderación, voz y servidor. También se puede configurar un canal a la vez. En ambos modos, el bot crea webhooks cuando tiene **Gestionar Webhooks**. Inicia automod solo con los módulos que tu servidor necesita. Agrega usuarios, canales o roles de confianza a las listas de permitidos solo después de revisar quién genuinamente necesita una excepción. La acción de habilitar antinuke crea o actualiza el rol de omisión `Vyrron Antinuke`; mueve ese rol por encima de los roles que debe proteger si la respuesta de configuración te lo pide.
+  </Step>
+  <Step title="Configura la experiencia de miembros">
+    Elige solo los sistemas que tu servidor mantendrá. Cada sistema habilitado debe tener un responsable, un canal de destino y un plan de pruebas.
+
+    <Accordion title="Personalizar Vyrron">
+      Usa `/setprofile` para personalizar el perfil específico del servidor de Vyrron, incluyendo su avatar, banner, biografía y estilo de nombre donde esté disponible. Estos ajustes se aplican solo al servidor actual, así que cada servidor puede darle a Vyrron su propia identidad sin cambiar cómo aparece en otros lugares.
+    </Accordion>
+
+    <Accordion title="Bienvenida y despedida">
+      Usa `/greet setup`, `/greet test` y `/greet variables`. Los mensajes de despedida usan los comandos correspondientes de `/farewell`.
+    </Accordion>
+
+    <Accordion title="Tickets">
+      Usa `/ticket setup`, agrega categorías con `/category add`, agrega roles de soporte con `/supportrole add`, y publica el panel con `/ticket panelsend`.
+    </Accordion>
+
+    <Accordion title="Roles auto-asignables">
+      Usa `/selfrole setup` para crear un panel, y luego `/selfrole config` para editarlo más tarde.
+    </Accordion>
+
+    <Accordion title="Niveles">
+      Usa `/leveling setup` para elegir el canal de subidas de nivel. Usa `/leveling config` para agregar o quitar roles otorgados en niveles específicos, `/leveling style` para el estilo de la tarjeta, y `,leveling rank` para verificar el resultado.
+    </Accordion>
+  </Step>
+  <Step title="Prueba y mantén">
+    Mantén un canal de pruebas privado y prueba los cambios allí primero. Las verificaciones de salud útiles incluyen:
+
+    ```text
+    /ping
+    /uptime
+    /stats
+    /permissions
+    /antinuke status
+    ,prefix
+    ```
+
+    Los comandos que dependen de servicios externos, como la resolución de música, IA, búsqueda de imágenes, feeds sociales y búsquedas de IP/dominio, pueden verse afectados por la disponibilidad del proveedor o límites de tasa.
+  </Step>
+</Steps>

@@ -1,0 +1,26 @@
+---
+title: "Roles de auto-asignacion en Vyrron"
+sidebarTitle: "Roles Propios"
+description: "Crea paneles de roles auto-asignables en tu servidor con Vyrron para que los miembros puedan gestionar sus propios roles."
+---
+
+Los paneles de roles propios de Vyrron hacen que los roles opcionales sean faciles de gestionar para los miembros sin darles permisos generales de gestion de roles. La configuracion requiere **Manage Server** y puede publicar un panel con hasta 25 roles seleccionables.
+
+| Comando | Para que sirve |
+| --- | --- |
+| `/selfrole setup` | Crea un panel de roles propios |
+| `/selfrole config` | Edita un panel existente |
+| `/selfrole reset` | Elimina el panel |
+
+## Antes de publicar
+
+- Crea los roles que los miembros pueden elegir.
+- Coloca a Vyrron por encima de esos roles.
+- Decide si los roles son para notificaciones, intereses o acceso.
+- Prueba el panel con una cuenta de miembro regular.
+
+El panel de configuracion tambien soporta un titulo personalizado, color de acento y emoji adjunto a opciones de rol individuales. `/selfrole config` edita el panel existente; usa `/selfrole reset` cuando el panel deba eliminarse en lugar de simplemente cambiarse.
+
+<Note>
+  Un panel de roles propios no evade la jerarquia de Discord. Vyrron sigue necesitando **Manage Roles**, y su rol debe estar por encima de cada rol en el panel.
+</Note>

@@ -1,0 +1,69 @@
+---
+title: "Mensajes de bienvenida y despedida en Vyrron"
+sidebarTitle: "Bienvenida"
+description: "Configura mensajes de bienvenida y despedida automáticos en tu servidor de Discord con Vyrron usando variables y estilos personalizables."
+---
+
+Usa los sistemas de bienvenida y despedida de Vyrron para dar una bienvenida consistente a los nuevos miembros y enviar mensajes de despedida sin tener que publicar manualmente cada llegada o salida. Los comandos de configuración, prueba y reinicio requieren el permiso **Gestionar servidor**; el comando de variables es seguro para que los miembros lo consulten.
+
+## Mensajes de bienvenida
+
+| Comando | Uso |
+| --- | --- |
+| `/greet setup` | Configurar los mensajes de bienvenida |
+| `/greet test` | Previsualizar el mensaje de bienvenida actual |
+| `/greet reset` | Eliminar la configuración de bienvenida |
+| `/greet variables` | Ver las variables disponibles en los mensajes |
+
+## Mensajes de despedida
+
+| Comando | Uso |
+| --- | --- |
+| `/farewell setup` | Configurar los mensajes de despedida |
+| `/farewell test` | Previsualizar el mensaje de despedida actual |
+| `/farewell reset` | Eliminar la configuración de despedida |
+| `/farewell variables` | Ver las variables de despedida |
+
+## Flujo de configuración
+
+<Steps>
+  <Step>
+    Crea un canal público de bienvenida.
+  </Step>
+  <Step>
+    Ejecuta `/greet setup` y elige el canal y el estilo del mensaje.
+  </Step>
+  <Step>
+    Ejecuta `/greet variables` para ver los valores disponibles para tu mensaje.
+  </Step>
+  <Step>
+    Ejecuta `/greet test` antes de habilitar una campaña de invitación masiva.
+  </Step>
+  <Step>
+    Repite el flujo con `/farewell setup` si deseas mensajes de despedida.
+  </Step>
+</Steps>
+
+## Variables de mensaje
+
+Ambos sistemas admiten las siguientes variables:
+
+| Variable | Se reemplaza por |
+| --- | --- |
+| `$member_mention` | Una mención del miembro que se une o sale |
+| `$member_name` | El nombre de usuario del miembro |
+| `$member` | La etiqueta o nombre de usuario del miembro |
+| `$member_count` | El número actual de miembros del servidor |
+| `$ordinal_member_count` | El número de miembros con sufijo ordinal |
+| `$guild_name` | El nombre del servidor |
+| `$join_time` | Marca de tiempo de Discord de cuando el miembro se unió |
+| `$leave_time` | Marca de tiempo de Discord del evento de despedida |
+| `$member_avatar` | La URL del avatar del miembro |
+
+<Note>
+  `$leave_time` es significativo para los mensajes de despedida; `$join_time` puede aparecer como `Desconocido` cuando Discord no tiene una fecha de unión disponible. El panel de configuración admite texto simple, embeds y diseños de Components V2 con imágenes, miniaturas y botones de enlace.
+</Note>
+
+<Tip>
+  Mantén los mensajes de bienvenida cortos y orientados a la acción: explica dónde leer las reglas, cómo obtener roles y dónde pedir ayuda. Ejecuta siempre el comando de prueba correspondiente antes de abrir el servidor a nuevos miembros.
+</Tip>

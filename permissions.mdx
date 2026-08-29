@@ -1,0 +1,74 @@
+---
+title: "Permisos y jerarquía de roles en Vyrron"
+sidebarTitle: "Permisos"
+description: "Permisos mínimos que necesita Vyrron, cómo funciona la jerarquía de roles de Discord y quién debe configurar cada área."
+---
+
+Vyrron solo puede hacer lo que Discord permite en el canal actual, y la jerarquía de roles de Discord siempre tiene la última palabra.
+
+## Permisos mínimos útiles
+
+Para el conjunto completo de funciones, Vyrron generalmente necesita:
+
+- Ver Canales
+- Enviar Mensajes
+- Enviar Mensajes en Hilos
+- Insertar Enlaces
+- Adjuntar Archivos
+- Leer Historial de Mensajes
+- Agregar Reacciones
+- Gestionar Mensajes
+- Gestionar Canales
+- Gestionar Roles
+- Expulsar Miembros
+- Prohibir Miembros
+- Moderar Miembros
+- Conectar y Hablar
+
+El enlace de invitación de este proyecto solicita un conjunto amplio de permisos de bot porque Vyrron incluye moderación, gestión de canales, paneles de roles, tickets, registro y reproducción de voz. Si usas una invitación personalizada, otorga permisos solo para las funciones que realmente habilites. Algunos sistemas necesitan permisos adicionales, y puedes ejecutar `/permissions` para inspeccionar los permisos de un miembro en contexto.
+
+## Jerarquía de roles
+
+Mueve el rol de Vyrron **por encima** de:
+
+- Roles que debe asignar a través de autorole, selfrole o comandos de moderación.
+- Miembros que debe moderar.
+- Canales que debe gestionar.
+
+<Warning>
+  Vyrron no puede gestionar un rol que sea igual o superior a su propio rol más alto, incluso si el bot tiene el permiso `Gestionar Roles`.
+</Warning>
+
+## ¿Quién debe configurar qué?
+
+| Área | Acceso recomendado |
+| --- | --- |
+| Prefijo, perfil, recordatorios, música | Miembros, sujeto a la política de tu servidor |
+| Bienvenida, niveles, sugerencias, feedback | Administradores o staff de confianza |
+| Tickets y roles de soporte | Administradores y líderes de soporte |
+| Moderación y gestión de canales | Moderadores con los permisos de Discord correspondientes |
+| Automod, registro, antinuke, propietarios adicionales | Propietarios del servidor y administradores senior |
+
+Trata `/antinuke reset`, `/automod reset`, `/logging reset` y `/leveling reset` como acciones de configuración destructivas. Revisa la confirmación mostrada por Discord antes de enviarlas.
+
+## Solución de problemas de acciones denegadas
+
+<Steps>
+  <Step title="Verifica el permiso de Discord requerido por el comando">
+    Comprueba que el comando que intentas usar no requiera un permiso que Vyrron no tenga en el canal actual.
+  </Step>
+  <Step title="Revisa la anulación de permisos del canal para Vyrron">
+    Asegúrate de que no haya una anulación de permisos en el canal que bloquee a Vyrron.
+  </Step>
+  <Step title="Comprueba si el rol de Vyrron está por encima del miembro o rol objetivo">
+    Vyrron debe tener un rol más alto que el miembro o rol que intenta moderar o gestionar.
+  </Step>
+  <Step title="Verifica si el canal está ignorado con /ignore">
+    Ejecuta `/ignore` para comprobar si el canal está en la lista de ignorados.
+  </Step>
+  <Step title="Reintenta con el comando de barra">
+    Usa el comando de barra para que Discord pueda mostrar las opciones disponibles y los permisos faltantes.
+  </Step>
+</Steps>
+
+Si Vyrron no puede enviar una respuesta en absoluto, otorga **Ver Canal** y **Enviar Mensajes** en ese canal primero. Para la configuración de registro, otorga también **Gestionar Canales** si usas la creación automática de canales y **Gestionar Webhooks** si Vyrron debe crear sus webhooks de registro. Para tickets, necesita crear y gestionar canales de texto privados y anulaciones de permisos.

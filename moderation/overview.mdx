@@ -1,0 +1,106 @@
+---
+title: "Moderación en Vyrron"
+sidebarTitle: "Moderación"
+description: "Comandos de moderación de Vyrron: acciones sobre miembros, controles de canales, gestión de roles y recuperación de mensajes."
+---
+
+Vyrron cubre el trabajo diario de un equipo de moderación de Discord: acciones sobre miembros, advertencias, controles de canales, gestión de roles, listas del servidor y limpieza de mensajes. Cada acción sigue estando sujeta al permiso de Discord del miembro que la invoca y a la posición del rol del bot.
+
+## Acciones sobre miembros
+
+| Comando | Qué hace |
+| --- | --- |
+| `/kick` | Expulsar a un miembro |
+| `/ban` | Banear a un miembro |
+| `/unban` | Quitar un ban |
+| `/tempban` | Banear a un miembro temporalmente |
+| `/softban` | Banear y eliminar mensajes recientes |
+| `/mute` | Silenciar a un miembro |
+| `/unmute` | Quitar el silencio |
+| `/warn` | Añadir una advertencia |
+| `/warnings` | Ver las advertencias de un miembro |
+| `/clearwarn` | Eliminar las advertencias de un miembro |
+| `/nick` | Cambiar el apodo de un miembro |
+
+<Note>
+  Los comandos de moderación siguen estando limitados por los permisos de Discord y la jerarquía de roles. Vyrron no puede moderar a un miembro cuyo rol más alto sea igual o superior al rol más alto del bot. Los miembros a nivel de propietario de Discord y los roles protegidos también pueden no estar disponibles como objetivos.
+</Note>
+
+## Controles de canal
+
+| Comando | Qué hace |
+| --- | --- |
+| `/lock` | Bloquear un canal |
+| `/unlock` | Desbloquear un canal |
+| `/hide` | Ocultar un canal |
+| `/unhide` | Mostrar un canal |
+| `/slowmode` | Establecer modo lento en un canal |
+| `/channel create` | Crear un canal |
+| `/channel rename` | Renombrar un canal |
+| `/channel move` | Mover un canal a una categoría |
+| `/channel topic` | Editar la descripción de un canal |
+| `/delete channel` | Eliminar un canal |
+| `/cleanup` | Eliminar los mensajes de Vyrron de un canal |
+| `/purge` | Eliminar mensajes de un canal |
+
+<Note>
+  Estos son alias de comandos de mensaje, no alias de comandos slash: `,cc` para `channel create`, `,cr` para `channel rename`, `,cm` para `channel move`, `,ct` para `channel topic`, `,channeldelete` para `delete channel`, `,deleterole` para `delete role`, `,deleteemoji` para `delete emoji` y `,whohas` para `list inrole`. Usa el prefijo configurado del servidor en lugar de `,` cuando sea diferente.
+</Note>
+
+## Roles y listas del servidor
+
+| Comando | Qué hace |
+| --- | --- |
+| `/role add` | Añadir un rol a un miembro |
+| `/role remove` | Quitar un rol a un miembro |
+| `/ar` | Añadir un rol a un miembro |
+| `/rr` | Quitar un rol a un miembro |
+| `/roleicon` | Establecer un icono de rol |
+| `/autorole add` | Añadir un autorrol |
+| `/autorole remove` | Quitar un autorrol |
+| `/autorole show` | Mostrar los autorroles configurados |
+| `/rolecreate` | Crear un rol |
+| `/roledelete` | Eliminar un rol |
+| `/delete role` | Eliminar un rol |
+| `/delete emoji` | Eliminar un emoji personalizado |
+| `,list boosters` | Listar los boosters del servidor |
+| `,list bots` | Listar los bots del servidor |
+| `,list roles` | Listar los roles del servidor |
+| `,list inrole` | Listar los miembros de un rol |
+
+<Note>
+  Los comandos `list` y `ghostping` son comandos de mensaje/prefijo. `,whohas` es un alias de `,list inrole`.
+</Note>
+
+### Autorroles
+
+Los autorroles se asignan cuando un miembro se une. Usa `/autorole add` con un rol, `/autorole show` para revisar la lista actual y `/autorole remove` para eliminar una entrada. El usuario que invoca el comando necesita **Gestionar servidor**. Cuando el bot asigna un rol, también necesita **Gestionar roles**, y su rol más alto debe estar por encima de cada autorrol. Los autorroles no cambian retroactivamente a los miembros existentes.
+
+## Evidencia y recuperación de mensajes
+
+| Comando | Qué hace |
+| --- | --- |
+| `/snipe` | Ver mensajes eliminados recientemente |
+| `/editsnipe` | Ver mensajes editados recientemente |
+| `,ghostping` | Comprobar ghost pings recientes |
+
+## Un flujo de moderación seguro
+
+<Steps>
+  <Step title="Registra la acción">
+    Mantén el registro de eventos activado para que el staff pueda revisar lo ocurrido.
+  </Step>
+  <Step title="Usa la acción menos destructiva">
+    Empieza con una advertencia o un silencio cuando un ban no sea necesario.
+  </Step>
+  <Step title="Verifica el objetivo">
+    Usa `/userinfo` y `/permissions` antes de cambiar roles o tomar medidas.
+  </Step>
+  <Step title="Documenta excepciones">
+    Mantén las listas de permitidos y los permisos del staff de forma intencionada. Usa `/antinuke status` cuando un incidente implique acciones destructivas.
+  </Step>
+</Steps>
+
+## Antes de solucionar una acción fallida
+
+Usa `/userinfo` para confirmar el objetivo y `/permissions` para inspeccionar al miembro que invoca el comando. Luego comprueba la posición del rol del bot, los permisos de canal y si el canal está ignorado con `,ignore` (o el prefijo configurado del servidor). `/purge`, los comandos de eliminación, bans y cambios de rol son destructivos; úsalos solo en canales donde la política de moderación esté clara.

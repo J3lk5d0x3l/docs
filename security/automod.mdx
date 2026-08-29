@@ -1,0 +1,62 @@
+---
+title: "Automod de Vyrron: filtros de mensajes"
+sidebarTitle: "Automod"
+description: "Configura los 13 módulos de automod de Vyrron para filtrar spam, enlaces no deseados, palabras prohibidas, contenido NSFW y más."
+---
+
+El Automod de Vyrron gestiona la protección a nivel de mensajes, como spam, enlaces no deseados, palabras inapropiadas, contenido NSFW, abuso de mayúsculas, menciones masivas, spam de emojis, spam de archivos adjuntos, mensajes largos, spam de saltos de línea y contenido repetido entre canales. Configúralo gradualmente y empárelo con el registro de eventos para que el staff pueda revisar los falsos positivos.
+
+## Comandos
+
+| Comando | Úsalo para |
+| --- | --- |
+| `/automod setup` | Configurar los módulos de automod |
+| `/automod enable` | Activar el automod |
+| `/automod disable` | Pausar el automod |
+| `/automod reset` | Eliminar la configuración del automod |
+| `/automod whitelist` | Gestionar excepciones del automod |
+
+## Módulos disponibles
+
+El panel de configuración expone actualmente estos módulos:
+
+| Módulo | Qué detecta |
+| --- | --- |
+| Anti Spam | Ráfagas y contenido repetido |
+| Anti Link | Enlaces externos, acortadores y URLs de IP |
+| Anti Invite | Enlaces de invitación de Discord |
+| Anti Bad Words | Lista multilingüe integrada o lista personalizada |
+| Anti NSFW | Texto e imágenes NSFW |
+| Anti Caps | Uso excesivo de mayúsculas y abuso de caracteres combinados |
+| Anti Ping | Menciones a `@everyone` y `@here` |
+| Anti Mass Mention | Ráfagas grandes o repetidas de menciones |
+| Anti Emoji Spam | Mensajes con exceso de emojis |
+| Anti Attachment Spam | Múltiples archivos o ráfagas de subidas rápidas |
+| Anti Char Limit | Mensajes de más de 900 caracteres |
+| Anti Newline Spam | Mensajes con 8 o más saltos de línea |
+| Anti Scam Spread | El mismo mensaje publicado en 3 o más canales |
+
+<Note>
+  Los módulos de palabras prohibidas y NSFW también sincronizan las reglas del AutoMod de Discord cuando el bot tiene el permiso **Gestionar servidor**. La lista integrada de palabras prohibidas es multilingüe; usa la opción de lista personalizada del panel de configuración cuando el servidor necesite su propio vocabulario.
+</Note>
+
+## Despliegue recomendado
+
+<Steps>
+  <Step title="Empieza en un canal de prueba">
+    Usa un canal privado del staff o un servidor de prueba pequeño para validar el comportamiento.
+  </Step>
+  <Step title="Activa una capa a la vez">
+    Registra qué filtros están activos y qué deben hacer cuando detecten una coincidencia.
+  </Step>
+  <Step title="Revisa las excepciones">
+    Agrega solo los canales, usuarios o roles que realmente necesiten una excepción.
+  </Step>
+  <Step title="Monitorea los registros">
+    Observa el canal de registros para detectar falsos positivos después de habilitar el automod.
+  </Step>
+</Steps>
+
+<Tip>
+  Si un filtro es demasiado agresivo, pausa el automod con `/automod disable`, ajusta la configuración, y prueba de nuevo en lugar de agregar excepciones amplias en la lista blanca.
+</Tip>

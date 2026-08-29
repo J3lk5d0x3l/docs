@@ -1,0 +1,47 @@
+---
+title: "Solicitudes de staff en Vyrron"
+sidebarTitle: "Staff"
+description: "Crea un formulario de solicitud de staff consistente en tu servidor de Discord con Vyrron para recibir aplicaciones estructuradas."
+---
+
+Usa este sistema cuando los miembros deban aplicar a traves de un formulario consistente en lugar de enviar mensajes directos desestructurados. La configuracion requiere **Manage Server**.
+
+## Comandos
+
+| Comando | Para que sirve |
+| --- | --- |
+| `/staff setup` | Configura el flujo de solicitud |
+| `/staff enable` | Abre las solicitudes |
+| `/staff disable` | Cierra las solicitudes |
+| `/staff reset` | Restablece la configuracion de solicitudes |
+| `/staff apply` | Envia una solicitud |
+
+## Proceso recomendado
+
+<Steps>
+  <Step>
+    Ejecuta `/staff setup` en un canal exclusivo para staff.
+  </Step>
+  <Step>
+    Agrega al menos una pregunta, luego elige el rol aceptado, el canal de revision y el rol de staff-manager en el panel de configuracion.
+  </Step>
+  <Step>
+    Ejecuta `/staff enable` solo cuando el equipo este listo para revisar las solicitudes.
+  </Step>
+  <Step>
+    Cierra la recepcion con `/staff disable` despues de la ventana de solicitudes.
+  </Step>
+  <Step>
+    Mantén una rubrica de revision consistente e informa a los solicitantes cuando esperar una respuesta.
+  </Step>
+</Steps>
+
+Las preguntas se ingresan en un campo de configuracion separadas por `|`, por ejemplo:
+
+```text
+Cuantos anos tienes? | Por que quieres ser staff? | Que mejorarias?
+```
+
+<Note>
+  El rol de staff-manager es el rol que puede aceptar o rechazar solicitudes. Mantén el canal de revision privado y asegurate de que el rol aceptado este por debajo del rol mas alto de Vyrron si el bot debe asignarlo.
+</Note>

@@ -1,20 +1,90 @@
 ---
-title: "Introduction"
-description: "Welcome to your project"
+title: "Vyrron: tu servidor, pero mejor"
+description: "Vyrron reúne seguridad, moderación, música, automatización y herramientas de comunidad en un solo bot para tu servidor de Discord."
+sidebarTitle: "Introducción"
 ---
 
-Write a short description of your product here. What it does, who it's for, and what they can accomplish with it.
+Tu servidor, pero más tranquilo. Vyrron reúne seguridad, moderación, música, automatización y herramientas de comunidad en un solo bot consistente para Discord. [Empieza aquí](/start-here) · [Explora los comandos](/reference/commands)
 
-<Tip>
-  Ready to make this your own? Start by editing this page. Update your `docs.json` file to customize your site. Then fill out the [Quickstart](/quickstart) page.
-</Tip>
+## Sobre Vyrron
 
-<Card title="Quickstart" icon="rocket" href="/quickstart">
-  This card links to the quickstart page in your project.
-</Card>
-<Card title="Components" icon="puzzle-piece" href="https://mintlify.com/docs/components">
-  Add cards, callouts, steps, tabs, and more to design and structure your pages.
-</Card>
-<Card title="Settings" icon="gear" href="https://mintlify.com/docs/organize/settings">
-  Set your site name, branding, and navigation in the `docs.json` file.
-</Card>
+Vyrron trae las funciones que normalmente necesitan varios bots en una sola experiencia coherente:
+
+<CardGroup cols={2}>
+  <Card title="Protege tu servidor" icon="shield" href="/security/overview">
+    Antinuke, automod, registro de eventos, advertencias, silenciados, bloqueos y herramientas de moderación ayudan a tu equipo a responder rápidamente y mantener un registro claro.
+  </Card>
+
+  <Card title="Construye tu comunidad" icon="users" href="/community/overview">
+    Mensajes de bienvenida, niveles, tickets, sorteos, sugerencias, feedback, roles de auto-asignación y flujos de trabajo para staff mantienen a los miembros involucrados.
+  </Card>
+
+  <Card title="Disfruta mejor música" icon="music" href="/music/overview">
+    Reproduce pistas y listas, gestiona colas, descubre música similar, y usa búsquedas de Spotify, letras, autoplay y pistas favoritas.
+  </Card>
+
+  <Card title="Haz más" icon="sparkles" href="/utility/overview">
+    Herramientas de IA, recordatorios, encuestas, tarjetas de perfil, herramientas de red, seguimiento y otras utilidades están disponibles junto a las funciones principales del servidor.
+  </Card>
+</CardGroup>
+
+## Personaliza el prefijo
+
+Vyrron admite tanto comandos slash de Discord como comandos de mensaje con el prefijo configurado. Los comandos slash están disponibles como comandos de Discord registrados; los comandos con prefijo son útiles cuando quieres un flujo de trabajo rápido basado en mensajes. El prefijo predeterminado es `,`, pero cada servidor puede elegir el suyo:
+
+```text
+,prefix
+```
+
+```text
+,prefix set !
+```
+
+```text
+,prefix self ?
+```
+
+Usa `,prefix remove` para restaurar el prefijo predeterminado del proyecto. Los prefijos pueden tener hasta 10 caracteres, y cambiar el prefijo del servidor no afecta los comandos slash.
+
+## Personaliza Vyrron por servidor
+
+Vyrron puede tener una identidad diferente en cada servidor donde se usa. Ejecuta `/setprofile` en el servidor que quieres personalizar para actualizar la identidad específica del servidor del bot:
+
+- Avatar
+- Banner
+- Bio
+- Estilo de nombre
+
+Estos cambios de perfil pertenecen solo al servidor actual. Personalizar Vyrron en un servidor no cambia su perfil en ningún otro.
+
+<CardGroup cols={3}>
+  <Card title="Empieza con lo básico" href="/start-here">
+    Añade a Vyrron, prueba que puede responder, elige un prefijo y completa la lista de verificación recomendada para la primera ejecución.
+  </Card>
+
+  <Card title="Personaliza la configuración" href="/setup">
+    Usa `/setprofile` para la identidad de Vyrron en el servidor, luego configura logs, protección y sistemas orientados a los miembros.
+  </Card>
+
+  <Card title="Explora todos los comandos" href="/reference/commands">
+    Explora el catálogo público de comandos en cada área de funciones de Vyrron.
+  </Card>
+</CardGroup>
+
+Puedes usar comandos slash y comandos con prefijo simultáneamente. El comando `prefix` en sí mismo es un comando de mensaje, por ejemplo `,prefix` o `!prefix`.
+
+## El camino recomendado
+
+<Steps>
+  <Step title="Invitar a Vyrron">
+    Usa el botón **Invitar a Vyrron** arriba, o ejecuta `/invite` si el bot ya está en un servidor donde puedes usarlo.
+  </Step>
+  <Step title="Configurar lo básico">
+    Sigue [Configuración](/setup) para elegir un prefijo, confirmar permisos y decidir qué canal debe recibir los logs.
+  </Step>
+  <Step title="Activar protección">
+    Empieza con [Seguridad](/security/overview), luego añade los sistemas de moderación y comunidad que tu servidor necesita.
+  </Step>
+</Steps>
+
+Si buscas un comando específico, usa la casilla de búsqueda o salta a la [referencia completa de comandos](/reference/commands).

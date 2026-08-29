@@ -1,0 +1,35 @@
+---
+title: "Clasificaciones en Vyrron"
+sidebarTitle: "Clasificaciones"
+description: "Muestra las clasificaciones de participacion de tu servidor con Vyrron, incluyendo niveles, invitaciones, mensajes y tiempo de voz."
+---
+
+Vyrron ofrece a tus miembros varias formas de ver las clasificaciones de participacion del servidor. Las clasificaciones regulares se ven con comandos, mientras que la clasificacion en vivo mantiene un mensaje de clasificacion actualizado visible en un canal.
+
+## Clasificaciones regulares
+
+Estas clasificaciones usan los datos de participacion del servidor:
+
+| Clasificacion | Comando |
+| --- | --- |
+| Niveles | `,leaderboard lvl` |
+| Invitaciones | `,leaderboard invites` o `,invitesleaderboard` |
+| Mensajes | `,leaderboard messages` o `,leaderboard dailymessages` |
+| Tiempo de voz | `,leaderboard voice`, `,leaderboard dailyvoice`, o `,leaderboard weeklyvoice` |
+
+Estos comandos de clasificacion regulares son comandos de mensaje/prefijo. Las clasificaciones diarias usan la fecha UTC actual, y las clasificaciones semanales usan la semana ISO UTC computada. Ve [Seguimiento](/community/tracking) para las estadisticas que alimentan las clasificaciones de invitaciones, mensajes y voz. Ve [Niveles](/community/leveling) para la configuracion de XP y rango.
+
+## Clasificacion en vivo
+
+La clasificacion en vivo mantiene una vista de actividad publica actualizada sin que el staff tenga que republicar las clasificaciones. La configuracion requiere **Manage Server**.
+
+| Comando | Para que sirve |
+| --- | --- |
+| `/liveleaderboard setup` | Configura la clasificacion en vivo |
+| `/liveleaderboard reset` | Desactiva la clasificacion en vivo |
+
+Elige un canal donde las actualizaciones frecuentes sean bienvenidas. Informa a los miembros que metrica representa la clasificacion y cuando se reinicia. El sistema esta respaldado por los datos de actividad rastreados del servidor; configura la funcion de seguimiento relevante antes de esperar clasificaciones utiles.
+
+<Note>
+  La clasificacion en vivo usa los datos de actividad del servidor. Asegurate de que el seguimiento correspondiente este habilitado para que las clasificaciones muestren informacion util.
+</Note>

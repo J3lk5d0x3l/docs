@@ -1,0 +1,73 @@
+---
+title: "Sistemas de seguridad de Vyrron"
+sidebarTitle: "Seguridad"
+description: "Vyrron protege tu servidor con tres capas: Antinuke, Automod y Registro de eventos. Aprende el orden recomendado de configuración."
+---
+
+Vyrron tiene tres capas de protección para tu servidor:
+
+1. **Antinuke** monitorea acciones destructivas del servidor y de los miembros, y proporciona listas de confianza para usuarios, roles y propietarios adicionales.
+2. **Automod** filtra mensajes riesgosos o no deseados con 13 módulos seleccionables.
+3. **Registro de eventos** (Logging) registra eventos de mensajes, miembros, moderación, voz y servidor para revisión del staff.
+
+Lee las guías detalladas de [Antinuke](/security/antinuke), [Automod](/security/automod) y [Registro de eventos](/security/logging) cuando estés listo para configurar cada capa.
+
+## Orden recomendado
+
+<Steps>
+  <Step title="Configura el registro">
+    Ejecuta `/logging setup`, elige los canales de registro, y luego `/logging enable`. El registro da al staff el contexto necesario para ajustar las demás capas.
+  </Step>
+  <Step title="Configura el automod">
+    Ejecuta `/automod setup`, revisa los módulos, y luego `/automod enable`. Usa `/automod whitelist` para excepciones cuidadosamente revisadas.
+  </Step>
+  <Step title="Activa el antinuke">
+    Ejecuta `/antinuke enable`, revisa `/antinuke status`, y gestiona las excepciones de confianza con `/whitelist` y `/extraowner`.
+  </Step>
+</Steps>
+
+## Comandos de Antinuke
+
+| Comando | Propósito |
+| --- | --- |
+| `/antinuke enable` | Habilitar la protección antinuke |
+| `/antinuke disable` | Pausar la protección |
+| `/antinuke config` | Ver la configuración del antinuke |
+| `/antinuke status` | Ver el panel de seguridad y los módulos activos |
+| `/antinuke reset` | Borrar la configuración del antinuke |
+| `/whitelist add` | Permitir un usuario o rol |
+| `/whitelist remove` | Eliminar una entrada de la lista blanca |
+| `/whitelist` | Gestionar las entradas de la lista blanca de forma interactiva |
+| `/extraowner add` | Agregar un propietario adicional |
+| `/extraowner remove` | Eliminar un propietario adicional |
+| `/extraowner manage` | Gestionar propietarios adicionales de forma interactiva |
+| `/extraowner reset` | Eliminar todos los propietarios adicionales |
+
+Una lista blanca es un límite de confianza, no una lista de conveniencia. Manténla pequeña, revísala regularmente, y nunca agregues un rol solo porque es fácil de seleccionar.
+
+## Comandos de Automod
+
+| Comando | Propósito |
+| --- | --- |
+| `/automod setup` | Configurar los módulos de automod |
+| `/automod enable` | Habilitar el automod |
+| `/automod disable` | Pausar el automod |
+| `/automod reset` | Eliminar la configuración del automod |
+| `/automod whitelist` | Gestionar excepciones del automod |
+
+## Comandos de Registro de eventos
+
+| Comando | Propósito |
+| --- | --- |
+| `/logging setup` | Configurar los canales de registro |
+| `/logging enable` | Habilitar el registro de eventos |
+| `/logging disable` | Pausar el registro de eventos |
+| `/logging reset` | Eliminar la configuración de registro |
+
+## Reglas prácticas de operación
+
+- Mantén los registros en canales exclusivos para el staff. El registro automático crea cinco canales bajo una categoría privada `Vyrron Logs` cuando tiene los permisos necesarios.
+- Prueba los filtros con una cuenta de moderador antes de habilitarlos en todo el servidor.
+- Empareja las acciones automáticas con registros para que el staff pueda auditar los falsos positivos.
+- Pausa una capa antes de modificarla si el servidor está activo.
+- Si estás respondiendo a un incidente, usa `/antinuke status` antes de cambiar la configuración.

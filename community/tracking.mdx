@@ -1,0 +1,53 @@
+---
+title: "Seguimiento de actividad en Vyrron"
+sidebarTitle: "Seguimiento"
+description: "Vyrron rastrea invitaciones, mensajes y tiempo de voz de los miembros de tu servidor. Usa estos datos para recompensar la participacion."
+---
+
+Vyrron rastrea tres senales de participacion: invitaciones, mensajes y tiempo de voz. Usa el seguimiento para recompensar la contribucion, no para presionar a los miembros a estar activos. Los registros de invitaciones, mensajes y voz se almacenan por servidor. Ve [Clasificaciones](/community/liveleaderboard) para mostrar estas estadisticas como rankings, incluyendo la clasificacion en vivo. Los comandos de seguimiento son comandos de mensaje/prefijo, no comandos slash. Los ejemplos a continuacion usan el prefijo `,` por defecto; reemplazalo con el prefijo configurado de tu servidor cuando sea necesario.
+
+## Invitaciones
+
+| Comando | Proposito |
+| --- | --- |
+| `,invites` | Ver estadisticas de invitaciones |
+| `,inviter` | Ver quien invito a un miembro |
+| `,invited` | Listar miembros que invitaste |
+| `,inviteinfo` | Ver los codigos de invitacion de un usuario |
+| `,addinvites` | Agregar credito de invitacion; requiere **Manage Server** |
+| `,removeinvites` | Eliminar credito de invitacion; requiere **Manage Server** |
+| `,clearinvites` | Borrar entradas de invitacion; requiere **Manage Server** |
+| `,resetmyinvites` | Restablecer tu propio registro de invitaciones |
+| `,leaderboard invites` | Mostrar los mejores invitadores |
+| `,invitesleaderboard` | Mostrar la clasificacion de invitaciones del servidor |
+
+## Mensajes
+
+| Comando | Proposito |
+| --- | --- |
+| `,messages` | Ver conteo de mensajes |
+| `,addmessages` | Agregar credito de mensajes; requiere **Manage Server** |
+| `,removemessages` | Eliminar credito de mensajes; requiere **Manage Server** |
+| `,clearmessages` | Borrar entradas de mensajes; requiere **Manage Server** |
+| `,resetmymessages` | Restablecer tu propio registro de mensajes |
+| `,leaderboard messages` | Mostrar los mejores mensajeros |
+| `,leaderboard dailymessages` | Mostrar la clasificacion diaria de mensajes |
+
+## Tiempo de voz
+
+| Comando | Proposito |
+| --- | --- |
+| `,vc` | Ver estadisticas de tiempo de voz |
+| `,addvctime` | Agregar tiempo de voz; requiere **Manage Server** |
+| `,reducevctime` | Reducir tiempo de voz; requiere **Manage Server** |
+| `,clearvoice` | Restablecer estadisticas de voz; requiere **Manage Server** |
+| `,resetmyvoice` | Restablecer tu propio registro de voz |
+| `,leaderboard voice` | Mostrar los mejores miembros de voz |
+| `,leaderboard dailyvoice` | Mostrar la clasificacion diaria |
+| `,leaderboard weeklyvoice` | Mostrar la clasificacion semanal |
+
+Las clasificaciones diarias usan la fecha UTC actual. Las clasificaciones semanales usan la semana ISO UTC computada; no hay un comando de tiempo de reinicio configurable por el usuario.
+
+<Warning>
+  Los comandos de ajuste administrativo cambian los registros de los miembros. Restringelos a staff de confianza y registra por que se hizo un ajuste manual. Los comandos de ajuste estan separados de los comandos de reinicio propio de los miembros, asi que el staff debe elegir la operacion mas restrictiva siempre que sea posible.
+</Warning>

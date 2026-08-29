@@ -1,0 +1,46 @@
+---
+title: "Sistema de niveles de Vyrron"
+sidebarTitle: "Niveles"
+description: "Activa el sistema de XP de Vyrron para rastrear la participación, mostrar tarjetas de rango y recompensar miembros con roles por nivel."
+---
+
+El sistema de niveles de Vyrron rastrea el XP generado por la participación de los miembros y muestra tarjetas de rango y clasificaciones. La configuración y el ajuste del sistema requieren el permiso **Gestionar servidor**.
+
+## Comandos
+
+| Comando | Uso |
+| --- | --- |
+| `/leveling setup` | Configurar el sistema de niveles |
+| `/leveling enable` | Habilitar la ganancia de XP |
+| `/leveling disable` | Pausar la ganancia de XP |
+| `/leveling config` | Editar los ajustes del sistema de niveles |
+| `/leveling style` | Elegir el estilo de la tarjeta de nivel |
+| `/leveling reset` | Borrar todos los datos de XP |
+| `,leveling rank` | Ver una tarjeta de rango |
+| `,leaderboard lvl` | Ver los miembros con mayor nivel |
+
+<Note>
+  `,rank` y `,level` son alias de comando de mensaje para `,leveling rank`.
+</Note>
+
+## Despliegue
+
+<Steps>
+  <Step>
+    **Configura.** Ejecuta `/leveling setup` y, opcionalmente, elige un canal para las tarjetas de nivel. Si no seleccionas un canal, las tarjetas se publicarán en el canal donde ocurra el evento de subida de nivel. Usa `/leveling config` para gestionar los roles por nivel.
+  </Step>
+  <Step>
+    **Elige la presentación.** Usa `/leveling style` para elegir el estilo de tarjeta de nivel que mejor se adapte a tu servidor.
+  </Step>
+  <Step>
+    **Activa y prueba.** Ejecuta `/leveling enable`, luego verifica `,leveling rank` y `,leaderboard lvl`.
+  </Step>
+</Steps>
+
+## Roles por nivel
+
+`/leveling config` abre un gestor de roles interactivo. Selecciona un rol, introduce un número de nivel entero mayor que cero, y Vyrron asignará ese rol cuando un miembro alcance el nivel. Elimina entradas desde el mismo panel. Vyrron necesita el permiso **Gestionar roles**, y su rol más alto debe estar por encima de cada rol de recompensa.
+
+<Warning>
+  `/leveling reset` borra todos los datos de XP. Trátalo como una acción de migración o reinicio, no como una forma habitual de corregir un problema de visualización.
+</Warning>

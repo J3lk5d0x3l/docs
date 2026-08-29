@@ -1,0 +1,86 @@
+---
+title: "Música en Vyrron"
+sidebarTitle: "Música"
+description: "Reproduce música en Discord con Vyrron: YouTube Music, Spotify, SoundCloud, Apple Music y más. Gestiona colas, letras y canciones favoritas."
+---
+
+El sistema de música de Vyrron usa Lavalink para la reproducción y reconoce términos de búsqueda más enlaces de YouTube Music, Spotify, SoundCloud, Apple Music, Audiomack y Tidal. Ofrece gestión de colas, controles de reproducción, letras y canciones favoritas personales. El éxito de la reproducción y la resolución dependen del nodo Lavalink configurado y de la disponibilidad del proveedor o resolver.
+
+## Inicia una sesión
+
+```text
+/join
+/play query: lo-fi beats
+/nowplaying
+/queue
+```
+
+Puedes usar `/search` cuando quieras elegir entre pistas coincidentes en lugar de reproducir inmediatamente el primer resultado. `/play` acepta un parámetro `query` obligatorio que contiene un título, frase de búsqueda o URL compatible. `/spotify track`, `/spotify album` y `/spotify artist` buscan metadatos de Spotify, mientras que `/spotify preview` devuelve una vista previa corta cuando está disponible.
+
+## Controles de reproducción
+
+| Comando | Propósito |
+| --- | --- |
+| `/pause` | Pausar la pista actual |
+| `/resume` | Reanudar la reproducción |
+| `/skip` | Saltar la pista actual |
+| `,skipto` | Saltar a una posición de la cola |
+| `/previous` | Reproducir la pista anterior |
+| `/stop` | Detener la reproducción y vaciar la cola |
+| `/volume` | Ajustar el volumen de reproducción |
+| `/seek` | Saltar a una posición |
+| `/loop` | Establecer el modo de bucle |
+| `/shuffle` | Mezclar la cola |
+| `/move` | Mover una pista en la cola |
+| `/remove` | Eliminar una pista de la cola |
+| `/clear` | Vaciar la cola |
+
+## Herramientas de cola y sesión
+
+| Comando | Propósito |
+| --- | --- |
+| `/queue` | Ver y gestionar la cola |
+| `/similar` | Añadir pistas similares a la cola |
+| `/grab` | Enviar información de la pista actual por MD |
+| `/lyrics` | Mostrar letras |
+| `/autoplay` | Activar o desactivar la reproducción automática |
+| `/247` | Mantener al reproductor en el canal de voz |
+| `/join` | Unirse a tu canal de voz |
+| `,rejoin` | Reconectar sin perder la cola |
+| `/leave` | Salir del canal de voz |
+| `/forcefix` | Forzar la reparación de un reproductor roto |
+| `/npstyle` | Elegir el estilo de la tarjeta de reproducción actual |
+
+## Canciones favoritas
+
+```text
+/like
+/showliked
+/playliked
+/dislike
+/clearliked
+```
+
+Estos comandos son personales: permiten a cada miembro mantener una biblioteca sin cambiar la política de cola compartida del servidor. `/like` y `/dislike` actúan sobre la pista actual; `/playliked` añade las pistas guardadas del miembro a la cola activa.
+
+## Solución de problemas de música
+
+<Steps>
+  <Step title="Verifica los permisos de Vyrron">
+    Asegúrate de que Vyrron pueda **Conectar** y **Hablar** en el canal de voz.
+  </Step>
+  <Step title="Confirma que estás en un canal de voz">
+    Debes estar en un canal de voz antes de usar `/play`.
+  </Step>
+  <Step title="Consulta el estado del reproductor">
+    Usa `/nowplaying` y `/queue` para confirmar el estado del reproductor.
+  </Step>
+  <Step title="Intenta reconectar">
+    Prueba `,rejoin` antes de borrar una sesión.
+  </Step>
+  <Step title="Usa forcefix con precaución">
+    Usa `/forcefix` solo cuando el reproductor esté genuinamente atascado.
+  </Step>
+</Steps>
+
+Los proveedores de música pueden cambiar su disponibilidad, metadatos o límites de tasa. Un error del proveedor no significa necesariamente que los permisos de Discord sean incorrectos. El bot también debe estar conectado al mismo canal de voz que el miembro que inicia la reproducción.

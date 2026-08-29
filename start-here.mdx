@@ -1,0 +1,67 @@
+---
+title: "Empieza con Vyrron"
+sidebarTitle: "Empieza aquí"
+description: "Configura Vyrron en cinco minutos: confirma que responde, elige un prefijo y activa la protección básica de tu servidor."
+---
+
+Vyrron funciona mejor cuando configuras la base primero. Puedes usar comandos slash registrados inmediatamente, o usar el prefijo configurado en comandos de mensaje. El comando de prefijo es solo para mensajes en esta versión, así que usa la forma con prefijo que se muestra a continuación cuando lo cambies.
+
+## Estilos de comandos
+
+| Estilo | Ejemplo |
+| --- | --- |
+| Comando slash | `/help` |
+| Comando con prefijo | `,help` |
+| Comando agrupado | `/antinuke enable` o `,antinuke enable` |
+
+El prefijo predeterminado en esta versión es `,`. Los administradores del servidor pueden cambiarlo con `,prefix set <nuevo-prefijo>` o la forma equivalente con el prefijo configurado. Un prefijo puede tener como máximo 10 caracteres. `,prefix self <nuevo-prefijo>` establece un prefijo personalizado en todos los servidores sin cambiar el valor del servidor.
+
+## Configuración en cinco minutos
+
+<Steps>
+  <Step title="Confirma que el bot puede responder">
+    Ejecuta `/ping`. Si Vyrron no puede responder, verifica que tenga **Ver canal** y **Enviar mensajes** en el canal donde estás probando.
+  </Step>
+  <Step title="Elige un prefijo">
+    Ejecuta `,prefix` para ver el valor actual. Usa `,prefix set !` para elegir un prefijo de servidor, `,prefix remove` para restaurar el predeterminado del proyecto, o `,prefix self ?` para un prefijo personal.
+  </Step>
+  <Step title="Crea una red de seguridad">
+    Ejecuta `/logging setup`, `/automod setup` y `,antinuke enable` desde un canal solo para administradores. Lee [Permisos](/permissions) antes de activar la protección. Activar antinuke está restringido al propietario del servidor o a un propietario adicional.
+  </Step>
+  <Step title="Configura la experiencia de miembros">
+    Elige los sistemas que se adapten a tu servidor: `/greet setup`, `/leveling setup`, `/ticket setup`, `/selfrole setup` o `/giveaway start`.
+  </Step>
+  <Step title="Prueba cada flujo de trabajo">
+    Usa el comando `test`, `config` o `status` de cada función donde esté disponible. Prueba en un canal privado antes de anunciarlo a los miembros.
+  </Step>
+</Steps>
+
+## Una pila útil para la primera semana
+
+### Comunidad pequeña
+
+Mensajes de bienvenida y despedida, sugerencias, feedback, recordatorios, encuestas y música.
+
+### Comunidad en crecimiento
+
+Añade niveles, roles de auto-asignación, sorteos, tickets, seguimiento y autoroles.
+
+### Comunidad pública
+
+Añade antinuke, automod, registro de eventos, solicitudes de staff y un proceso de moderación documentado.
+
+### Servidor de creador o medios
+
+Añade autopost, notificador social, música, tarjetas de perfil y clasificaciones en vivo.
+
+<Note>
+  No des a Vyrron más permisos de los que el servidor necesita. Un bot no puede proteger un rol o canal por encima de su rol más alto, y una acción de moderación puede fallar si la jerarquía de roles de Discord lo bloquea. Nunca pegues un token de bot o clave de proveedor en Discord.
+</Note>
+
+## Encuentra tu próximo paso
+
+- ¿Necesitas que el bot **detenga raids o acciones destructivas**? Lee [Seguridad](/security/overview).
+- ¿Necesitas **gestionar miembros y canales**? Lee [Moderación](/moderation/overview).
+- ¿Necesitas **tickets, roles, niveles o bienvenidas**? Lee [Sistemas de comunidad](/community/overview).
+- ¿Necesitas **reproducir música**? Lee [Música](/music/overview).
+- ¿Necesitas una **utilidad rápida o herramienta de IA**? Lee [Utilidades y extras](/utility/overview).

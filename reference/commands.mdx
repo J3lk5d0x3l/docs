@@ -1,0 +1,549 @@
+---
+title: "Referencia de comandos de Vyrron"
+sidebarTitle: "Comandos"
+description: "Lista completa de todos los comandos de Vyrron organizados por área: protección, moderación, comunidad, música y utilidades."
+---
+
+Usa esta página para encontrar el comando adecuado para tu servidor. Los comandos están agrupados por función para que puedas ir directamente a la configuración, protección, sistemas de comunidad, música o utilidades cotidianas. Usa comandos de barra donde estén disponibles. Los comandos de mensaje usan el prefijo configurado del servidor, como `,prefix` o `!prefix`.
+
+Algunos comandos requieren permisos de servidor. Los comandos que usan servicios externos también pueden verse afectados por la disponibilidad del proveedor o límites de tasa.
+
+## Encuentra una función
+
+| Área de función | Guía |
+| --- | --- |
+| Antinuke | [Antinuke](/security/antinuke) |
+| Moderación | [Moderación](/moderation/overview) |
+| Registro de eventos | [Registro de eventos](/security/logging) |
+| Automod | [Automod](/security/automod) |
+| Bienvenida y despedida | [Bienvenida y despedida](/community/welcome) |
+| Niveles | [Niveles](/community/leveling) |
+| Clasificaciones | [Clasificaciones](/community/liveleaderboard) |
+| Música | [Música](/music/overview) |
+| Sorteos | [Sorteos](/community/giveaways) |
+| Voicemaster | [Voicemaster](/community/voicemaster) |
+| Sugerencias | [Sugerencias](/community/suggestions) |
+| Feedback | [Feedback](/community/feedback) |
+| Staff | [Solicitudes de staff](/community/staff) |
+| Tickets | [Tickets](/community/tickets) |
+| Automatización | [Automatización](/community/automation) |
+| Utilidades | [Utilidades y extras](/utility/overview) |
+| Autopost | [Autopost](/community/autopost) |
+| Roles de auto-asignación | [Roles de auto-asignación](/community/selfrole) |
+| Notificador social | [Notificador social](/community/social-notifier) |
+| Seguimiento | [Seguimiento](/community/tracking) |
+| Roleplay | [Roleplay](/utility/roleplay) |
+| Varios | [Herramientas misceláneas](/utility/misc) |
+
+## Rutas de comandos comunes
+
+### Protección
+
+```text
+/antinuke enable
+/antinuke status
+/whitelist
+/extraowner manage
+/automod setup
+/logging setup
+```
+
+### Moderación
+
+```text
+/warn
+/warnings
+/mute
+/purge
+/lock
+/role add
+/channel create
+/snipe
+```
+
+### Comunidad
+
+```text
+/greet setup
+/leveling setup
+/ticket setup
+/selfrole setup
+/giveaway start
+/suggestions setup
+/autoresponder create
+```
+
+### Música
+
+```text
+/play
+/search
+/queue
+/skip
+/loop
+/lyrics
+/playliked
+```
+
+### Utilidades
+
+```text
+/help
+/serverinfo
+/userinfo
+/ai ask
+/reminder add
+/search web
+/domain dns
+```
+
+## Aliases
+
+Los aliases siguientes son para comandos de mensaje. Usa el prefijo configurado de tu servidor; los ejemplos usan el prefijo predeterminado `,`. No son nombres alternativos de comandos de barra.
+
+| Alias de mensaje | Comando |
+| --- | --- |
+| `,rank`, `,level` | `leveling rank` |
+| `,cc` | `channel create` |
+| `,cr` | `channel rename` |
+| `,cm` | `channel move` |
+| `,ct` | `channel topic` |
+| `,channeldelete` | `delete channel` |
+| `,deleterole` | `delete role` |
+| `,deleteemoji` | `delete emoji` |
+| `,whohas` | `list inrole` |
+| `,cap` | `caption` |
+
+## Cómo obtener ayuda de comandos en Discord
+
+Usa `/help` para abrir el menú de ayuda y explorar las categorías disponibles. Los comandos de barra solo están disponibles para los comandos registrados con Discord; los comandos exclusivos de mensaje usan el prefijo configurado. Para obtener detalles de un comando, usa:
+
+```text
+,help cmdname
+```
+
+Discord mostrará las opciones y subcomandos disponibles para la versión instalada del comando. Si un comando no aparece, verifica que los comandos de aplicación de Vyrron estén disponibles en el servidor y que estés usando el nombre correcto del comando. Algunos comandos permanecen intencionalmente solo como comandos de mensaje, incluyendo la gestión de prefijos en esta versión.
+
+## Lista de comandos
+
+Las secciones siguientes listan los comandos por función. Los comandos se muestran sin prefijo; usa la sintaxis de barra para los comandos de barra registrados y el prefijo de mensaje configurado para los comandos exclusivos de mensaje.
+
+### Antinuke
+
+| Comando | Propósito |
+| --- | --- |
+| `antinuke enable` | Activar la protección antinuke |
+| `antinuke disable` | Pausar la protección antinuke |
+| `antinuke config` | Ver el estado del antinuke |
+| `antinuke status` | Ver el panel de seguridad y módulos activos |
+| `antinuke reset` | Borrar la configuración del antinuke |
+| `whitelist add` | Permitir un usuario o rol |
+| `whitelist remove` | Eliminar un usuario o rol de la lista de permitidos |
+| `whitelist` | Gestionar entradas de la lista de permitidos de forma interactiva |
+| `extraowner add` | Añadir un propietario extra |
+| `extraowner remove` | Eliminar un propietario extra |
+| `extraowner manage` | Gestionar propietarios extra de forma interactiva |
+| `extraowner reset` | Eliminar todos los propietarios extra |
+
+### Moderación
+
+| Comando | Propósito |
+| --- | --- |
+| `kick` | Expulsar a un usuario |
+| `purge` | Eliminar mensajes del canal |
+| `ban` | Banear a un usuario |
+| `unban` | Desbanear a un usuario |
+| `tempban` | Banear temporalmente a un usuario |
+| `softban` | Softban para limpiar mensajes |
+| `warn` | Advertir a un miembro |
+| `warnings` | Ver advertencias de un miembro |
+| `clearwarn` | Eliminar advertencias de un miembro |
+| `mute` | Silenciar a un miembro |
+| `unmute` | Quitar silencio a un miembro |
+| `lock` | Bloquear un canal |
+| `unlock` | Desbloquear un canal |
+| `hide` | Ocultar un canal |
+| `unhide` | Revelar un canal |
+| `slowmode` | Establecer modo lento del canal |
+| `nick` | Cambiar un apodo |
+| `role add` | Añadir un rol a un miembro |
+| `role remove` | Quitar un rol de un miembro |
+| `ar` | Añadir un rol a un miembro |
+| `rr` | Quitar un rol de un miembro |
+| `roleicon` | Establecer un icono de rol usando un emoji o imagen |
+| `list boosters` | Listar los boosters del servidor |
+| `list bots` | Listar los bots del servidor |
+| `list roles` | Listar los roles del servidor |
+| `list inrole` | Listar miembros en un rol; alias `whohas` |
+| `autorole add` | Añadir un autorol |
+| `autorole remove` | Quitar un autorol |
+| `autorole show` | Mostrar los autoroles configurados |
+| `channel create` | Crear un canal; alias `cc` |
+| `delete channel` | Eliminar un canal; alias `channeldelete` |
+| `delete role` | Eliminar un rol; alias `deleterole` |
+| `delete emoji` | Eliminar un emoji personalizado; alias `deleteemoji` |
+| `channel rename` | Renombrar un canal; alias `cr` |
+| `channel move` | Mover un canal a una categoría; alias `cm` |
+| `channel topic` | Editar el tema de un canal; alias `ct` |
+| `cleanup` | Eliminar mensajes del bot de un canal |
+| `editsnipe` | Ver mensajes editados recientemente |
+| `snipe` | Ver mensajes eliminados recientemente |
+| `ghostping` | Verificar pings fantasma recientes |
+
+### Registro de eventos
+
+| Comando | Propósito |
+| --- | --- |
+| `logging setup` | Configurar canales de registro |
+| `logging enable` | Activar el registro de eventos |
+| `logging disable` | Pausar el registro de eventos |
+| `logging reset` | Eliminar la configuración de registro |
+
+### Automod
+
+| Comando | Propósito |
+| --- | --- |
+| `automod setup` | Configurar módulos de automod |
+| `automod enable` | Activar el automod |
+| `automod disable` | Pausar el automod |
+| `automod reset` | Eliminar la configuración del automod |
+| `automod whitelist` | Gestionar excepciones del automod |
+
+### Bienvenida y despedida
+
+| Comando | Propósito |
+| --- | --- |
+| `greet setup` | Configurar mensajes de bienvenida |
+| `greet test` | Probar un mensaje de bienvenida |
+| `greet reset` | Eliminar la configuración de bienvenida |
+| `greet variables` | Ver variables disponibles de bienvenida |
+| `farewell setup` | Configurar mensajes de despedida |
+| `farewell test` | Probar un mensaje de despedida |
+| `farewell reset` | Eliminar la configuración de despedida |
+| `farewell variables` | Ver variables de despedida |
+
+### Niveles
+
+| Comando | Propósito |
+| --- | --- |
+| `leveling setup` | Configurar el sistema de niveles |
+| `leveling enable` | Activar la ganancia de XP |
+| `leveling disable` | Pausar el sistema de niveles |
+| `leveling config` | Editar la configuración de niveles |
+| `leveling style` | Elegir el estilo de la tarjeta de nivel |
+| `leveling reset` | Borrar todos los datos de XP |
+| `leveling rank` | Ver una tarjeta de rango; aliases `rank`, `level` |
+| `leaderboard lvl` | Mostrar los mejores miembros por nivel |
+
+### Música
+
+| Comando | Propósito |
+| --- | --- |
+| `play` | Reproducir una canción o lista de reproducción |
+| `search` | Buscar y elegir pistas |
+| `spotify album` | Buscar un álbum de Spotify |
+| `spotify artist` | Buscar un artista de Spotify |
+| `spotify preview` | Obtener una vista previa de una pista de Spotify |
+| `spotify track` | Buscar una pista de Spotify |
+| `similar` | Añadir pistas similares a la cola |
+| `nowplaying` | Ver la pista actual |
+| `queue` | Ver y gestionar la cola |
+| `skip` | Saltar la pista actual |
+| `skipto` | Saltar a una posición de la cola |
+| `previous` | Reproducir la pista anterior |
+| `pause` | Pausar la reproducción |
+| `resume` | Reanudar la reproducción |
+| `stop` | Detener la reproducción y vaciar la cola |
+| `volume` | Ajustar el volumen de reproducción |
+| `seek` | Saltar a una posición |
+| `loop` | Establecer el modo de bucle |
+| `shuffle` | Mezclar la cola |
+| `move` | Mover una pista en la cola |
+| `remove` | Eliminar una pista de la cola |
+| `clear` | Vaciar la cola |
+| `grab` | Enviar información de la pista actual por MD |
+| `join` | Unirse a tu canal de voz |
+| `rejoin` | Reconectar sin perder la cola |
+| `leave` | Salir del canal de voz |
+| `forcefix` | Restaurar un reproductor roto |
+| `247` | Activar o desactivar el modo de voz 24/7 |
+| `autoplay` | Activar o desactivar la reproducción automática |
+| `lyrics` | Mostrar letras de la pista |
+| `like` | Dar me gusta a la pista actual |
+| `dislike` | Quitar me gusta de una pista |
+| `showliked` | Explorar canciones favoritas |
+| `playliked` | Añadir canciones favoritas a la cola |
+| `clearliked` | Borrar canciones favoritas |
+| `npstyle` | Establecer el estilo de la tarjeta de reproducción actual |
+
+### Sorteos y canales de voz
+
+| Comando | Propósito |
+| --- | --- |
+| `giveaway start` | Crear un sorteo |
+| `giveaway edit` | Editar un sorteo activo |
+| `giveaway reroll` | Volver a sortear un sorteo finalizado |
+| `giveaway end` | Finalizar un sorteo activo |
+| `voicemaster setup` | Configurar canales de voz temporales |
+| `voicemaster reset` | Eliminar la configuración de Voicemaster |
+| `voicemaster config` | Ver o actualizar los valores predeterminados de Voicemaster |
+
+### Sugerencias, feedback y staff
+
+| Comando | Propósito |
+| --- | --- |
+| `suggestions setup` | Establecer el canal de sugerencias |
+| `suggestions reset` | Desactivar sugerencias |
+| `feedback setup` | Establecer el canal de feedback |
+| `feedback reset` | Desactivar feedback |
+| `staff setup` | Configurar solicitudes de staff |
+| `staff enable` | Abrir solicitudes de staff |
+| `staff disable` | Cerrar solicitudes de staff |
+| `staff reset` | Restablecer la configuración de solicitudes de staff |
+| `staff apply` | Solicitar ser staff |
+
+### Tickets
+
+| Comando | Propósito |
+| --- | --- |
+| `ticket setup` | Configurar el sistema de tickets |
+| `ticket reset` | Restablecer la configuración de tickets |
+| `ticket panelsend` | Enviar un panel de tickets |
+| `ticket claim` | Reclamar un ticket abierto |
+| `ticket close` | Cerrar un canal de ticket |
+| `ticket rename` | Renombrar un canal de ticket |
+| `ticket transfer` | Transferir la propiedad del ticket |
+| `ticket adduser` | Añadir un usuario a un ticket |
+| `ticket removeuser` | Quitar un usuario de un ticket |
+| `ticket transcript` | Generar una transcripción del ticket |
+| `category add` | Añadir una categoría de ticket |
+| `category remove` | Eliminar una categoría de ticket |
+| `category list` | Listar categorías de tickets |
+| `supportrole add` | Añadir un rol de soporte |
+| `supportrole remove` | Quitar un rol de soporte |
+| `supportrole list` | Listar roles de soporte |
+
+### Automatización
+
+| Comando | Propósito |
+| --- | --- |
+| `autoresponder create` | Añadir una respuesta automática |
+| `autoresponder remove` | Eliminar una respuesta automática |
+| `autoresponder list` | Listar respuestas automáticas |
+| `autoreact create` | Añadir una reacción automática |
+| `autoreact remove` | Eliminar una reacción automática |
+| `autoreact list` | Listar reacciones automáticas |
+
+### Utilidades
+
+| Comando | Propósito |
+| --- | --- |
+| `serverinfo` | Ver información del servidor |
+| `channelinfo` | Ver información del canal |
+| `userinfo` | Ver información de un miembro |
+| `roleinfo` | Ver información de un rol |
+| `vcinfo` | Ver información del canal de voz |
+| `avatar` | Mostrar el avatar de un usuario |
+| `banner` | Mostrar el banner de un usuario |
+| `guildbanner` | Mostrar el banner del servidor |
+| `support` | Obtener el enlace al servidor de soporte |
+| `membercount` | Ver el conteo de miembros del servidor |
+| `stats` | Ver estadísticas del bot |
+| `permissions` | Ver permisos de un miembro |
+| `accountage` | Ver la antigüedad de la cuenta |
+| `invite` | Obtener el enlace de invitación del bot |
+| `vote` | Votar por Vyrron en Top.gg |
+| `uptime` | Ver el tiempo de actividad del bot |
+| `boostcount` | Ver información de boosts del servidor |
+| `users` | Ver el total de usuarios del bot |
+| `about` | Ver información del bot |
+| `help` | Explorar comandos u obtener ayuda de un comando |
+| `setprofile` | Personalizar el perfil del bot en el servidor |
+| `afk` | Establecerte como AFK |
+| `embed` | Construir y enviar un embed personalizado |
+| `container` | Construir un contenedor de Components V2 |
+| `ping` | Ver la latencia de la API |
+| `src` | Ver estadísticas del código fuente TypeScript |
+| `prefix` | Ver prefijos actuales; comando de mensaje |
+| `prefix set` | Establecer el prefijo del servidor; comando de mensaje |
+| `prefix remove` | Eliminar el prefijo del servidor; comando de mensaje |
+| `prefix self` | Establecer un prefijo personal; comando de mensaje |
+| `ignore` | Ignorar un canal para comandos |
+| `rolecreate` | Crear un rol |
+| `roledelete` | Eliminar un rol |
+| `math` | Evaluar una expresión matemática |
+| `todo` | Gestionar tareas personales |
+| `recap` | Resumir mensajes recientes del canal con IA |
+| `ip lookup` | Buscar información de una dirección IP |
+| `ip whois` | Ejecutar una búsqueda WHOIS |
+| `ip abuse` | Verificar reportes de abuso de IP |
+| `ip asn` | Buscar información de ASN |
+| `ip ptr` | Ejecutar una búsqueda de DNS inverso |
+| `ip ports` | Escanear puertos comunes de una IP |
+| `ip subnet` | Calcular información de subred |
+| `ip ping` | Hacer ping a una dirección IP |
+| `domain lookup` | Buscar información de un dominio |
+| `domain dns` | Ver registros DNS |
+| `domain ssl` | Verificar información del certificado SSL |
+| `domain ip` | Resolver un dominio a una IP |
+| `domain availability` | Verificar disponibilidad de un dominio |
+| `domain sub` | Enumerar subdominios |
+| `rbg` | Eliminar el fondo de una imagen |
+
+### Autopost, roles de auto-asignación y notificador social
+
+| Comando | Propósito |
+| --- | --- |
+| `autopost setup` | Asignar categorías de imágenes a canales |
+| `autopost config` | Ver o actualizar autopost |
+| `autopost reset` | Detener todos los temporizadores de autopost |
+| `selfrole setup` | Crear un panel de roles de auto-asignación |
+| `selfrole config` | Editar un panel de roles existente |
+| `selfrole reset` | Eliminar un panel de roles de auto-asignación |
+| `notifier setup` | Añadir un feed de YouTube o Reddit |
+| `notifier remove` | Eliminar un feed de notificaciones |
+| `notifier reset` | Eliminar todos los feeds de notificaciones |
+
+### Seguimiento
+
+| Comando | Propósito |
+| --- | --- |
+| `invites` | Ver estadísticas de invitaciones de un miembro |
+| `inviter` | Ver quién invitó a un miembro |
+| `invited` | Listar miembros que invitaste |
+| `inviteinfo` | Ver los códigos de invitación de un usuario |
+| `addinvites` | Añadir invitaciones a un usuario |
+| `removeinvites` | Quitar invitaciones de un usuario |
+| `clearinvites` | Borrar registros de invitaciones |
+| `resetmyinvites` | Restablecer tus propias invitaciones |
+| `leaderboard invites` | Mostrar los mejores invitadores |
+| `invitesleaderboard` | Mostrar los mejores invitadores del servidor |
+| `leaderboard votes` | Mostrar la clasificación de votos de Top.gg de Vyrron |
+| `messages` | Ver conteo de mensajes |
+| `addmessages` | Añadir mensajes a un usuario |
+| `removemessages` | Quitar mensajes de un usuario |
+| `clearmessages` | Borrar registros de mensajes |
+| `resetmymessages` | Restablecer tu registro de mensajes |
+| `leaderboard messages` | Mostrar los mejores mensajeros |
+| `leaderboard dailymessages` | Mostrar los mejores mensajeros del día |
+| `vc` | Ver estadísticas de tiempo en voz |
+| `addvctime` | Añadir tiempo de voz a un usuario |
+| `reducevctime` | Reducir tiempo de voz de un usuario |
+| `clearvoice` | Restablecer estadísticas de voz |
+| `resetmyvoice` | Restablecer tu registro de voz |
+| `leaderboard voice` | Mostrar los mejores miembros de voz |
+| `leaderboard dailyvoice` | Mostrar los líderes de voz del día |
+| `leaderboard weeklyvoice` | Mostrar los líderes de voz de la semana |
+
+### Roleplay
+
+| Comando | Propósito |
+| --- | --- |
+| `airkiss` | Lanzar un beso al aire |
+| `angrystare` | Dar una mirada de enfado |
+| `bite` | Morder a alguien |
+| `bleh` | Sacar la lengua |
+| `brofist` | Compartir un puñetazo de hermano |
+| `celebrate` | Celebrar |
+| `cheers` | Brindar |
+| `clap` | Aplaudir a alguien |
+| `confused` | Expresar confusión |
+| `cool` | Actuar con frialdad |
+| `cry` | Llorar a gusto |
+| `cuddle` | Acurrucarse con alguien |
+| `dance` | Mostrar tus pasos de baile |
+| `drool` | Babear por algo |
+| `evillaugh` | Soltar una risa malvada |
+| `facepalm` | Darse una palmada en la frente |
+| `handhold` | Tomar la mano de alguien |
+| `happy` | Expresar felicidad |
+| `headbang` | Hacer headbang |
+| `hug` | Abrazar a alguien |
+| `kiss` | Besar a alguien |
+| `laugh` | Estallar en carcajadas |
+| `lick` | Lamer a alguien |
+| `love` | Mostrar cariño a alguien |
+| `mad` | Mostrar enfado |
+| `nervous` | Mostrar nerviosismo |
+| `nom` | Mordisquear a alguien |
+| `nuzzle` | Frotarse contra alguien |
+| `nyah` | Decir NYAH |
+| `pat` | Dar palmaditas a alguien |
+| `peek` | Espiar a alguien |
+| `pinch` | Pellizcar a alguien |
+| `poke` | Dar toques a alguien |
+| `pout` | Hacer pucheros |
+| `punch` | Lanzar un puñetazo |
+| `sad` | Expresar tristeza |
+| `scared` | Mostrar miedo |
+| `shout` | Gritar |
+| `shrug` | Encogerse de hombros |
+| `shy` | Actuar con timidez |
+| `sigh` | Suspirar |
+| `sip` | Tomar un sorbo dramático |
+| `slap` | Abofetear a alguien |
+| `sleep` | Quedarse dormido |
+| `slowclap` | Dar un aplauso lento sarcástico |
+| `smack` | Dar una palmada a alguien |
+| `smile` | Sonreír |
+| `sneeze` | Estornudar |
+| `sorry` | Disculparse |
+| `stare` | Mirar fijamente |
+| `surprised` | Reaccionar con sorpresa |
+| `sweat` | Sudar nerviosamente |
+| `thumbsup` | Dar pulgares arriba |
+| `tickle` | Hacer cosquillas a alguien |
+| `tired` | Mostrar cansancio |
+| `wave` | Saludar con la mano |
+| `wink` | Guiñar un ojo |
+| `woah` | Reaccionar con asombro |
+| `yawn` | Bostezar |
+| `yay` | Celebrar |
+
+### Clasificaciones en vivo
+
+| Comando | Propósito |
+| --- | --- |
+| `liveleaderboard setup` | Configurar la clasificación en vivo |
+| `liveleaderboard reset` | Desactivar la clasificación en vivo |
+
+### Varios
+
+| Comando | Propósito |
+| --- | --- |
+| `profile` | Ver la tarjeta de perfil de un usuario |
+| `profileedit` | Configurar o editar una tarjeta de perfil |
+| `steal` | Copiar un emoji o sticker al servidor |
+| `quote` | Generar una imagen de cita |
+| `caption` | Añadir un pie de foto sobre una imagen; alias `cap` |
+| `ai ask` | Hacerle una pregunta a la IA |
+| `ai tts` | Convertir texto a voz |
+| `ai ocr` | Extraer y analizar texto de una imagen |
+| `ai reason` | Resolver un problema complejo |
+| `imdb` | Buscar una película o serie |
+| `screenshot` | Capturar una página web |
+| `report` | Enviar un reporte de error al equipo de desarrollo |
+| `poll create` | Crear una encuesta de Discord |
+| `poll end` | Finalizar una encuesta activa |
+| `timer start` | Iniciar un temporizador |
+| `timer pause` | Pausar un temporizador activo |
+| `timer resume` | Reanudar un temporizador pausado |
+| `timer end` | Finalizar un temporizador activo |
+| `reminder add` | Establecer un recordatorio personal |
+| `reminder list` | Listar recordatorios activos |
+| `reminder remove` | Eliminar un recordatorio |
+| `timezone` | Ver o establecer una zona horaria |
+| `fix` | Descargar medios de Instagram o TikTok |
+| `pinterest` | Buscar imágenes en Pinterest |
+| `lookup` | Explorar nombres de usuario abandonados y vanities de servidores |
+| `lastseen` | Mostrar el último mensaje de un usuario en el servidor |
+| `nptoggle` | Activar o desactivar el prefijo personal |
+| `define` | Buscar la definición de una palabra |
+| `sherlock` | Buscar un nombre de usuario en múltiples plataformas |
+| `get pfp` | Obtener el avatar de un usuario |
+| `get banner` | Obtener el banner de un usuario |
+| `get wallpaper` | Obtener inspiración de fondos de pantalla |
+| `lens` | Búsqueda inversa de imágenes |
+| `search web` | Buscar en la web |
+| `search images` | Buscar imágenes |
+| `search news` | Buscar las últimas noticias |
