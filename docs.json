@@ -17,97 +17,21 @@
         ]
       }
     ],
-    "tabs": [
+    "anchors": [
       {
-        "tab": "Inicio",
-        "groups": [
-          {
-            "group": "Empezar",
-            "pages": [
-              "index",
-              "start-here",
-              "setup",
-              "permissions"
-            ]
-          }
-        ]
+        "anchor": "Invitar Vyrron",
+        "icon": "robot",
+        "href": "https://discord.com/oauth2/authorize"
       },
       {
-        "tab": "Protección y Moderación",
-        "groups": [
-          {
-            "group": "Seguridad",
-            "pages": [
-              "security/overview",
-              "security/antinuke",
-              "security/automod",
-              "security/logging"
-            ]
-          },
-          {
-            "group": "Moderación",
-            "pages": [
-              "moderation/overview"
-            ]
-          }
-        ]
+        "anchor": "GitHub",
+        "icon": "github",
+        "href": "https://github.com/j3lk5d0x3l"
       },
       {
-        "tab": "Comunidad",
-        "groups": [
-          {
-            "group": "Comunidad",
-            "pages": [
-              "community/overview",
-              "community/welcome",
-              "community/leveling",
-              "community/tickets",
-              "community/giveaways",
-              "community/voicemaster",
-              "community/suggestions",
-              "community/feedback",
-              "community/staff",
-              "community/automation",
-              "community/autopost",
-              "community/selfrole",
-              "community/social-notifier",
-              "community/tracking",
-              "community/liveleaderboard"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Explorar Vyrron",
-        "groups": [
-          {
-            "group": "Música",
-            "pages": [
-              "music/overview"
-            ]
-          },
-          {
-            "group": "Utilidades",
-            "pages": [
-              "utility/overview",
-              "utility/ai",
-              "utility/network",
-              "utility/roleplay",
-              "utility/misc"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Referencia",
-        "groups": [
-          {
-            "group": "Referencia",
-            "pages": [
-              "reference/commands"
-            ]
-          }
-        ]
+        "anchor": "Soporte",
+        "icon": "discord",
+        "href": "https://discord.vyrron.net"
       }
     ]
   }
